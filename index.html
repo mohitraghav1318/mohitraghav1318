@@ -1,209 +1,113 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mohit Raghav | Portfolio</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="style.css" />
-  <!-- AOS CSS -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mohit Raghav's Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <header class="bg-dark text-white py-4 mb-4">
-    <div class="container">
-      <div class="d-flex flex-column flex-md-row align-items-center justify-content-between">
-        <div>
-          <h1 class="display-4 m-0">Mohit Raghav</h1>
-          <p class="typing h5"></p>
-        </div>
-        <nav class="nav flex-column flex-md-row gap-2 justify-content-center mt-4 mt-md-0">
-          <a class="nav-link text-white" href="#about">About</a>
-          <a class="nav-link text-white" href="#skills">Skills</a>
-          <a class="nav-link text-white" href="#projects">Projects</a>
-          <a class="nav-link text-white" href="#contact">Contact</a>
-        </nav>
-        <button id="theme-toggle" class="btn btn-outline-light ms-md-3 mt-3 mt-md-0">Toggle Theme</button>
-      </div>
-    </div>
-  </header>
 
-  <main>
-    <section id="about" class="container py-5" data-aos="fade-up">
-      <h2 class="mb-4 text-center">About Me</h2>
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <p class="lead text-center">
-            I'm Mohit Raghav, a BTech student studying Computer Science with a focus on AI and Machine Learning. I enjoy building websites and making them look good with HTML, CSS, JavaScript, and Bootstrap. I'm always interested in learning new things and improving my skills, especially in web development and programming.
-          </p>
-        </div>
-      </div>
-    </section>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black shadow">
+        <div class="container">
+            <!-- Brand / Name -->
+            <a class="navbar-brand fw-bold" href="/index.html">MOHIT RAGHAV</a>
 
-    <section id="skills" class="container py-5" data-aos="fade-up">
-      <h2 class="mb-4 text-center">Skills</h2>
-      <div class="row justify-content-center">
-        <div class="col-md-10">
-          <div class="row g-3">
-            <div class="col-6 col-md-4 col-lg-2">
-              <div class="card text-center shadow-sm">
-                <div class="card-body">HTML</div>
-              </div>
+            <!-- Toggler for mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/projects.html">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/skills.html">Skills</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="/about.html">About Me</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact.html">Contact Me</a>
+                    </li>
+                </ul>
             </div>
-            <div class="col-6 col-md-4 col-lg-2">
-              <div class="card text-center shadow-sm">
-                <div class="card-body">CSS</div>
-              </div>
-            </div>
-              <div class="col-6 col-md-4 col-lg-2">
-                <div class="card text-center shadow-sm ">
-                  <div class="card-body">Bootstrap</div>
+        </div>
+    </nav>
+    <!-- 
+    <div class="container my-5">
+        <div class="card shadow-lg border-10">
+            <div class="row g-0 align-items-center">
+
+                <div class="col-md-7 p-4">
+                    <div class="card-body">
+                       
+                    </div>
                 </div>
-              </div>
-            <div class="col-6 col-md-4 col-lg-2">
-              <div class="card text-center shadow-sm">
-                <div class="card-body">JavaScript</div>
-              </div>
-            </div>
-            <div class="col-6 col-md-4 col-lg-2">
-              <div class="card text-center shadow-sm">
-                <div class="card-body">Python</div>
-              </div>
-            </div>
-            <div class="col-6 col-md-4 col-lg-2">
-              <div class="card text-center shadow-sm">
-                <div class="card-body">Responsive Design</div>
-              </div>
-            </div>
-            <div class="col-6 col-md-4 col-lg-2">
-              <div class="card text-center shadow-sm">
-                <div class="card-body">Animations</div>
-              </div>
-            </div>
-            <div class="col-6 col-md-4 col-lg-2">
-              <div class="card text-center shadow-sm">
-                <div class="card-body">Github</div>
-              </div>
-            </div>
-            <div class="col-6 col-md-4 col-lg-2">
-              <div class="card text-center shadow-sm">
-                <div class="card-body">Linux</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <section id="projects" class="container py-5" data-aos="fade-up">
-      <h2 class="mb-4 text-center">Projects</h2>
-      <div class="row justify-content-center g-3">
-        <div class="col-md-6 col-lg-4">
-          <div class="card h-100 shadow-sm">
-            <div class="card-body">
-              <h3 class="card-title">Portfolio Website</h3>
-              <p class="card-text">This portfolio itself, built using HTML, CSS, JavaScript, and Bootstrap with a clean dark and light theme and animations.</p>
-              <a href="https://mohitraghav1318.github.io/mohit-portfolio/">Portfolio</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="card h-100 shadow-sm">
-            <div class="card-body">
-              <h3 class="card-title">News Web Applicatlion</h3>
-              <p class="card-text">A web app built with Python and Flask that fetches and displays up-to-date news using public APIs. Features include dynamic news updates, and a clean, responsive interface. Developed to practice API integration, backend development, and frontend templating.</p>
-              <a href="https://zeromohit.pythonanywhere.com/">News Web</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+               
 
-<section id="contact" class="container py-5" data-aos="fade-up">
-  <h2 class="mb-4 text-center">Contact</h2>
-  <div class="row justify-content-center">
-    <div class="col-lg-6 text-center">
-      <p>
-        You can reach me at
-        <a href="mailto:mohitraghav911@gmail.com" class="link-info">mohitraghav911@gmail.com</a>
-      </p>
-      <div class="mt-3">
-        <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank" class="me-3 link-info" aria-label="LinkedIn">
-          <i class="fab fa-linkedin fa-2x"></i>LinkedIn
-        </a>
-        <a href="https://www.instagram.com/your-instagram-profile" target="_blank" class="link-info" aria-label="Instagram">
-          <i class="fab fa-instagram fa-2x"></i>Instagram
-        </a>
-      </div>
+            </div>
+        </div>
+    </div> -->
+    <div class="container">
+
+        <div class="row align-items-center mb-5">
+
+            <div class="col-md-6">
+                <h3 class="card-title fw-bold">Hii I am <b>MOHIT RAGHAV</b>,</h3>
+                <p class="card-text">
+                    “I’ve always been fascinated by how technology can solve real-world problems and bring ideas to
+                    life. As a Computer Science AIML student, I spend my days exploring web development, building small
+                    projects, and learning something new every day. Coding is my way of creating, experimenting, and
+                    expressing myself, and outside of tech, I love diving into anime and bringing my own drawings to
+                    life. I enjoy blending creativity with logic, and I’m always excited to see where my curiosity takes
+                    me next.”
+                </p>
+                <a href="/projects.html" class="btn btn-dark rounded-pill">View My Projects</a>
+            </div>
+            <div class="col-md-5 text-center p-4">
+                <img src="asset/svgs/undraw_in-the-zone_07y7.svg" alt="Developer Illustration" class="img-fluid"
+                    style="max-width:350px;">
+
+            </div>
+        </div>
+
+
+        <div class="row align-items-center mb-5">
+            <div class="col-md-6">
+                <img src="asset/svgs/undraw_resume_jrgi.svg" class="img-fluid" alt="About SVG">
+            </div>
+            <div class="col-md-6">
+                <h3>My Coding Journey</h3>
+                <p>“I started my coding journey with the basics of HTML and CSS, where I learned how to create simple
+                    yet
+                    beautiful web pages. Over time, my curiosity pushed me to explore more complex technologies like
+                    JavaScript for interactivity and Bootstrap for responsive design. As I grew more confident, I
+                    stepped
+                    into Python and Flask to understand how powerful backend development can be. Along the way, I also
+                    explored tools like Git and GitHub to collaborate and manage my projects effectively. Every step has
+                    been a mix of challenges and learning, and I’m excited to keep pushing myself into advanced web
+                    development and AI applications.”</p>
+                <a href="/skills.html" class="btn btn-dark rounded-pill">View My Skills</a>
+            </div>
+        </div>
+
+
     </div>
-  </div>
-</section>
-  </main>
 
-  <footer class="bg-dark text-white py-3 mt-5">
-    <div class="container text-center">
-      <p class="mb-0">&copy; 2025 Mohit Raghav. All rights reserved.</p>
-    </div>
-  </footer>
 
-  <!-- Typing effect script -->
-  <script>
-    const texts = ["Web Developer", "DSA", "AI & ML Learner"];
-    let count = 0;
-    let index = 0;
-    let currentText = '';
-    let letter = '';
-
-    (function type() {
-      if (count === texts.length) count = 0;
-      currentText = texts[count];
-      letter = currentText.slice(0, ++index);
-      document.querySelector(".typing").textContent = letter;
-      if (letter.length === currentText.length) {
-        count++;
-        index = 0;
-        setTimeout(type, 1000);
-      } else {
-        setTimeout(type, 100);
-      }
-    })();
-  </script>
-
-  <!-- Theme Toggle Script -->
-  <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const toggleBtn = document.getElementById("theme-toggle");
-  const html = document.documentElement;
-
-  // Initialize based on current value or fallback to dark
-  if (!html.getAttribute("data-bs-theme")) {
-    html.setAttribute("data-bs-theme", "dark");
-  }
-  toggleBtn.textContent = html.getAttribute("data-bs-theme") === "dark" ? "Light Theme" : "Dark Theme";
-
-  toggleBtn.addEventListener("click", () => {
-    const currentTheme = html.getAttribute("data-bs-theme");
-    const newTheme = currentTheme === "dark" ? "light" : "dark";
-    html.setAttribute("data-bs-theme", newTheme);
-    toggleBtn.textContent = newTheme === "dark" ? "Light Theme" : "Dark Theme";
-  });
-});
-
-  </script>
-
-  <!-- Bootstrap JS Bundle (with Popper) -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- AOS JS -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>
