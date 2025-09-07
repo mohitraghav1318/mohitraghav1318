@@ -26,3 +26,7 @@ p {
     /* Purple highlight */
     font-weight: bold;
 }
+
+.para {
+    font-size: 1.2rem;
+}
