@@ -1,0 +1,508 @@
+<%- include('../partials/header') %>
+    <%- include('../partials/navbar') %>
+
+        <style>
+            /* Background Animations */
+            #particles-js {
+                position: fixed;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                background: linear-gradient(135deg, #26658C 0%, #023859 100%);
+            }
+
+            .gradient-orb {
+                position: fixed;
+                border-radius: 50%;
+                filter: blur(100px);
+                opacity: 0.2;
+                pointer-events: none;
+                z-index: -1;
+            }
+
+            .gradient-orb-1 {
+                width: 400px;
+                height: 400px;
+                background: #54ACBF;
+                top: 10%;
+                left: 10%;
+                animation: float1 20s ease-in-out infinite;
+            }
+
+            .gradient-orb-2 {
+                width: 350px;
+                height: 350px;
+                background: #26658C;
+                top: 50%;
+                right: 10%;
+                animation: float2 25s ease-in-out infinite;
+            }
+
+            .gradient-orb-3 {
+                width: 450px;
+                height: 450px;
+                background: #023859;
+                bottom: 10%;
+                left: 40%;
+                animation: float3 22s ease-in-out infinite;
+            }
+
+            @keyframes float1 {
+
+                0%,
+                100% {
+                    transform: translate(0, 0);
+                }
+
+                50% {
+                    transform: translate(50px, -50px);
+                }
+            }
+
+            @keyframes float2 {
+
+                0%,
+                100% {
+                    transform: translate(0, 0);
+                }
+
+                50% {
+                    transform: translate(-40px, 40px);
+                }
+            }
+
+            @keyframes float3 {
+
+                0%,
+                100% {
+                    transform: translate(0, 0);
+                }
+
+                50% {
+                    transform: translate(30px, -30px);
+                }
+            }
+
+            /* Main Content */
+            .content-wrapper {
+                position: relative;
+                padding: 60px 0 80px;
+            }
+
+            /* Glass Cards */
+            .glass-card {
+                background: rgba(255, 255, 255, 0.95);
+                border-radius: 20px;
+                padding: 40px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+                transition: all 0.6s ease;
+                margin-bottom: 40px;
+            }
+
+            .glass-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 20px 50px rgba(38, 101, 140, 0.25);
+            }
+
+            .glass-card .icon {
+                font-size: 3rem;
+                margin-bottom: 20px;
+                transition: transform 0.6s ease;
+            }
+
+            .glass-card:hover .icon {
+                transform: scale(1.15) rotate(5deg);
+            }
+
+            /* Typography */
+            h1,
+            h2,
+            h3 {
+                color: #023859;
+                font-weight: 800;
+            }
+
+            .text-accent {
+                color: #54ACBF;
+            }
+
+            /* Images */
+            .img-fluid {
+                transition: all 0.8s ease;
+            }
+
+            .img-fluid:hover {
+                transform: scale(1.05) translateY(-10px);
+                filter: drop-shadow(0 15px 30px rgba(38, 101, 140, 0.3));
+            }
+
+            /* Buttons */
+            .btn-custom {
+                background: linear-gradient(135deg, #54ACBF 0%, #26658C 100%);
+                color: white;
+                border: none;
+                padding: 12px 35px;
+                border-radius: 50px;
+                font-weight: 600;
+                transition: all 0.5s ease;
+                box-shadow: 0 5px 20px rgba(84, 172, 191, 0.3);
+                text-decoration: none;
+                display: inline-block;
+            }
+
+            .btn-custom:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 10px 30px rgba(84, 172, 191, 0.5);
+                color: white;
+            }
+
+            /* Section Spacing */
+            .section {
+                margin-bottom: 80px;
+            }
+
+            /* Stats Cards */
+            .stat-card {
+                text-align: center;
+                padding: 35px 25px;
+                background: white;
+                border-radius: 20px;
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+                transition: all 0.6s ease;
+                height: 100%;
+            }
+
+            .stat-card:hover {
+                transform: translateY(-12px) scale(1.03);
+                box-shadow: 0 20px 45px rgba(38, 101, 140, 0.25);
+            }
+
+            .stat-card .icon {
+                font-size: 3rem;
+                margin-bottom: 20px;
+                transition: transform 0.6s ease;
+            }
+
+            .stat-card:hover .icon {
+                transform: scale(1.15) rotate(5deg);
+            }
+
+            .stat-card h4 {
+                color: #023859;
+                font-size: 1.4rem;
+                margin-bottom: 15px;
+                font-weight: 700;
+            }
+
+            .stat-card p {
+                color: #666;
+                font-size: 0.95rem;
+                line-height: 1.6;
+                margin-bottom: 0;
+            }
+
+            /* Contact Links */
+            .contact-link {
+                color: #26658C;
+                font-weight: 600;
+                text-decoration: none;
+                transition: all 0.4s ease;
+                position: relative;
+            }
+
+            .contact-link:hover {
+                color: #54ACBF;
+                transform: translateX(5px);
+                display: inline-block;
+            }
+
+            @media (max-width: 768px) {
+                .gradient-orb {
+                    display: none;
+                }
+
+                .glass-card {
+                    padding: 25px;
+                }
+            }
+        </style>
+
+        <!-- Particles Background -->
+        <div id="particles-js"></div>
+
+        <!-- Floating Gradient Orbs -->
+        <div class="gradient-orb gradient-orb-1"></div>
+        <div class="gradient-orb gradient-orb-2"></div>
+        <div class="gradient-orb gradient-orb-3"></div>
+
+        <div class="content-wrapper">
+            <div class="container">
+
+                <!-- Hero Section -->
+                <section class="section">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <div class="glass-card">
+                                <h1 class="mb-4">Hi, I am <span class="text-accent">MOHIT RAGHAV</span> 👋</h1>
+                                <p class="lead">
+                                    I've always been fascinated by how technology can solve real-world problems and
+                                    bring ideas to
+                                    life. As a Computer Science AIML student, I spend my days exploring web development,
+                                    building
+                                    projects, and learning something new every day.
+                                </p>
+                                <p>
+                                    Coding is my way of creating, experimenting, and expressing myself. Outside of tech,
+                                    I love
+                                    diving into anime and bringing my own drawings to life. I enjoy blending creativity
+                                    with logic,
+                                    and I'm always excited to see where my curiosity takes me next.
+                                </p>
+                                <div class="mt-4">
+                                    <a href="/projects" class="btn-custom me-3">View My Work</a>
+                                    <a href="/contact" class="btn-custom">Get In Touch</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 text-center">
+                            <img src="/images/svgs/undraw_in-the-zone_07y7.svg" alt="Developer" class="img-fluid"
+                                style="max-width:400px;">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- What Drives Me Section -->
+                <section class="section">
+                    <h2 class="text-center mb-5" style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">What
+                        Drives Me 💫</h2>
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="stat-card">
+                                <div class="icon">🔥</div>
+                                <h4>Passion for Learning</h4>
+                                <p>Technology evolves every day, and so do I. From mastering new frameworks to exploring
+                                    cutting-edge AI concepts, learning fuels my journey.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="stat-card">
+                                <div class="icon">💪</div>
+                                <h4>Solving Challenges</h4>
+                                <p>Every bug is a puzzle, every feature is a challenge. I thrive on breaking down
+                                    complex problems into elegant, efficient solutions.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="stat-card">
+                                <div class="icon">🌟</div>
+                                <h4>Building Real Impact</h4>
+                                <p>Code isn't just syntax—it's a tool to create meaningful experiences that help people
+                                    and solve real-world problems.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Coding Journey Section -->
+                <section class="section">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <img src="/images/svgs/undraw_resume_jrgi.svg" class="img-fluid" alt="Coding Journey">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="glass-card">
+                                <h2 class="mb-4">🚀 My Coding Journey</h2>
+                                <p>
+                                    I started my coding journey with the basics of HTML and CSS, where I learned how to
+                                    create
+                                    simple yet beautiful web pages. Over time, my curiosity pushed me to explore more
+                                    complex
+                                    technologies like JavaScript for interactivity and Bootstrap for responsive design.
+                                </p>
+                                <p>
+                                    As I grew more confident, I stepped into Python and Flask to understand how powerful
+                                    backend
+                                    development can be. Along the way, I also explored tools like Git and GitHub to
+                                    collaborate
+                                    and manage my projects effectively. Every step has been a mix of challenges and
+                                    learning, and
+                                    I'm excited to keep pushing myself into advanced web development and AI
+                                    applications.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Education Section -->
+                <section class="section">
+                    <div class="glass-card">
+                        <h2 class="text-center mb-5">Education 🎓</h2>
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <h3 class="fw-bold">B.Tech in Computer Science and Engineering</h3>
+                                <p class="mb-2">
+                                    Specialization in <strong class="text-accent">Artificial Intelligence & Machine
+                                        Learning (AIML)</strong>
+                                </p>
+                                <p class="fw-bold mb-3" style="color: #26658C;">
+                                    Meerut Institute of Engineering and Technology <br>
+                                    2024 – 2028
+                                </p>
+                                <p>
+                                    Currently pursuing my undergraduate degree with a strong academic foundation in
+                                    computer
+                                    science fundamentals, exploring cutting-edge fields of Artificial Intelligence and
+                                    Machine
+                                    Learning, and actively involved in campus technical activities.
+                                </p>
+                            </div>
+                            <div class="col-md-6 text-center">
+                                <img src="/images/svgs/undraw_environmental-study_c69w.svg" class="img-fluid w-75"
+                                    alt="Education">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- What I Do Section -->
+                <section class="section">
+                    <h2 class="text-center mb-5" style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">What I
+                        Do 🎯</h2>
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="glass-card text-center">
+                                <div class="icon">🌐</div>
+                                <h4>Full-Stack Web Development</h4>
+                                <p>Crafting responsive, user-friendly websites from frontend design to backend logic. I
+                                    build complete web applications using modern frameworks and best practices.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="glass-card text-center">
+                                <div class="icon">🤖</div>
+                                <h4>AI & Machine Learning</h4>
+                                <p>Diving deep into Python libraries, exploring neural networks, and understanding how
+                                    machines learn. Building intelligent features that make applications smarter.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="glass-card text-center">
+                                <div class="icon">⚡</div>
+                                <h4>API Development & Integration</h4>
+                                <p>Designing RESTful APIs, integrating third-party services, and connecting different
+                                    systems to create seamless, data-driven applications.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Skills Preview Section -->
+                <section class="section">
+                    <div class="glass-card">
+                        <h2 class="text-center mb-5">My Skills 🚀</h2>
+                        <div class="row align-items-center">
+                            <div class="col-md-6 text-center">
+                                <img src="/images/svgs/undraw_code-inspection_z688.svg" class="img-fluid w-75"
+                                    alt="Skills">
+                            </div>
+                            <div class="col-md-6">
+                                <p class="lead mb-4">
+                                    Proficient in <strong class="text-accent">Web Development</strong>,
+                                    <strong class="text-accent">Python</strong>, and
+                                    <strong class="text-accent">AI/ML</strong> with hands-on project experience.
+                                </p>
+                                <ul class="list-unstyled mb-4">
+                                    <li class="mb-2">✓ Frontend: HTML, CSS, JavaScript, Bootstrap</li>
+                                    <li class="mb-2">✓ Backend: Python, Flask, Node.js</li>
+                                    <li class="mb-2">✓ Database: MongoDB</li>
+                                    <li class="mb-2">✓ Tools: Git, GitHub, Linux</li>
+                                </ul>
+                                <a href="/skills" class="btn-custom">Explore All Skills</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Projects Preview Section -->
+                <section class="section">
+                    <div class="glass-card">
+                        <h2 class="text-center mb-5">Projects 💻</h2>
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <p class="lead mb-4">
+                                    From personal portfolio to real-world web apps, check out my latest work!
+                                </p>
+                                <ul class="list-unstyled mb-4">
+                                    <li class="mb-3">📚 <strong>Readify</strong> - Full-stack book reading platform</li>
+                                    <li class="mb-3">📰 <strong>News App</strong> - Real-time news aggregator with API
+                                    </li>
+                                    <li class="mb-3">💼 <strong>Portfolio</strong> - Modern personal portfolio website
+                                    </li>
+                                </ul>
+                                <a href="/projects" class="btn-custom">View All Projects</a>
+                            </div>
+                            <div class="col-md-6 text-center">
+                                <img src="/images/svgs/undraw_cool-guy-avatar_qjc4.svg" class="img-fluid w-75"
+                                    alt="Projects">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Contact Section -->
+                <section class="section">
+                    <div class="glass-card text-center">
+                        <h2 class="mb-4">Let's Connect 📩</h2>
+                        <p class="lead mb-4">If you'd like to collaborate or just say hi, feel free to reach out!</p>
+                        <div class="mb-4">
+                            <p><strong>Email:</strong> <a href="mailto:mohitraghav1318@gmail.com"
+                                    class="contact-link">mohitraghav1318@gmail.com</a></p>
+                            <p><strong>GitHub:</strong> <a href="https://github.com/mohitraghav1318" target="_blank"
+                                    class="contact-link">mohitraghav1318</a></p>
+                            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mohit-raghav-45b434288"
+                                    target="_blank" class="contact-link">Mohit Raghav</a></p>
+                        </div>
+                        <a href="/contact" class="btn-custom">Send Me a Message</a>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+        <!-- Particles.js Script -->
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+        <script>
+            particlesJS('particles-js', {
+                particles: {
+                    number: { value: 60, density: { enable: true, value_area: 800 } },
+                    color: { value: '#54ACBF' },
+                    shape: { type: 'circle' },
+                    opacity: { value: 0.5, random: true },
+                    size: { value: 3, random: true },
+                    line_linked: {
+                        enable: true,
+                        distance: 150,
+                        color: '#54ACBF',
+                        opacity: 0.4,
+                        width: 1
+                    },
+                    move: {
+                        enable: true,
+                        speed: 2,
+                        direction: 'none',
+                        out_mode: 'out'
+                    }
+                },
+                interactivity: {
+                    events: {
+                        onhover: { enable: true, mode: 'grab' },
+                        onclick: { enable: true, mode: 'push' }
+                    }
+                }
+            });
+        </script>
+
+        <%- include('../partials/footer') %>

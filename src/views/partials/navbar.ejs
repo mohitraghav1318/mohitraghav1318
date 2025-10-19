@@ -1,0 +1,259 @@
+<!-- Modern Glassmorphism Navbar -->
+<style>
+    /* Navbar Styles */
+    .modern-navbar {
+        background: rgba(2, 56, 89, 0.8);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-bottom: 2px solid rgba(84, 172, 191, 0.3);
+        box-shadow: 0 8px 32px rgba(2, 56, 89, 0.4);
+        padding: 15px 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        transition: all 0.3s ease;
+    }
+
+    .modern-navbar.scrolled {
+        background: rgba(2, 56, 89, 0.95);
+        box-shadow: 0 10px 40px rgba(2, 56, 89, 0.6);
+    }
+
+    /* Brand Styling */
+    .navbar-brand {
+        font-size: 1.5rem;
+        font-weight: 900;
+        color: #54ACBF !important;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        position: relative;
+        transition: all 0.3s ease;
+        text-shadow: 0 0 10px rgba(84, 172, 191, 0.5);
+    }
+
+    .navbar-brand:hover {
+        color: #fff !important;
+        text-shadow: 0 0 20px rgba(84, 172, 191, 0.8);
+        transform: scale(1.05);
+    }
+
+    .navbar-brand::before {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #54ACBF 0%, #26658C 100%);
+        transition: width 0.3s ease;
+    }
+
+    .navbar-brand:hover::before {
+        width: 100%;
+    }
+
+    /* Nav Links */
+    .navbar-nav .nav-link {
+        color: rgba(255, 255, 255, 0.9) !important;
+        font-weight: 600;
+        font-size: 1rem;
+        padding: 10px 20px !important;
+        margin: 0 5px;
+        border-radius: 10px;
+        position: relative;
+        transition: all 0.3s ease;
+        overflow: hidden;
+    }
+
+    .navbar-nav .nav-link::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, #54ACBF 0%, #26658C 100%);
+        transition: left 0.3s ease;
+        z-index: -1;
+        border-radius: 10px;
+    }
+
+    .navbar-nav .nav-link:hover {
+        color: #fff !important;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(84, 172, 191, 0.4);
+    }
+
+    .navbar-nav .nav-link:hover::before {
+        left: 0;
+    }
+
+    .navbar-nav .nav-link.active {
+        background: linear-gradient(135deg, #54ACBF 0%, #26658C 100%);
+        color: #fff !important;
+        box-shadow: 0 5px 15px rgba(84, 172, 191, 0.4);
+    }
+
+    /* Navbar Toggler */
+    .navbar-toggler {
+        border: 2px solid #54ACBF;
+        padding: 8px 12px;
+        transition: all 0.3s ease;
+    }
+
+    .navbar-toggler:focus {
+        box-shadow: 0 0 0 0.25rem rgba(84, 172, 191, 0.5);
+    }
+
+    .navbar-toggler:hover {
+        background: rgba(84, 172, 191, 0.2);
+        transform: rotate(90deg);
+    }
+
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%2354ACBF' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+
+    /* Animated Background Effect */
+    .navbar-background-effect {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg,
+                rgba(84, 172, 191, 0.1) 0%,
+                rgba(38, 101, 140, 0.1) 50%,
+                rgba(84, 172, 191, 0.1) 100%);
+        background-size: 200% 100%;
+        animation: navbarGradient 8s ease infinite;
+        z-index: -1;
+        pointer-events: none;
+    }
+
+    @keyframes navbarGradient {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 991px) {
+        .navbar-collapse {
+            background: rgba(2, 56, 89, 0.98);
+            backdrop-filter: blur(20px);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 15px;
+            border: 2px solid rgba(84, 172, 191, 0.3);
+        }
+
+        .navbar-nav .nav-link {
+            margin: 5px 0;
+            text-align: center;
+        }
+
+        .navbar-nav .nav-link:hover {
+            transform: translateX(10px);
+        }
+    }
+
+    /* Smooth Scroll Behavior */
+    html {
+        scroll-behavior: smooth;
+    }
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-dark modern-navbar">
+    <!-- Animated Background Effect -->
+    <div class="navbar-background-effect"></div>
+
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            <span>MOHIT RAGHAV</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/" id="nav-home">
+                        <i class="fas fa-home me-1"></i> Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/projects" id="nav-projects">
+                        <i class="fas fa-laptop-code me-1"></i> Projects
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/skills" id="nav-skills">
+                        <i class="fas fa-code me-1"></i> Skills
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact" id="nav-contact">
+                        <i class="fas fa-envelope me-1"></i> Contact
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Add Font Awesome for Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Navbar Scroll Effect Script -->
+<script>
+    // Add scroll effect to navbar
+    window.addEventListener('scroll', function () {
+        const navbar = document.querySelector('.modern-navbar');
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // Active link highlighting based on current page
+    document.addEventListener('DOMContentLoaded', function () {
+        const currentPath = window.location.pathname;
+        const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            const href = link.getAttribute('href');
+
+            if (href === currentPath ||
+                (currentPath === '/' && href === '/') ||
+                (currentPath.includes(href) && href !== '/')) {
+                link.classList.add('active');
+            }
+        });
+    });
+
+    // Smooth close navbar on mobile after clicking a link
+    document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+        link.addEventListener('click', function () {
+            const navbarCollapse = document.querySelector('.navbar-collapse');
+            if (navbarCollapse.classList.contains('show')) {
+                const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+                    toggle: true
+                });
+            }
+        });
+    });
+</script>

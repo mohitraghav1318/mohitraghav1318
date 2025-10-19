@@ -1,0 +1,687 @@
+/* ============================================
+   BASE STYLES
+   ============================================ */
+
+body {
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+
+h1,
+h2 {
+    color: #023859;
+}
+
+h3,
+h4 {
+    color: #26658C;
+}
+
+p {
+    color: #555555;
+}
+
+.text-accent {
+    color: #54ACBF;
+    font-weight: bold;
+}
+
+.para {
+    font-size: 1.2rem;
+}
+
+/* ============================================
+   BACKGROUND & ANIMATIONS
+   ============================================ */
+
+/* Animated Gradient Overlay */
+.gradient-overlay {
+    background: linear-gradient(-45deg, #023859, #26658C, #54ACBF, #26658C);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    opacity: 0.9;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Particle Background */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: linear-gradient(135deg, #26658C 0%, #023859 100%);
+}
+
+/* ============================================
+   CUSTOM CSS ILLUSTRATIONS
+   ============================================ */
+
+/* Animated Code Window */
+.code-window {
+    width: 100%;
+    max-width: 450px;
+    height: 300px;
+    background: #1e1e1e;
+    border-radius: 15px;
+    box-shadow: 0 20px 60px rgba(2, 56, 89, 0.4);
+    position: relative;
+    overflow: hidden;
+    animation: float 4s ease-in-out infinite;
+}
+
+.code-window::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 35px;
+    background: #2d2d2d;
+    border-bottom: 1px solid #404040;
+}
+
+.window-dots {
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    display: flex;
+    gap: 8px;
+    z-index: 1;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.dot.red {
+    background: #ff5f56;
+}
+
+.dot.yellow {
+    background: #ffbd2e;
+}
+
+.dot.green {
+    background: #27c93f;
+}
+
+.code-lines {
+    padding: 50px 20px 20px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+}
+
+.code-line {
+    margin: 10px 0;
+    height: 12px;
+    border-radius: 3px;
+    animation: typeCode 3s ease-in-out infinite;
+}
+
+.code-line:nth-child(1) {
+    background: linear-gradient(90deg, #54ACBF 0%, transparent 70%);
+    width: 60%;
+    animation-delay: 0s;
+}
+
+.code-line:nth-child(2) {
+    background: linear-gradient(90deg, #26658C 0%, transparent 70%);
+    width: 80%;
+    animation-delay: 0.3s;
+}
+
+.code-line:nth-child(3) {
+    background: linear-gradient(90deg, #54ACBF 0%, transparent 70%);
+    width: 50%;
+    animation-delay: 0.6s;
+}
+
+.code-line:nth-child(4) {
+    background: linear-gradient(90deg, #26658C 0%, transparent 70%);
+    width: 75%;
+    animation-delay: 0.9s;
+}
+
+.code-line:nth-child(5) {
+    background: linear-gradient(90deg, #54ACBF 0%, transparent 70%);
+    width: 65%;
+    animation-delay: 1.2s;
+}
+
+@keyframes typeCode {
+
+    0%,
+    100% {
+        opacity: 0.3;
+        transform: translateX(-10px);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Laptop Illustration */
+.laptop-illustration {
+    width: 100%;
+    max-width: 400px;
+    height: 250px;
+    position: relative;
+    animation: float 4s ease-in-out infinite;
+    animation-delay: 0.5s;
+}
+
+.laptop-screen {
+    width: 100%;
+    height: 180px;
+    background: linear-gradient(135deg, #023859 0%, #26658C 100%);
+    border-radius: 10px;
+    border: 8px solid #1a1a1a;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(2, 56, 89, 0.4);
+}
+
+.laptop-base {
+    width: 110%;
+    height: 15px;
+    background: #1a1a1a;
+    border-radius: 0 0 20px 20px;
+    position: absolute;
+    bottom: 0;
+    left: -5%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.screen-content {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+}
+
+.browser-bar {
+    height: 25px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    margin-bottom: 15px;
+}
+
+.browser-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #54ACBF;
+    margin-right: 5px;
+}
+
+.content-blocks {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.content-block {
+    height: 10px;
+    border-radius: 3px;
+    background: rgba(84, 172, 191, 0.3);
+    animation: loadBlock 2s ease-in-out infinite;
+}
+
+.content-block:nth-child(1) {
+    width: 80%;
+    animation-delay: 0s;
+}
+
+.content-block:nth-child(2) {
+    width: 60%;
+    animation-delay: 0.3s;
+}
+
+.content-block:nth-child(3) {
+    width: 90%;
+    animation-delay: 0.6s;
+}
+
+@keyframes loadBlock {
+
+    0%,
+    100% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 1;
+        background: rgba(84, 172, 191, 0.8);
+    }
+}
+
+/* Geometric Shapes Illustration */
+.geometric-shapes {
+    width: 100%;
+    max-width: 350px;
+    height: 350px;
+    position: relative;
+    animation: float 4s ease-in-out infinite;
+}
+
+.shape-circle {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #54ACBF 0%, #26658C 100%);
+    top: 20%;
+    left: 10%;
+    animation: rotateShape 10s linear infinite;
+    box-shadow: 0 10px 30px rgba(84, 172, 191, 0.4);
+}
+
+.shape-square {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #26658C 0%, #023859 100%);
+    top: 50%;
+    right: 15%;
+    animation: rotateShape 12s linear infinite reverse;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(38, 101, 140, 0.4);
+}
+
+.shape-triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+    border-bottom: 104px solid #54ACBF;
+    bottom: 15%;
+    left: 40%;
+    animation: rotateShape 8s linear infinite;
+    filter: drop-shadow(0 10px 30px rgba(84, 172, 191, 0.4));
+}
+
+@keyframes rotateShape {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(180deg) scale(1.1);
+    }
+
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+/* Book/Learning Illustration */
+.book-illustration {
+    width: 100%;
+    max-width: 300px;
+    height: 250px;
+    position: relative;
+    animation: float 4s ease-in-out infinite;
+    animation-delay: 1s;
+}
+
+.book {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, #26658C 0%, #023859 100%);
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) perspective(1000px) rotateY(-15deg);
+    box-shadow: 0 20px 50px rgba(2, 56, 89, 0.5);
+}
+
+.book::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 100%;
+    background: #023859;
+    border-radius: 10px 0 0 10px;
+}
+
+.book-pages {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    right: 20px;
+}
+
+.page-line {
+    height: 8px;
+    background: rgba(84, 172, 191, 0.4);
+    margin: 12px 0;
+    border-radius: 2px;
+    animation: pageFade 3s ease-in-out infinite;
+}
+
+.page-line:nth-child(1) {
+    width: 80%;
+    animation-delay: 0s;
+}
+
+.page-line:nth-child(2) {
+    width: 90%;
+    animation-delay: 0.3s;
+}
+
+.page-line:nth-child(3) {
+    width: 70%;
+    animation-delay: 0.6s;
+}
+
+.page-line:nth-child(4) {
+    width: 85%;
+    animation-delay: 0.9s;
+}
+
+@keyframes pageFade {
+
+    0%,
+    100% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Project Cards Illustration */
+.project-cards {
+    width: 100%;
+    max-width: 350px;
+    height: 300px;
+    position: relative;
+    animation: float 4s ease-in-out infinite;
+    animation-delay: 0.7s;
+}
+
+.project-card {
+    position: absolute;
+    width: 180px;
+    height: 120px;
+    background: linear-gradient(135deg, #54ACBF 0%, #26658C 100%);
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(84, 172, 191, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.project-card:nth-child(1) {
+    top: 20px;
+    left: 20px;
+    z-index: 3;
+    animation: cardFloat 4s ease-in-out infinite;
+}
+
+.project-card:nth-child(2) {
+    top: 60px;
+    right: 30px;
+    z-index: 2;
+    background: linear-gradient(135deg, #26658C 0%, #023859 100%);
+    animation: cardFloat 4s ease-in-out infinite;
+    animation-delay: 0.5s;
+}
+
+.project-card:nth-child(3) {
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    background: linear-gradient(135deg, #023859 0%, #26658C 100%);
+    animation: cardFloat 4s ease-in-out infinite;
+    animation-delay: 1s;
+}
+
+@keyframes cardFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(2deg);
+    }
+}
+
+/* ============================================
+   LAYOUT & CONTAINERS
+   ============================================ */
+
+.content-wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+.section-spacing {
+    padding: 60px 0;
+}
+
+/* ============================================
+   GLASS MORPHISM CARDS
+   ============================================ */
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    border-radius: 25px;
+    border: 2px solid rgba(84, 172, 191, 0.3);
+    box-shadow: 0 10px 40px 0 rgba(2, 56, 89, 0.3);
+    padding: 40px;
+    margin-bottom: 40px;
+    transition: all 0.4s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 20px 60px 0 rgba(2, 56, 89, 0.5);
+    border-color: rgba(84, 172, 191, 0.6);
+}
+
+/* ============================================
+   TEXT STYLES
+   ============================================ */
+
+.text-white-shadow {
+    color: #fff;
+    text-shadow: 2px 2px 8px rgba(2, 56, 89, 0.5);
+}
+
+.text-custom-blue {
+    color: #54ACBF;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+.hero-text {
+    animation: fadeInUp 1.2s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-25px);
+    }
+}
+
+.glow-on-hover {
+    animation: glow 2.5s ease-in-out infinite;
+    color: #54ACBF;
+    font-weight: 900;
+}
+
+@keyframes glow {
+
+    0%,
+    100% {
+        filter: drop-shadow(0 0 10px rgba(84, 172, 191, 0.6));
+        text-shadow: 0 0 20px rgba(84, 172, 191, 0.8);
+    }
+
+    50% {
+        filter: drop-shadow(0 0 25px rgba(84, 172, 191, 1));
+        text-shadow: 0 0 35px rgba(84, 172, 191, 1);
+    }
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+
+.btn-animated {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    z-index: 1;
+    background: linear-gradient(135deg, #54ACBF 0%, #26658C 100%);
+    border: none;
+    color: white;
+    font-weight: 600;
+    padding: 12px 35px;
+    box-shadow: 0 5px 20px rgba(84, 172, 191, 0.4);
+}
+
+.btn-animated:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(2, 56, 89, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+    z-index: -1;
+}
+
+.btn-animated:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(84, 172, 191, 0.6);
+    color: white;
+}
+
+.btn-animated:hover:before {
+    width: 350px;
+    height: 350px;
+}
+
+/* ============================================
+   SECTIONS
+   ============================================ */
+
+#contact {
+    background: rgba(255, 255, 255, 0.98);
+    border-radius: 25px;
+    margin: 20px;
+    padding: 50px;
+    box-shadow: 0 10px 40px rgba(2, 56, 89, 0.2);
+}
+
+#contact h2 {
+    color: #023859;
+}
+
+#contact a {
+    color: #26658C;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+#contact a:hover {
+    color: #54ACBF;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
+    .section-spacing {
+        padding: 40px 0;
+    }
+
+    .glass-card {
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    .code-window,
+    .laptop-illustration,
+    .geometric-shapes,
+    .book-illustration,
+    .project-cards {
+        max-width: 300px;
+        height: auto;
+    }
+
+    #contact {
+        padding: 30px 20px;
+    }
+}

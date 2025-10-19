@@ -1,0 +1,328 @@
+<%- include('../partials/header') %>
+    <%- include('../partials/navbar') %>
+
+        <style>
+            /* Same Background as Other Pages */
+            #particles-js {
+                position: fixed;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                background: linear-gradient(135deg, #26658C 0%, #023859 100%);
+            }
+
+            /* Floating Gradient Orbs */
+            .gradient-orb {
+                position: fixed;
+                border-radius: 50%;
+                filter: blur(100px);
+                opacity: 0.2;
+                pointer-events: none;
+                z-index: -1;
+            }
+
+            .gradient-orb-1 {
+                width: 400px;
+                height: 400px;
+                background: #54ACBF;
+                top: 10%;
+                left: 10%;
+                animation: float1 15s ease-in-out infinite;
+            }
+
+            .gradient-orb-2 {
+                width: 350px;
+                height: 350px;
+                background: #26658C;
+                top: 50%;
+                right: 10%;
+                animation: float2 18s ease-in-out infinite;
+            }
+
+            .gradient-orb-3 {
+                width: 450px;
+                height: 450px;
+                background: #023859;
+                bottom: 10%;
+                left: 40%;
+                animation: float3 20s ease-in-out infinite;
+            }
+
+            @keyframes float1 {
+
+                0%,
+                100% {
+                    transform: translate(0, 0);
+                }
+
+                50% {
+                    transform: translate(50px, -50px);
+                }
+            }
+
+            @keyframes float2 {
+
+                0%,
+                100% {
+                    transform: translate(0, 0);
+                }
+
+                50% {
+                    transform: translate(-40px, 40px);
+                }
+            }
+
+            @keyframes float3 {
+
+                0%,
+                100% {
+                    transform: translate(0, 0);
+                }
+
+                50% {
+                    transform: translate(30px, -30px);
+                }
+            }
+
+            /* Contact Section */
+            .contact-section {
+                position: relative;
+                min-height: 100vh;
+                padding: 60px 0 100px;
+            }
+
+            .contact-header {
+                text-align: center;
+                margin-bottom: 50px;
+            }
+
+            .contact-title {
+                color: white;
+                font-size: 2.5rem;
+                font-weight: 900;
+                margin-bottom: 20px;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            }
+
+            .contact-subtitle {
+                color: rgba(255, 255, 255, 0.9);
+                font-size: 1.1rem;
+                line-height: 1.8;
+                max-width: 800px;
+                margin: 0 auto;
+                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            }
+
+            /* Contact Card */
+            .contact-card {
+                background: rgba(255, 255, 255, 0.95);
+                border-radius: 20px;
+                padding: 40px;
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+                backdrop-filter: blur(10px);
+            }
+
+            /* Form Styling */
+            .form-label {
+                color: #023859;
+                font-weight: 600;
+                margin-bottom: 8px;
+            }
+
+            .form-control {
+                border: 2px solid #e9ecef;
+                border-radius: 10px;
+                padding: 12px 16px;
+                transition: all 0.3s ease;
+                background: white;
+            }
+
+            .form-control:focus {
+                border-color: #54ACBF;
+                box-shadow: 0 0 0 0.2rem rgba(84, 172, 191, 0.25);
+                transform: translateY(-2px);
+            }
+
+            .form-control:hover {
+                border-color: #26658C;
+            }
+
+            /* Submit Button */
+            .btn-submit {
+                background: linear-gradient(135deg, #54ACBF 0%, #26658C 100%);
+                border: none;
+                color: white;
+                padding: 12px 40px;
+                border-radius: 10px;
+                font-weight: 600;
+                font-size: 1.1rem;
+                transition: all 0.3s ease;
+                box-shadow: 0 4px 15px rgba(84, 172, 191, 0.3);
+            }
+
+            .btn-submit:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 8px 25px rgba(84, 172, 191, 0.5);
+                background: linear-gradient(135deg, #26658C 0%, #023859 100%);
+            }
+
+            /* Illustration */
+            .contact-illustration {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 30px;
+            }
+
+            .contact-illustration img {
+                max-width: 100%;
+                height: auto;
+                filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.2));
+                animation: floatImg 4s ease-in-out infinite;
+            }
+
+            @keyframes floatImg {
+
+                0%,
+                100% {
+                    transform: translateY(0);
+                }
+
+                50% {
+                    transform: translateY(-20px);
+                }
+            }
+
+            /* Responsive */
+            @media (max-width: 768px) {
+                .gradient-orb {
+                    display: none;
+                }
+
+                .contact-title {
+                    font-size: 2rem;
+                }
+
+                .contact-card {
+                    padding: 25px;
+                }
+
+                .contact-illustration {
+                    order: -1;
+                    margin-bottom: 30px;
+                }
+            }
+        </style>
+
+        <!-- Particles Background -->
+        <div id="particles-js"></div>
+
+        <!-- Floating Gradient Orbs -->
+        <div class="gradient-orb gradient-orb-1"></div>
+        <div class="gradient-orb gradient-orb-2"></div>
+        <div class="gradient-orb gradient-orb-3"></div>
+
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <div class="container">
+
+                <!-- Header -->
+                <div class="contact-header">
+                    <h1 class="contact-title">Get In Touch 📩</h1>
+                    <p class="contact-subtitle">
+                        Your thoughts and opinions truly matter to me! Please take a moment to share your experience,
+                        suggestions, or any questions you may have. Your feedback helps me improve and ensures I can
+                        provide the best support possible. I'm here to listen and eager to hear from you!
+                    </p>
+                </div>
+
+                <!-- Contact Form Card -->
+                <div class="contact-card">
+                    <div class="row align-items-center">
+
+                        <!-- Illustration -->
+                        <div class="col-md-6 contact-illustration">
+                            <img src="images/svgs/undraw_profile-data_xkr9.svg" alt="Contact Illustration" />
+                        </div>
+
+                        <!-- Contact Form -->
+                        <div class="col-md-6">
+                            <h3 class="mb-4" style="color: #023859; font-weight: 700;">Send Me a Message</h3>
+                            <form action="https://formbold.com/s/9XrKy" method="POST">
+
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Name</label>
+                                    <input type="text" class="form-control" id="name" name="name"
+                                        placeholder="Your full name" required />
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" id="email" name="email"
+                                        placeholder="name@example.com" required />
+                                </div>
+
+                                <div class="mb-4">
+                                    <label for="message" class="form-label">Message</label>
+                                    <textarea class="form-control" id="message" name="message" rows="5"
+                                        placeholder="Write your message here..." required></textarea>
+                                </div>
+
+                                <button type="submit" class="btn btn-submit w-100">
+                                    Send Message
+                                    <i class="fas fa-paper-plane ms-2"></i>
+                                </button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Particles.js Script -->
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+        <script>
+            particlesJS('particles-js', {
+                particles: {
+                    number: { value: 60, density: { enable: true, value_area: 800 } },
+                    color: { value: '#54ACBF' },
+                    shape: { type: 'circle' },
+                    opacity: { value: 0.5, random: true },
+                    size: { value: 3, random: true },
+                    line_linked: {
+                        enable: true,
+                        distance: 150,
+                        color: '#54ACBF',
+                        opacity: 0.4,
+                        width: 1
+                    },
+                    move: {
+                        enable: true,
+                        speed: 2,
+                        direction: 'none',
+                        random: false,
+                        straight: false,
+                        out_mode: 'out',
+                        bounce: false
+                    }
+                },
+                interactivity: {
+                    detect_on: 'canvas',
+                    events: {
+                        onhover: { enable: true, mode: 'grab' },
+                        onclick: { enable: true, mode: 'push' },
+                        resize: true
+                    }
+                },
+                retina_detect: true
+            });
+        </script>
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+        <%- include('../partials/footer') %>
