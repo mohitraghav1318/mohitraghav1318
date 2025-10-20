@@ -1,0 +1,225 @@
+<%- include('../partials/header') %>
+    <%- include('../partials/navbar') %>
+
+        <!-- Particles Background -->
+        <div id="particles-js"></div>
+
+        <!-- Floating Gradient Orbs -->
+        <div class="gradient-orb gradient-orb-1"></div>
+        <div class="gradient-orb gradient-orb-2"></div>
+        <div class="gradient-orb gradient-orb-3"></div>
+
+        <div class="about-me-section">
+            <div class="about-me-container">
+                <p>Hey, I’m <strong>Mohit Raghav</strong>, though most people in the coding space know me as <span
+                        class="highlight">MrZero</span> — a name I gave myself for a funny but meaningful reason. In
+                    programming, everything starts from zero, and that idea stuck with me. It reminds me that every
+                    journey,
+                    no matter how big, begins with a single small step (or a zero-index, if you will).</p>
+
+                <p>I’m currently pursuing my studies at <span class="highlight">[Your College Name]</span>, diving deep
+                    into
+                    <span class="highlight">[your field/stream]</span>, while simultaneously exploring web development
+                    and
+                    data structures. I enjoy learning new technologies, building projects, and seeing how the things I
+                    create can solve real problems. Outside of coding, I’m inspired by anime, music, and anything that
+                    challenges me to think differently — basically anything that keeps life interesting.
+                </p>
+
+                <p>Right now, my focus is on growing as a developer, experimenting with new ideas, and making each
+                    project a
+                    little better than the last. For me, it’s all about staying curious, learning from every step, and
+                    enjoying the ride along the way. If you’ve read this far, feel free to <span class="highlight">reach
+                        out
+                        or leave some feedback</span> — I’d love to hear from you!</p>
+
+                <div class="back-btn">
+                    <a href="/" class="btn">← Back to Home</a>
+                </div>
+            </div>
+        </div>
+
+        <style>
+            /* Background Animations */
+            #particles-js {
+                position: fixed;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                background: linear-gradient(135deg, #26658C 0%, #023859 100%);
+            }
+
+            .gradient-orb {
+                position: fixed;
+                border-radius: 50%;
+                filter: blur(100px);
+                opacity: 0.2;
+                pointer-events: none;
+                z-index: -1;
+            }
+
+            .gradient-orb-1 {
+                width: 400px;
+                height: 400px;
+                background: #54ACBF;
+                top: 10%;
+                left: 10%;
+                animation: float1 15s ease-in-out infinite;
+            }
+
+            .gradient-orb-2 {
+                width: 350px;
+                height: 350px;
+                background: #26658C;
+                top: 50%;
+                right: 10%;
+                animation: float2 18s ease-in-out infinite;
+            }
+
+            .gradient-orb-3 {
+                width: 450px;
+                height: 450px;
+                background: #023859;
+                bottom: 10%;
+                left: 40%;
+                animation: float3 20s ease-in-out infinite;
+            }
+
+            @keyframes float1 {
+
+                0%,
+                100% {
+                    transform: translate(0, 0);
+                }
+
+                50% {
+                    transform: translate(50px, -50px);
+                }
+            }
+
+            @keyframes float2 {
+
+                0%,
+                100% {
+                    transform: translate(0, 0);
+                }
+
+                50% {
+                    transform: translate(-40px, 40px);
+                }
+            }
+
+            @keyframes float3 {
+
+                0%,
+                100% {
+                    transform: translate(0, 0);
+                }
+
+                50% {
+                    transform: translate(30px, -30px);
+                }
+            }
+
+            /* About Me Section */
+            .about-me-section {
+                min-height: 100vh;
+                padding: 60px 20px;
+            }
+
+            .about-me-container {
+                max-width: 900px;
+                margin: 0 auto;
+                background: rgba(255, 255, 255, 0.95);
+                padding: 40px 50px;
+                border-radius: 20px;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+                position: relative;
+                z-index: 1;
+            }
+
+            .about-me-container p {
+                margin-bottom: 18px;
+                font-size: 1.05rem;
+                line-height: 1.7;
+                color: #333;
+            }
+
+            .highlight {
+                color: #54ACBF;
+                font-weight: 600;
+            }
+
+            .back-btn {
+                text-align: center;
+                margin-top: 40px;
+            }
+
+            /* Themed Button */
+            .btn {
+                display: inline-block;
+                padding: 12px 30px;
+                background: linear-gradient(135deg, #26658C, #54ACBF);
+                color: white;
+                border-radius: 50px;
+                text-decoration: none;
+                font-weight: 600;
+                transition: all 0.3s ease;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            }
+
+            .btn:hover {
+                background: linear-gradient(135deg, #023859, #26658C);
+                transform: translateY(-3px) scale(1.05);
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            }
+
+            @media (max-width: 768px) {
+                .about-me-container {
+                    padding: 25px;
+                }
+
+                .about-me-container p {
+                    font-size: 1rem;
+                }
+
+                .gradient-orb {
+                    display: none;
+                }
+            }
+        </style>
+
+        <!-- Particles.js Script -->
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+        <script>
+            particlesJS('particles-js', {
+                particles: {
+                    number: { value: 60, density: { enable: true, value_area: 800 } },
+                    color: { value: '#54ACBF' },
+                    shape: { type: 'circle' },
+                    opacity: { value: 0.5, random: true },
+                    size: { value: 3, random: true },
+                    line_linked: {
+                        enable: true,
+                        distance: 150,
+                        color: '#54ACBF',
+                        opacity: 0.4,
+                        width: 1
+                    },
+                    move: { enable: true, speed: 2, out_mode: 'out' }
+                },
+                interactivity: {
+                    detect_on: 'canvas',
+                    events: {
+                        onhover: { enable: true, mode: 'grab' },
+                        onclick: { enable: true, mode: 'push' },
+                        resize: true
+                    }
+                },
+                retina_detect: true
+            });
+        </script>
+
+        <%- include('../partials/footer') %>

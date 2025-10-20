@@ -14,6 +14,12 @@ router.get('/skills', (req, res) => {
 router.get('/contact', (req, res) => {
     res.render('pages/contact', { title: 'Contact' });
 });
+router.get('/aboutme', (req, res) => {
+    res.render('pages/aboutme', { title: 'About Me' });
+})
+router.get('/journey', (req, res) => {
+    res.render('pages/journey', { title: 'My Coding Journey' });
+})
 
 
 module.exports = router;

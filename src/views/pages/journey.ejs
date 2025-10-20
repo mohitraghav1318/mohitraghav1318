@@ -1,0 +1,252 @@
+<%- include('../partials/header') %>
+    <%- include('../partials/navbar') %>
+
+        <!-- Particles Background -->
+        <div id="particles-js"></div>
+
+        <!-- Floating Gradient Orbs -->
+        <div class="gradient-orb gradient-orb-1"></div>
+        <div class="gradient-orb gradient-orb-2"></div>
+        <div class="gradient-orb gradient-orb-3"></div>
+
+        <section class="journey-section">
+            <div class="journey-container">
+                <h1>My Coding Journey 💻</h1>
+
+                <p>It all started with curiosity. I still remember the first time I looked at a website and thought,
+                    <em>how does this thing actually work?</em> That question quietly stuck with me until one day, I
+                    opened a text editor, typed a few lines of HTML and CSS, and saw a basic web page appear on my
+                    screen. It wasn’t much — just a heading, a paragraph, a few colors — but at that moment, it felt
+                    like magic. I had built something that existed only because I decided to make it.
+                </p>
+
+                <p>As I dug deeper, I realized coding wasn’t just about writing instructions for computers. It was
+                    about solving puzzles, breaking big ideas into small, logical pieces, and shaping imagination
+                    into reality. I started exploring <span class="highlight">JavaScript</span> next — the part that
+                    makes websites come alive. That’s where I learned the joy of making buttons respond, animations
+                    move, and ideas interact. It was challenging at first, but every bug I fixed taught me more
+                    patience than any tutorial could.</p>
+
+                <p>Once I got comfortable with the front end, my curiosity took me to the world behind the screens —
+                    the backend. I wanted to know how data flows, how a website stores information, and how
+                    everything stays connected. That’s when I started learning <span class="highlight">Node.js,
+                        Express,</span> and <span class="highlight">MongoDB</span>. Building APIs, connecting
+                    databases, and watching my applications come to life from both ends gave me a new kind of
+                    satisfaction. It wasn’t just about design anymore — it was about logic, structure, and making
+                    things work seamlessly together.</p>
+
+                <p>Of course, the road wasn’t always smooth. I spent hours stuck on silly bugs, confused by error
+                    messages that made no sense, and questioning whether I was even improving. But then came the
+                    small wins — the first successful deployment, the first time my app actually worked end-to-end,
+                    and the first time someone else used something I built. Those moments made every long night
+                    worth it.</p>
+
+                <p>Along the way, I discovered how tools like <span class="highlight">Git</span> and <span
+                        class="highlight">GitHub</span> make collaboration possible, how frameworks like <span
+                        class="highlight">Bootstrap</span> speed up design, and how curiosity never really ends in
+                    this field. Every new language or library I explore feels like opening another door in a world
+                    that keeps expanding.</p>
+
+                <p>Now, when I look back, I see how far I’ve come — from building static pages to developing
+                    full-stack applications. But more than that, I’ve learned to enjoy the process itself. Coding
+                    has become more than a skill for me; it’s a way to think, to create, and to keep growing. My
+                    journey is still unfolding, and I’m excited for the next chapter — wherever curiosity decides to
+                    take me next.</p>
+
+                <div class="back-btn">
+                    <a href="/" class="btn">← Back to Home</a>
+                </div>
+            </div>
+        </section>
+
+        <style>
+            /* Background Animations */
+            #particles-js {
+                position: fixed;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                background: linear-gradient(135deg, #26658C 0%, #023859 100%);
+            }
+
+            /* Floating Gradient Orbs */
+            .gradient-orb {
+                position: fixed;
+                border-radius: 50%;
+                filter: blur(100px);
+                opacity: 0.2;
+                pointer-events: none;
+                z-index: -1;
+            }
+
+            .gradient-orb-1 {
+                width: 400px;
+                height: 400px;
+                background: #54ACBF;
+                top: 10%;
+                left: 10%;
+                animation: float1 15s ease-in-out infinite;
+            }
+
+            .gradient-orb-2 {
+                width: 350px;
+                height: 350px;
+                background: #26658C;
+                top: 50%;
+                right: 10%;
+                animation: float2 18s ease-in-out infinite;
+            }
+
+            .gradient-orb-3 {
+                width: 450px;
+                height: 450px;
+                background: #023859;
+                bottom: 10%;
+                left: 40%;
+                animation: float3 20s ease-in-out infinite;
+            }
+
+            @keyframes float1 {
+
+                0%,
+                100% {
+                    transform: translate(0, 0);
+                }
+
+                50% {
+                    transform: translate(50px, -50px);
+                }
+            }
+
+            @keyframes float2 {
+
+                0%,
+                100% {
+                    transform: translate(0, 0);
+                }
+
+                50% {
+                    transform: translate(-40px, 40px);
+                }
+            }
+
+            @keyframes float3 {
+
+                0%,
+                100% {
+                    transform: translate(0, 0);
+                }
+
+                50% {
+                    transform: translate(30px, -30px);
+                }
+            }
+
+            /* Journey Section */
+            .journey-section {
+                padding: 60px 20px;
+                min-height: 100vh;
+            }
+
+            .journey-container {
+                max-width: 900px;
+                margin: 0 auto;
+                background: rgba(255, 255, 255, 0.95);
+                padding: 40px 50px;
+                border-radius: 20px;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+                position: relative;
+                z-index: 1;
+            }
+
+            .journey-container h1 {
+                text-align: center;
+                color: #222;
+                margin-bottom: 30px;
+                font-size: 2.2rem;
+            }
+
+            .journey-container p {
+                margin-bottom: 18px;
+                font-size: 1.05rem;
+                line-height: 1.7;
+                color: #333;
+            }
+
+            .highlight {
+                color: #0078ff;
+                font-weight: 600;
+            }
+
+            /* Themed Button */
+            .btn {
+                display: inline-block;
+                padding: 12px 30px;
+                background: linear-gradient(135deg, #26658C, #54ACBF);
+                color: white;
+                border-radius: 50px;
+                text-decoration: none;
+                font-weight: 600;
+                transition: all 0.3s ease;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            }
+
+            .btn:hover {
+                background: linear-gradient(135deg, #023859, #26658C);
+                transform: translateY(-3px) scale(1.05);
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            }
+
+            @media (max-width: 768px) {
+                .journey-container {
+                    padding: 25px;
+                }
+
+                .journey-container h1 {
+                    font-size: 1.8rem;
+                }
+
+                .journey-container p {
+                    font-size: 1rem;
+                }
+
+                .gradient-orb {
+                    display: none;
+                }
+            }
+        </style>
+
+        <!-- Particles.js Script -->
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+        <script>
+            particlesJS('particles-js', {
+                particles: {
+                    number: { value: 60, density: { enable: true, value_area: 800 } },
+                    color: { value: '#54ACBF' },
+                    shape: { type: 'circle' },
+                    opacity: { value: 0.5, random: true },
+                    size: { value: 3, random: true },
+                    line_linked: {
+                        enable: true,
+                        distance: 150,
+                        color: '#54ACBF',
+                        opacity: 0.4,
+                        width: 1
+                    },
+                    move: { enable: true, speed: 2, out_mode: 'out' }
+                },
+                interactivity: {
+                    detect_on: 'canvas',
+                    events: {
+                        onhover: { enable: true, mode: 'grab' },
+                        onclick: { enable: true, mode: 'push' },
+                        resize: true
+                    }
+                },
+                retina_detect: true
+            });
+        </script>
+
+        <%- include('../partials/footer') %>
