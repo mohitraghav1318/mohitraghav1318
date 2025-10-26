@@ -7,6 +7,7 @@ const app = express();
 
 // Middleware
 app.use(logger);
+app.use(express.static('public'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: false }));
 
