@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mohitraghav1318.onrender.com/sitemap.xml
