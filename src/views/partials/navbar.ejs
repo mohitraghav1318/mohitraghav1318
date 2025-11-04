@@ -218,7 +218,6 @@
 
 <!-- Navbar Scroll Effect Script -->
 <script>
-    Add scroll effect to navbar
     window.addEventListener('scroll', function () {
         const navbar = document.querySelector('.modern-navbar');
         if (window.scrollY > 50) {
@@ -227,9 +226,7 @@
             navbar.classList.remove('scrolled');
         }
     });
-
-    Active link highlighting based on current page
-    document.addEventListener('DOMContentLoaded', function () {
+ document.addEventListener('DOMContentLoaded', function () {
         const currentPath = window.location.pathname;
         const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
 
@@ -244,8 +241,6 @@
             }
         });
     });
-
-    Smooth close navbar on mobile after clicking a link
     document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
         link.addEventListener('click', function () {
             const navbarCollapse = document.querySelector('.navbar-collapse');
