@@ -85,17 +85,6 @@ https://www.linkedin.com/in/mohitraghav1318/
 
 ---
 
-## 📊 GitHub Stats
-
-<p align="center">
-<img src="https://github-readme-stats.vercel.app/api?username=mohitraghav1318&show_icons=true&theme=tokyonight" />
-</p>
-
-<p align="center">
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=mohitraghav1318&theme=tokyonight" />
-</p>
-
----
 
 ## 🎯 2026 Goals
 
@@ -107,3 +96,4 @@ https://www.linkedin.com/in/mohitraghav1318/
 ---
 
 ⭐ If you like my work, consider following me!
+
