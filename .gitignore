@@ -2,3 +2,10 @@ node_modules
 /dist
 .DS_Store
 *.log
+.env
+.idea
+.vscode
+*.suo
+/node_modules
+/dist
+*.log
