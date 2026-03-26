@@ -1,0 +1,155 @@
+@use '../../styles/abstracts/variables' as *;
+@use '../../styles/abstracts/mixins' as *;
+
+.home-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero {
+  @include section-space;
+
+  &__inner {
+    align-items: center;
+    display: grid;
+    gap: $space-2xl;
+    grid-template-columns: 1.1fr 0.9fr;
+
+    @include respond-md {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: $space-md;
+  }
+
+  &__eyebrow {
+    color: $primary;
+    font-size: 0.86rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    color: $text-primary;
+    max-width: 16ch;
+  }
+
+  &__description {
+    max-width: 58ch;
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-sm;
+    margin-top: $space-sm;
+  }
+
+  &__visual {
+    display: grid;
+    gap: $space-md;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+
+    @include respond-sm {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__photo-wrap {
+    @include panel-surface;
+    grid-column: 1 / span 2;
+    overflow: hidden;
+
+    @include respond-sm {
+      grid-column: 1;
+    }
+  }
+
+  &__photo {
+    aspect-ratio: 5 / 4;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  &__stat {
+    @include panel-surface;
+    display: flex;
+    flex-direction: column;
+    gap: $space-xxs;
+    padding: $space-md;
+
+    &--primary {
+      border-color: $border-strong;
+    }
+
+    &--secondary {
+      border-color: rgba($accent, 0.45);
+    }
+  }
+
+  &__stat-value {
+    color: $text-primary;
+    font-family: $font-display;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  &__stat-label {
+    color: $text-secondary;
+    font-size: 0.85rem;
+  }
+}
+
+.home-preview {
+  @include section-space;
+
+  &--projects {
+    padding-top: $space-xl;
+  }
+
+  &__grid {
+    display: grid;
+    gap: $space-lg;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    @include respond-md {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &--projects &__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    @include respond-md {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @include respond-sm {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__action {
+    margin-top: $space-lg;
+  }
+}
+
+.contact-cta {
+  @include section-space;
+
+  &__inner {
+    @include panel-surface;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: $space-lg;
+    padding: $space-2xl;
+    text-align: center;
+  }
+}

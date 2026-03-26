@@ -1,0 +1,188 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.section-title {
+  display: flex;
+  flex-direction: column;
+  gap: $space-sm;
+  margin-bottom: $space-xl;
+
+  &--center {
+    align-items: center;
+    text-align: center;
+  }
+
+  &__eyebrow {
+    color: $primary;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  &__heading {
+    color: $text-primary;
+    max-width: 24ch;
+  }
+
+  &--center &__heading {
+    max-width: 26ch;
+  }
+
+  &__subtitle {
+    max-width: 62ch;
+  }
+}
+
+.project-card {
+  @include panel-surface;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  &__media {
+    border-bottom: 0.0625rem solid $border-soft;
+    overflow: hidden;
+  }
+
+  &__image {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    transition: transform $transition-base;
+    width: 100%;
+  }
+
+  &:hover &__image {
+    transform: scale(1.03);
+  }
+
+  &__content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: $space-md;
+    padding: $space-lg;
+  }
+
+  &__meta {
+    color: $primary;
+    font-size: 0.76rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    color: $text-primary;
+  }
+
+  &__description {
+    color: $text-secondary;
+  }
+
+  &__tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-xs;
+  }
+
+  &__tech-item {
+    background-color: rgba($accent, 0.13);
+    border: 0.0625rem solid rgba($accent, 0.35);
+    border-radius: $radius-pill;
+    color: $text-primary;
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: $space-xxs $space-sm;
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-sm;
+    margin-top: auto;
+  }
+}
+
+.skill-card {
+  @include panel-surface;
+  display: flex;
+  flex-direction: column;
+  gap: $space-sm;
+  padding: $space-lg;
+
+  &__category {
+    color: $primary;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    color: $text-primary;
+  }
+
+  &__description {
+    color: $text-secondary;
+  }
+
+  &__level {
+    color: $success;
+    font-size: 0.86rem;
+    font-weight: 600;
+    margin-top: auto;
+  }
+}
+
+.contact-form {
+  @include panel-surface;
+  display: flex;
+  flex-direction: column;
+  gap: $space-md;
+  padding: $space-xl;
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: $space-xs;
+  }
+
+  &__label {
+    color: $text-primary;
+    font-size: 0.86rem;
+    font-weight: 500;
+  }
+
+  &__input {
+    background-color: rgba($bg-elevated, 0.55);
+    border: 0.0625rem solid $border-soft;
+    border-radius: $radius-md;
+    color: $text-primary;
+    padding: $space-sm $space-md;
+    transition:
+      border-color $transition-fast,
+      box-shadow $transition-fast;
+
+    &::placeholder {
+      color: $text-muted;
+    }
+
+    &:focus {
+      border-color: $primary;
+      box-shadow: 0 0 0 0.2rem $primary-soft;
+      outline: none;
+    }
+
+    &--textarea {
+      min-height: 9rem;
+      resize: vertical;
+    }
+  }
+
+  &__status {
+    color: $success;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+}

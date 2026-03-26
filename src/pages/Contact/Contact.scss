@@ -1,0 +1,49 @@
+@use '../../styles/abstracts/variables' as *;
+@use '../../styles/abstracts/mixins' as *;
+
+.contact-page {
+  @include section-space;
+
+  &__layout {
+    display: grid;
+    gap: $space-md;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-bottom: $space-lg;
+
+    @include respond-md {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__card {
+    @include panel-surface;
+    display: flex;
+    flex-direction: column;
+    gap: $space-xs;
+    padding: $space-lg;
+  }
+
+  &__card-title {
+    color: $text-primary;
+    font-family: $font-display;
+    font-size: 1.1rem;
+  }
+
+  &__card-text {
+    color: $text-secondary;
+  }
+
+  &__card-link {
+    color: $primary;
+    font-weight: 600;
+    transition: color $transition-fast;
+
+    &:hover {
+      color: $primary-strong;
+    }
+  }
+
+  &__form-wrap {
+    max-width: 48rem;
+  }
+}

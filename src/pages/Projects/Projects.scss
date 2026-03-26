@@ -1,0 +1,16 @@
+@use '../../styles/abstracts/variables' as *;
+@use '../../styles/abstracts/mixins' as *;
+
+.projects-page {
+  @include section-space;
+
+  &__grid {
+    display: grid;
+    gap: $space-lg;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    @include respond-md {
+      grid-template-columns: 1fr;
+    }
+  }
+}

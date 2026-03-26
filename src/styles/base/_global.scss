@@ -1,0 +1,42 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  background:
+    radial-gradient(circle at 10% 15%, rgba($accent, 0.16) 0%, transparent 36%),
+    radial-gradient(circle at 88% 12%, rgba($primary, 0.2) 0%, transparent 34%),
+    linear-gradient(180deg, rgba($bg-surface, 0.94) 0%, $bg 48%, rgba($bg, 0.98) 100%);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  margin-inline: auto;
+  max-width: $container-max;
+  padding-inline: $space-lg;
+
+  @include respond-sm {
+    padding-inline: $space-md;
+  }
+}
+
+.app-shell {
+  min-height: 100vh;
+}
+
+.main-layout {
+  padding-top: $space-4xl;
+}

@@ -1,0 +1,33 @@
+@use './variables' as *;
+
+@mixin respond-md {
+  @media (max-width: $breakpoint-md) {
+    @content;
+  }
+}
+
+@mixin respond-sm {
+  @media (max-width: $breakpoint-sm) {
+    @content;
+  }
+}
+
+@mixin section-space {
+  padding-block: $space-3xl;
+
+  @include respond-md {
+    padding-block: $space-2xl;
+  }
+}
+
+@mixin panel-surface {
+  background: linear-gradient(150deg, rgba($bg-elevated, 0.9) 0%, rgba($bg-surface, 0.86) 100%);
+  border: 0.0625rem solid $border-soft;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-md;
+}
+
+@mixin accent-outline {
+  border: 0.0625rem solid $border-strong;
+  box-shadow: $shadow-glow;
+}

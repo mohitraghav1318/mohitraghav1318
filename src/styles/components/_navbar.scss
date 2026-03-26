@@ -1,0 +1,147 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.navbar {
+  backdrop-filter: blur(1rem);
+  background-color: $bg-overlay;
+  border-bottom: 0.0625rem solid $border-soft;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 20;
+
+  &__inner {
+    align-items: center;
+    display: grid;
+    gap: $space-lg;
+    grid-template-columns: auto 1fr;
+    min-height: 5rem;
+
+    @include respond-md {
+      grid-template-columns: 1fr auto;
+    }
+  }
+
+  &__brand {
+    align-items: center;
+    display: inline-flex;
+    gap: $space-sm;
+  }
+
+  &__brand-mark {
+    @include accent-outline;
+    align-items: center;
+    border-radius: $radius-sm;
+    color: $primary;
+    display: inline-flex;
+    font-family: $font-display;
+    font-size: 0.92rem;
+    font-weight: 700;
+    justify-content: center;
+    min-height: 2rem;
+    min-width: 2rem;
+  }
+
+  &__brand-text {
+    color: $text-primary;
+    font-family: $font-display;
+    font-size: 1.05rem;
+    font-weight: 600;
+  }
+
+  &__toggle {
+    display: none;
+
+    @include respond-md {
+      align-items: center;
+      background-color: transparent;
+      border: 0;
+      cursor: pointer;
+      display: inline-flex;
+      flex-direction: column;
+      gap: $space-xs;
+      padding: $space-xs;
+    }
+  }
+
+  &__toggle-line {
+    background-color: $text-primary;
+    border-radius: $radius-pill;
+    display: block;
+    height: 0.125rem;
+    width: 1.5rem;
+  }
+
+  &__menu {
+    align-items: center;
+    display: flex;
+    gap: $space-lg;
+    justify-content: space-between;
+
+    @include respond-md {
+      @include panel-surface;
+      flex-direction: column;
+      gap: $space-lg;
+      left: $space-md;
+      opacity: 0;
+      padding: $space-lg;
+      pointer-events: none;
+      position: absolute;
+      right: $space-md;
+      top: calc(100% + #{$space-sm});
+      transform: translateY(-0.75rem);
+      transition:
+        opacity $transition-fast,
+        transform $transition-fast;
+      visibility: hidden;
+
+      &--open {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+        visibility: visible;
+      }
+    }
+  }
+
+  &__list {
+    align-items: center;
+    display: flex;
+    gap: $space-sm;
+
+    @include respond-md {
+      align-items: flex-start;
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+
+  &__link {
+    border-radius: $radius-pill;
+    color: $text-secondary;
+    display: inline-flex;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: $space-xs $space-md;
+    transition:
+      color $transition-fast,
+      background-color $transition-fast;
+
+    &:hover {
+      background-color: rgba($accent, 0.1);
+      color: $text-primary;
+    }
+
+    &--active {
+      background-color: rgba($primary, 0.22);
+      color: $primary-strong;
+    }
+  }
+
+  &__resume {
+    @include respond-md {
+      width: 100%;
+    }
+  }
+}
