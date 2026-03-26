@@ -42,7 +42,44 @@
 
   &__media {
     border-bottom: 0.0625rem solid $border-soft;
+    min-height: 12.25rem;
     overflow: hidden;
+  }
+
+  &__placeholder {
+    align-items: center;
+    background:
+      radial-gradient(
+        circle at 15% 10%,
+        rgba($primary, 0.32) 0%,
+        transparent 48%
+      ),
+      radial-gradient(
+        circle at 80% 85%,
+        rgba($accent, 0.2) 0%,
+        transparent 54%
+      ),
+      linear-gradient(135deg, rgba($bg-elevated, 0.95), rgba($bg-surface, 0.95));
+    display: flex;
+    flex-direction: column;
+    gap: $space-sm;
+    height: 100%;
+    justify-content: center;
+    min-height: 12.25rem;
+    width: 100%;
+  }
+
+  &__placeholder-icon {
+    color: $primary;
+    font-size: 1.35rem;
+  }
+
+  &__placeholder-text {
+    color: $text-primary;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
   }
 
   &__image {
@@ -72,6 +109,34 @@
     text-transform: uppercase;
   }
 
+  &__meta-row {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-sm;
+    justify-content: space-between;
+  }
+
+  &__type {
+    align-items: center;
+    background-color: rgba($primary, 0.12);
+    border: 0.0625rem solid rgba($primary, 0.34);
+    border-radius: $radius-pill;
+    color: $text-primary;
+    display: inline-flex;
+    font-size: 0.7rem;
+    font-weight: 600;
+    gap: 0.33rem;
+    letter-spacing: 0.06em;
+    padding: 0.26rem 0.58rem;
+    text-transform: uppercase;
+  }
+
+  &__type-icon {
+    color: $primary;
+    font-size: 0.68rem;
+  }
+
   &__title {
     color: $text-primary;
   }
@@ -87,20 +152,45 @@
   }
 
   &__tech-item {
+    align-items: center;
     background-color: rgba($accent, 0.13);
     border: 0.0625rem solid rgba($accent, 0.35);
     border-radius: $radius-pill;
     color: $text-primary;
+    display: inline-flex;
     font-size: 0.75rem;
     font-weight: 500;
+    gap: 0.35rem;
     padding: $space-xxs $space-sm;
   }
 
+  &__tech-icon {
+    color: $accent;
+    font-size: 0.68rem;
+  }
+
   &__actions {
+    align-items: center;
     display: flex;
     flex-wrap: wrap;
     gap: $space-sm;
     margin-top: auto;
+  }
+
+  &__badge {
+    align-items: center;
+    border-radius: $radius-pill;
+    display: inline-flex;
+    font-size: 0.8rem;
+    font-weight: 600;
+    gap: $space-xs;
+    padding: 0.44rem 0.88rem;
+  }
+
+  &__badge--muted {
+    background-color: rgba($bg-elevated, 0.6);
+    border: 0.0625rem solid $border-soft;
+    color: $text-secondary;
   }
 }
 
@@ -112,11 +202,19 @@
   padding: $space-lg;
 
   &__category {
+    align-items: center;
     color: $primary;
+    display: inline-flex;
     font-size: 0.78rem;
     font-weight: 600;
+    gap: $space-xs;
     letter-spacing: 0.08em;
     text-transform: uppercase;
+  }
+
+  &__category-icon {
+    color: $primary-strong;
+    font-size: 0.72rem;
   }
 
   &__title {
@@ -128,9 +226,12 @@
   }
 
   &__level {
+    align-items: center;
     color: $success;
+    display: inline-flex;
     font-size: 0.86rem;
     font-weight: 600;
+    gap: $space-xs;
     margin-top: auto;
   }
 }

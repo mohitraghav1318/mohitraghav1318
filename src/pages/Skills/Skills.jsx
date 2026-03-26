@@ -28,8 +28,8 @@ function Skills() {
             <section className="skills-page__group" key={category}>
               <h3 className="skills-page__group-title">{category}</h3>
               <div className="skills-page__grid">
-                {group.map((skill) => (
-                  <SkillCard key={skill.id} skill={skill} />
+                {group.map((skill, index) => (
+                  <SkillCard key={`${skill.id}-${index}`} skill={skill} />
                 ))}
               </div>
             </section>

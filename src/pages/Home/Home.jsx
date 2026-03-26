@@ -16,11 +16,16 @@ function Home() {
       <section className="hero">
         <Container className="hero__inner">
           <div className="hero__content">
-            <p className="hero__eyebrow">AI/ML Student · Full Stack Developer</p>
-            <h1 className="hero__title">Designing premium digital products with code that scales.</h1>
+            <p className="hero__eyebrow">
+              AI/ML Student · Full Stack Developer
+            </p>
+            <h1 className="hero__title">
+              Designing premium digital products with code that scales.
+            </h1>
             <p className="hero__description">
-              I build modern web experiences with a sharp product eye, strong engineering discipline,
-              and performance-first execution from concept to deployment.
+              I build modern web experiences with a sharp product eye, strong
+              engineering discipline, and performance-first execution from
+              concept to deployment.
             </p>
 
             <div className="hero__actions">
@@ -35,7 +40,11 @@ function Home() {
 
           <div className="hero__visual" aria-hidden="true">
             <div className="hero__photo-wrap">
-              <img alt="Mohit Raghav" className="hero__photo" src="/images/profile/profile-main.jpeg" />
+              <img
+                alt="Mohit Raghav"
+                className="hero__photo"
+                src="/images/profile/profile-main.jpeg"
+              />
             </div>
             <div className="hero__stat hero__stat--primary">
               <span className="hero__stat-value">12+</span>
@@ -58,8 +67,8 @@ function Home() {
           />
 
           <div className="home-preview__grid">
-            {featuredSkills.map((skill) => (
-              <SkillCard key={skill.id} skill={skill} />
+            {featuredSkills.map((skill, index) => (
+              <SkillCard key={`${skill.id}-${index}`} skill={skill} />
             ))}
           </div>
 
@@ -97,7 +106,7 @@ function Home() {
         <Container className="contact-cta__inner">
           <SectionTitle
             align="center"
-            eyebrow="Let&apos;s Build"
+            eyebrow="Let's Build"
             title="Need a high-quality product with premium UI and clean architecture?"
             subtitle="I can help you move from concept to production with speed, clarity, and strong execution."
           />
