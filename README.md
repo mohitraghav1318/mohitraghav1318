@@ -1,194 +1,133 @@
 <div align="center">
+  <br/>
+  <h1>Mohit Raghav</h1>
+  <p><code>Full Stack Developer &nbsp;·&nbsp; MERN Stack &nbsp;·&nbsp; Mr.Zero ⚡</code></p>
+  <br/>
+  <img src="https://readme-typing-svg.demolab.com?font=DM+Mono&size=14&duration=3500&pause=1200&color=555555&center=true&vCenter=true&width=500&lines=Building+impactful+platforms+from+scratch.;Backend+%7C+System+Design+%7C+DSA.;Open+to+freelance+%26+collaborations." alt="Typing SVG" />
+  <br/><br/>
 
-<!-- HEADER BANNER -->
-<img src="https://capsule-render.vercel.app/api?type=venom&color=0:0a0a0f,30:0d0221,60:0a0f2e,100:000000&height=280&section=header&text=Mohit%20Raghav&fontSize=72&fontColor=ffffff&fontAlignY=42&desc=Full%20Stack%20Developer%20%E2%80%A2%20MERN%20Stack%20%E2%80%A2%20Mr.Zero%20%E2%9A%A1&descAlignY=62&descColor=7b7bff&animation=fadeIn&stroke=7b7bff&strokeWidth=2" />
-
-<br/>
-
-<!-- TYPING ANIMATION -->
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=20&duration=3000&pause=800&color=7B7BFF&center=true&vCenter=true&multiline=false&repeat=true&width=680&height=50&lines=Starting+from+Zero+—+Building+Everything+⚡;Full+Stack+Developer+%7C+MERN+Stack+%7C+DSA;Open+to+Freelance+%26+Collabs+🚀;Web+Dev+@+Intellia+Tech+Society+💻" alt="Typing SVG" />
-
-<br/><br/>
-
-<!-- SOCIAL BADGES -->
-[![Portfolio](https://img.shields.io/badge/🌐_Portfolio-0a0a0f?style=for-the-badge&logo=vercel&logoColor=7B7BFF&labelColor=0a0a0f)](https://mohitraghav1318.vercel.app/)&nbsp;
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0a0a0f?style=for-the-badge&logo=linkedin&logoColor=0A66C2&labelColor=0a0a0f)](https://www.linkedin.com/in/mohitraghav1318/)&nbsp;
-[![GitHub](https://img.shields.io/badge/GitHub-0a0a0f?style=for-the-badge&logo=github&logoColor=ffffff&labelColor=0a0a0f)](https://github.com/mohitraghav1318)&nbsp;
-[![Email](https://img.shields.io/badge/Email-0a0a0f?style=for-the-badge&logo=gmail&logoColor=EA4335&labelColor=0a0a0f)](mailto:mohitraghav1318@gmail.com)
+[![Portfolio](https://img.shields.io/badge/Portfolio-000?style=flat-square&logo=vercel&logoColor=white)](https://mohitraghav1318.vercel.app/)&ensp;
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mohitraghav1318/)&ensp;
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/mohitraghav1318)&ensp;
+[![Email](https://img.shields.io/badge/Email-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:mohitraghav1318@gmail.com)
 
 <br/>
 
-<!-- PROFILE VIEWS + FOLLOWERS BADGES -->
-<img src="https://komarev.com/ghpvc/?username=mohitraghav1318&label=Profile+Views&color=7B7BFF&style=for-the-badge&abbreviated=true" alt="Profile Views" />&nbsp;
-![GitHub followers](https://img.shields.io/github/followers/mohitraghav1318?label=Followers&color=7B7BFF&labelColor=0a0a0f&style=for-the-badge&logo=github)&nbsp;
-![GitHub stars](https://img.shields.io/github/stars/mohitraghav1318?label=Total+Stars&color=FFD700&labelColor=0a0a0f&style=for-the-badge&logo=github)
+![Profile Views](https://komarev.com/ghpvc/?username=mohitraghav1318&style=flat-square&color=555555&label=profile+views)&ensp;
+![Followers](https://img.shields.io/github/followers/mohitraghav1318?style=flat-square&color=555555&label=followers)&ensp;
+![Stars](https://img.shields.io/github/stars/mohitraghav1318?style=flat-square&color=555555&label=total+stars)
 
 </div>
 
 ---
 
-<div align="center">
+### About
 
-```
-╔═══════════════════════════════════════════════════════════════╗
-║                    < SYSTEM PROFILE />                        ║
-╚═══════════════════════════════════════════════════════════════╝
-```
-
-</div>
-
-```typescript
-const MrZero = {
-  name        : "Mohit Raghav",
-  alias       : "Mr.Zero ⚡",
-  role        : "Full Stack Developer (MERN)",
-  location    : "India 🇮🇳",
-  society     : "Web Developer @ Intellia — College Tech Society",
-  currentFocus: ["Backend Dev", "System Design", "DSA"],
-  passion     : "Building platforms that solve real problems",
-  available   : true,   // ← Open to freelance & collaborations
-  philosophy  : "Starting from Zero — Building Everything.",
-} as const;
+```ts
+const mohit = {
+  alias    : "Mr.Zero",
+  role     : "Full Stack Developer",
+  location : "India 🇮🇳",
+  society  : "Web Dev @ Intellia — College Tech Society",
+  learning : ["Backend Architecture", "System Design", "DSA"],
+  open     : true, // freelance & collaborations
+};
 ```
 
-<br/>
+> *Starting from zero — building everything.*
 
 ---
 
-## ⚡ Tech Arsenal
+### Stack
 
-<div align="center">
+**Languages**
 
-### 💬 Languages
-<p>
-<img src="https://skillicons.dev/icons?i=js,ts,java,python,c&theme=dark" />
-</p>
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=000)&ensp;
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=fff)&ensp;
+![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=fff)&ensp;
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=fff)&ensp;
+![C](https://img.shields.io/badge/C-00599C?style=flat-square&logo=c&logoColor=fff)
 
-### 🌐 Frontend
-<p>
-<img src="https://skillicons.dev/icons?i=react,nextjs,html,css,tailwind,bootstrap&theme=dark" />
-</p>
+**Frontend**
 
-### ⚙️ Backend & Runtime
-<p>
-<img src="https://skillicons.dev/icons?i=nodejs,express,flask&theme=dark" />
-</p>
+![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)&ensp;
+![Next.js](https://img.shields.io/badge/Next.js-000?style=flat-square&logo=nextdotjs&logoColor=fff)&ensp;
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-06B6D4?style=flat-square&logo=tailwindcss&logoColor=fff)&ensp;
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=fff)&ensp;
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=fff)
 
-### 🗄️ Databases & Cloud
-<p>
-<img src="https://skillicons.dev/icons?i=mongodb,firebase,mysql&theme=dark" />
-</p>
+**Backend**
 
-### 🔧 Tools & DevEnv
-<p>
-<img src="https://skillicons.dev/icons?i=git,github,vscode,postman,linux,figma,vercel&theme=dark" />
-</p>
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=fff)&ensp;
+![Express](https://img.shields.io/badge/Express-000?style=flat-square&logo=express&logoColor=fff)&ensp;
+![Flask](https://img.shields.io/badge/Flask-000?style=flat-square&logo=flask&logoColor=fff)
 
-</div>
+**Database & Cloud**
 
----
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=fff)&ensp;
+![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=000)&ensp;
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=fff)
 
-## 🚀 Featured Projects
+**Tools**
 
-<div align="center">
-
-<table>
-<tr>
-<td width="50%" align="center">
-
-### ⚡ Velora
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=mohitraghav1318&repo=Velora&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=7b7bff&icon_color=7b7bff)](https://github.com/mohitraghav1318/Velora)
-
-Performance-first modern web app with cutting-edge UI/UX and optimized load times.
-
-`React` `Node.js` `MongoDB` `Express`
-
-</td>
-<td width="50%" align="center">
-
-### 💼 Client Projects
-<br/>
-![Badge](https://img.shields.io/badge/Status-Live-00ff88?style=for-the-badge&labelColor=0d1117)
-<br/><br/>
-End-to-end freelance solutions — from requirements gathering to production deployment.
-
-`Full Stack` `MERN` `REST APIs`
-
-</td>
-</tr>
-</table>
-
-</div>
+![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=fff)&ensp;
+![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=flat-square&logo=visualstudiocode&logoColor=fff)&ensp;
+![Postman](https://img.shields.io/badge/Postman-FF6C37?style=flat-square&logo=postman&logoColor=fff)&ensp;
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=000)&ensp;
+![Figma](https://img.shields.io/badge/Figma-F24E1E?style=flat-square&logo=figma&logoColor=fff)&ensp;
+![Vercel](https://img.shields.io/badge/Vercel-000?style=flat-square&logo=vercel&logoColor=fff)
 
 ---
 
-## 📊 GitHub Analytics
+### Projects
 
-<div align="center">
-
-<img height="180em" src="https://github-readme-stats.vercel.app/api?username=mohitraghav1318&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&hide_border=true&bg_color=0d1117&title_color=7b7bff&icon_color=7b7bff&text_color=c9d1d9&ring_color=7b7bff" />
-&nbsp;&nbsp;
-<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=mohitraghav1318&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=7b7bff&text_color=c9d1d9" />
-
-<br/><br/>
-
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=mohitraghav1318&theme=tokyonight&hide_border=true&background=0d1117&ring=7b7bff&fire=ff6e6e&currStreakLabel=7b7bff" alt="GitHub Streak" />
-
-</div>
+| Project | Description | Stack |
+|---|---|---|
+| **[Velora](https://github.com/mohitraghav1318/Velora)** | Performance-first modern web app with optimized UX | React · Node · MongoDB |
+| **Freelance Work** | End-to-end client solutions — requirements to deployment | MERN · REST APIs |
 
 ---
 
-## 📈 Contribution Activity
-
-<div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=mohitraghav1318&theme=tokyo-night&hide_border=true&bg_color=0d1117&color=7b7bff&line=7b7bff&point=ffffff&area=true&area_color=7b7bff" />
-</div>
-
----
-
-## 🏆 GitHub Trophies
-
-<div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=mohitraghav1318&theme=tokyonight&no-frame=true&no-bg=true&row=1&column=7" />
-</div>
-
----
-
-## 🎯 2026 Roadmap
+### GitHub
 
 <div align="center">
 
-| 🎯 Goal | 📌 Status |
-|:--------|:----------|
-| 🧩 Master DSA & Problem Solving | ![](https://img.shields.io/badge/🔄-In_Progress-7b7bff?style=flat-square&labelColor=0d1117) |
-| 🏗️ Build scalable full-stack apps | ![](https://img.shields.io/badge/🔄-In_Progress-7b7bff?style=flat-square&labelColor=0d1117) |
-| 🌍 Contribute to Open Source | ![](https://img.shields.io/badge/📌-Planned-orange?style=flat-square&labelColor=0d1117) |
-| 🧠 Deep dive into System Design | ![](https://img.shields.io/badge/🔄-In_Progress-7b7bff?style=flat-square&labelColor=0d1117) |
-| 💡 Ship impactful real-world projects | ![](https://img.shields.io/badge/🔄-In_Progress-7b7bff?style=flat-square&labelColor=0d1117) |
-| 📦 Publish npm packages / OSS tools | ![](https://img.shields.io/badge/📌-Planned-orange?style=flat-square&labelColor=0d1117) |
-
-</div>
-
----
-
-<div align="center">
-
-### 🤝 Let's Build Something Legendary
-
-[![Portfolio](https://img.shields.io/badge/🌍_Portfolio-Visit_Now-7B7BFF?style=for-the-badge&labelColor=0a0a0f)](https://mohitraghav1318.vercel.app/)&nbsp;
-[![LinkedIn](https://img.shields.io/badge/💼_LinkedIn-Let's_Connect-0077B5?style=for-the-badge&labelColor=0a0a0f)](https://www.linkedin.com/in/mohitraghav1318/)&nbsp;
-[![GitHub](https://img.shields.io/badge/⭐_GitHub-Follow_Me-181717?style=for-the-badge&labelColor=0a0a0f)](https://github.com/mohitraghav1318)
+<img height="165" src="https://github-readme-stats.vercel.app/api?username=mohitraghav1318&show_icons=true&theme=default&hide_border=true&title_color=000000&text_color=555555&icon_color=000000&bg_color=ffffff&include_all_commits=true&count_private=true" />&ensp;<img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=mohitraghav1318&layout=compact&theme=default&hide_border=true&title_color=000000&text_color=555555&bg_color=ffffff" />
 
 <br/>
 
-<img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight" />
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=mohitraghav1318&theme=default&hide_border=true&background=ffffff&ring=000000&fire=555555&currStreakLabel=000000&sideNums=000000&currStreakNum=000000&sideLabels=555555&dates=999999" />
 
 <br/>
 
-> *"Starting from Zero — Building Everything."* — **Mr.Zero ⚡**
+<img src="https://github-profile-trophy.vercel.app/?username=mohitraghav1318&theme=flat&no-frame=true&no-bg=true&column=7&margin-w=8" />
 
-<br/>
+</div>
 
-<img src="https://capsule-render.vercel.app/api?type=venom&color=0:000000,50:0a0f2e,100:0a0a0f&height=150&section=footer&text=&animation=fadeIn" />
+---
 
+### Contribution
+
+<div align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=mohitraghav1318&theme=minimal&hide_border=true&bg_color=ffffff&color=555555&line=000000&point=000000&area=false" />
+</div>
+
+---
+
+### 2026 Goals
+
+| Goal | Status |
+|---|---|
+| Master DSA & problem solving | 🔄 In progress |
+| Build scalable full-stack systems | 🔄 In progress |
+| Contribute to open source | 📌 Planned |
+| Deep dive into system design | 🔄 In progress |
+| Ship impactful real-world products | 🔄 In progress |
+
+---
+
+<div align="center">
+  <br/>
+  <sub>Available for freelance & collaborations &nbsp;·&nbsp; <a href="https://mohitraghav1318.vercel.app/">mohitraghav1318.vercel.app</a></sub>
+  <br/><br/>
 </div>
