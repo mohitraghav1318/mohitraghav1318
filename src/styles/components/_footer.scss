@@ -2,9 +2,17 @@
 @use '../abstracts/mixins' as *;
 
 .footer {
-  border-top: 0.0625rem solid $border-soft;
+  border-top: 0.0625rem solid rgba($text-primary, 0.12);
   margin-top: $space-4xl;
   padding-block: $space-2xl;
+
+  background:
+    radial-gradient(
+      circle at 85% 12%,
+      rgba($primary, 0.12) 0%,
+      transparent 40%
+    ),
+    linear-gradient(180deg, rgba($bg, 0.08) 0%, rgba($bg-surface, 0.28) 100%);
 
   &__inner {
     display: flex;
@@ -19,6 +27,22 @@
     gap: $space-lg;
     grid-template-columns: 1fr auto;
     padding: $space-xl;
+    position: relative;
+
+    &::after {
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba($primary, 0.24),
+        transparent
+      );
+      content: '';
+      height: 0.0625rem;
+      left: $space-xl;
+      position: absolute;
+      right: $space-xl;
+      top: 0;
+    }
 
     @include respond-md {
       grid-template-columns: 1fr;
@@ -45,7 +69,8 @@
   }
 
   &__social-link {
-    border: 0.0625rem solid $border-soft;
+    background-color: rgba($bg-elevated, 0.45);
+    border: 0.0625rem solid rgba($text-primary, 0.14);
     border-radius: $radius-pill;
     color: $text-secondary;
     font-size: 0.88rem;
@@ -57,8 +82,8 @@
       background-color $transition-fast;
 
     &:hover {
-      background-color: rgba($accent, 0.12);
-      border-color: $accent;
+      background-color: rgba($primary, 0.14);
+      border-color: rgba($primary-strong, 0.56);
       color: $text-primary;
     }
   }

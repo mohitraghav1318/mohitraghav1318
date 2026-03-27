@@ -39,6 +39,18 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  transition:
+    transform $transition-base,
+    border-color $transition-fast,
+    box-shadow $transition-base;
+
+  &:hover {
+    border-color: rgba($primary-strong, 0.58);
+    box-shadow:
+      0 1rem 2rem rgba(0, 0, 0, 0.32),
+      0 0 0 0.0625rem rgba($primary, 0.24);
+    transform: translateY(-0.24rem);
+  }
 
   &__media {
     border-bottom: 0.0625rem solid $border-soft;
@@ -51,12 +63,12 @@
     background:
       radial-gradient(
         circle at 15% 10%,
-        rgba($primary, 0.32) 0%,
+        rgba($primary, 0.36) 0%,
         transparent 48%
       ),
       radial-gradient(
         circle at 80% 85%,
-        rgba($accent, 0.2) 0%,
+        rgba($primary-strong, 0.22) 0%,
         transparent 54%
       ),
       linear-gradient(135deg, rgba($bg-elevated, 0.95), rgba($bg-surface, 0.95));
@@ -119,8 +131,8 @@
 
   &__type {
     align-items: center;
-    background-color: rgba($primary, 0.12);
-    border: 0.0625rem solid rgba($primary, 0.34);
+    background-color: rgba($primary, 0.16);
+    border: 0.0625rem solid rgba($primary, 0.45);
     border-radius: $radius-pill;
     color: $text-primary;
     display: inline-flex;
@@ -153,8 +165,8 @@
 
   &__tech-item {
     align-items: center;
-    background-color: rgba($accent, 0.13);
-    border: 0.0625rem solid rgba($accent, 0.35);
+    background-color: rgba($bg-elevated, 0.5);
+    border: 0.0625rem solid rgba($text-primary, 0.16);
     border-radius: $radius-pill;
     color: $text-primary;
     display: inline-flex;
@@ -165,7 +177,7 @@
   }
 
   &__tech-icon {
-    color: $accent;
+    color: $primary-strong;
     font-size: 0.68rem;
   }
 
@@ -188,8 +200,8 @@
   }
 
   &__badge--muted {
-    background-color: rgba($bg-elevated, 0.6);
-    border: 0.0625rem solid $border-soft;
+    background-color: rgba($bg-elevated, 0.5);
+    border: 0.0625rem solid rgba($text-primary, 0.14);
     color: $text-secondary;
   }
 }
@@ -263,6 +275,17 @@
   flex-direction: column;
   gap: $space-md;
   padding: $space-xl;
+  position: relative;
+
+  &::before {
+    background: linear-gradient(90deg, rgba($primary, 0.24), transparent 75%);
+    content: '';
+    height: 0.125rem;
+    left: $space-xl;
+    position: absolute;
+    right: $space-xl;
+    top: 0;
+  }
 
   &__field {
     display: flex;
@@ -277,8 +300,8 @@
   }
 
   &__input {
-    background-color: rgba($bg-elevated, 0.55);
-    border: 0.0625rem solid $border-soft;
+    background-color: rgba($bg-elevated, 0.45);
+    border: 0.0625rem solid rgba($text-primary, 0.16);
     border-radius: $radius-md;
     color: $text-primary;
     padding: $space-sm $space-md;
@@ -291,8 +314,9 @@
     }
 
     &:focus {
-      border-color: $primary;
-      box-shadow: 0 0 0 0.2rem $primary-soft;
+      background-color: rgba($bg-elevated, 0.62);
+      border-color: rgba($primary-strong, 0.72);
+      box-shadow: 0 0 0 0.19rem rgba($primary, 0.24);
       outline: none;
     }
 

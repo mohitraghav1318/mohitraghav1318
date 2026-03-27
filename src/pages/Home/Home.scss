@@ -6,10 +6,10 @@
   flex-direction: column;
 }
 
-.hero {
+.home-hero {
   @include section-space;
 
-  &__inner {
+  &__shell {
     align-items: center;
     display: grid;
     gap: $space-2xl;
@@ -28,7 +28,7 @@
 
   &__eyebrow {
     color: $primary;
-    font-size: 0.86rem;
+    font-size: 0.82rem;
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -36,11 +36,11 @@
 
   &__title {
     color: $text-primary;
-    max-width: 16ch;
+    max-width: 18ch;
   }
 
   &__description {
-    max-width: 58ch;
+    max-width: 62ch;
   }
 
   &__actions {
@@ -50,11 +50,25 @@
     margin-top: $space-sm;
   }
 
+  &__highlights {
+    display: grid;
+    gap: $space-xs;
+    margin-top: $space-xs;
+
+    li {
+      background-color: rgba($accent, 0.08);
+      border: 0.0625rem solid rgba($accent, 0.24);
+      border-radius: $radius-md;
+      color: $text-secondary;
+      font-size: 0.9rem;
+      padding: $space-sm;
+    }
+  }
+
   &__visual {
     display: grid;
     gap: $space-md;
     grid-template-columns: 1fr 1fr;
-    position: relative;
 
     @include respond-sm {
       grid-template-columns: 1fr;
@@ -72,7 +86,7 @@
   }
 
   &__photo {
-    aspect-ratio: 5 / 4;
+    aspect-ratio: 4 / 3;
     object-fit: cover;
     width: 100%;
   }
@@ -96,13 +110,56 @@
   &__stat-value {
     color: $text-primary;
     font-family: $font-display;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     font-weight: 700;
   }
 
   &__stat-label {
     color: $text-secondary;
     font-size: 0.85rem;
+  }
+
+  &__pillars {
+    display: grid;
+    gap: $space-md;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: $space-xl;
+
+    @include respond-md {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__pillar {
+    @include panel-surface;
+    display: flex;
+    flex-direction: column;
+    gap: $space-sm;
+    padding: $space-lg;
+  }
+
+  &__pillar-icon {
+    align-items: center;
+    background-color: rgba($primary, 0.14);
+    border: 0.0625rem solid rgba($primary, 0.34);
+    border-radius: $radius-md;
+    color: $primary;
+    display: inline-flex;
+    font-size: 0.95rem;
+    height: 2rem;
+    justify-content: center;
+    width: 2rem;
+  }
+
+  &__pillar-title {
+    color: $text-primary;
+    font-size: 1.02rem;
+    margin: 0;
+  }
+
+  &__pillar-text {
+    color: $text-secondary;
+    font-size: 0.9rem;
   }
 }
 
@@ -113,10 +170,23 @@
     padding-top: $space-xl;
   }
 
+  &__head {
+    align-items: flex-end;
+    display: flex;
+    gap: $space-md;
+    justify-content: space-between;
+
+    @include respond-md {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+
   &__grid {
     display: grid;
     gap: $space-lg;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: $space-md;
 
     @include respond-md {
       grid-template-columns: 1fr;
@@ -133,10 +203,6 @@
     @include respond-sm {
       grid-template-columns: 1fr;
     }
-  }
-
-  &__action {
-    margin-top: $space-lg;
   }
 }
 

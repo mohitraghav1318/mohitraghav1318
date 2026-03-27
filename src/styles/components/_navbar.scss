@@ -2,9 +2,13 @@
 @use '../abstracts/mixins' as *;
 
 .navbar {
-  backdrop-filter: blur(1rem);
-  background-color: $bg-overlay;
-  border-bottom: 0.0625rem solid $border-soft;
+  backdrop-filter: blur(1.1rem) saturate(135%);
+  background: linear-gradient(
+    180deg,
+    rgba($bg-surface, 0.82) 0%,
+    rgba($bg, 0.72) 100%
+  );
+  border-bottom: 0.0625rem solid rgba($text-primary, 0.14);
   left: 0;
   position: fixed;
   top: 0;
@@ -27,27 +31,45 @@
     align-items: center;
     display: inline-flex;
     gap: $space-sm;
+    transition: transform $transition-fast;
+
+    &:hover {
+      transform: translateY(-0.0625rem);
+    }
   }
 
   &__brand-mark {
-    @include accent-outline;
     align-items: center;
-    border-radius: $radius-sm;
-    color: $primary;
+    background:
+      radial-gradient(
+        circle at 25% 18%,
+        rgba($primary-strong, 0.32),
+        transparent 60%
+      ),
+      linear-gradient(145deg, rgba($bg-elevated, 0.9), rgba($bg-surface, 0.86));
+    border: 0.0625rem solid rgba($primary, 0.48);
+    border-radius: $radius-md;
+    box-shadow:
+      0 0 0 0.0625rem rgba($primary, 0.16),
+      0 0.6rem 1.2rem rgba(0, 0, 0, 0.24);
+    color: $primary-strong;
     display: inline-flex;
     font-family: $font-display;
-    font-size: 0.92rem;
+    font-size: 0.88rem;
     font-weight: 700;
+    height: 2.1rem;
     justify-content: center;
-    min-height: 2rem;
-    min-width: 2rem;
+    letter-spacing: 0.04em;
+    width: 2.1rem;
   }
 
   &__brand-text {
     color: $text-primary;
     font-family: $font-display;
-    font-size: 1.05rem;
-    font-weight: 600;
+    font-size: 1.02rem;
+    font-weight: 700;
+    letter-spacing: 0.015em;
+    text-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.25);
   }
 
   &__toggle {
@@ -129,7 +151,7 @@
       background-color $transition-fast;
 
     &:hover {
-      background-color: rgba($accent, 0.1);
+      background-color: rgba($primary, 0.14);
       color: $text-primary;
     }
 

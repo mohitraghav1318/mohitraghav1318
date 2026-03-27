@@ -38,7 +38,9 @@ function Navbar() {
           <span className="navbar__toggle-line" />
         </button>
 
-        <nav className={`navbar__menu ${isMenuOpen ? 'navbar__menu--open' : ''}`}>
+        <nav
+          className={`navbar__menu ${isMenuOpen ? 'navbar__menu--open' : ''}`}
+        >
           <ul className="navbar__list">
             {navLinks.map((link) => (
               <li className="navbar__item" key={link.to}>

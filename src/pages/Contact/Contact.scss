@@ -21,6 +21,14 @@
     flex-direction: column;
     gap: $space-xs;
     padding: $space-lg;
+    transition:
+      transform $transition-fast,
+      border-color $transition-fast;
+
+    &:hover {
+      border-color: rgba($primary-strong, 0.5);
+      transform: translateY(-0.16rem);
+    }
   }
 
   &__card-title {
