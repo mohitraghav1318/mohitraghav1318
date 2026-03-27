@@ -5,7 +5,7 @@ const skills = [
     category: 'Frontend Engineering',
     summary:
       'Building fast single-page applications with component-based architecture, routing, and modern development tooling.',
-    level: 'Advanced',
+    level: 'Intermidiate+',
   },
   {
     id: 'frontend-js',
@@ -13,7 +13,7 @@ const skills = [
     category: 'Frontend Engineering',
     summary:
       'Modern JavaScript development including asynchronous workflows, modular code organization, and DOM interaction.',
-    level: 'Advanced',
+    level: 'Intermidiate+',
   },
   {
     id: 'frontend-html-css',
@@ -21,7 +21,7 @@ const skills = [
     category: 'Frontend Engineering',
     summary:
       'Semantic layouts, responsive interfaces, and modern styling techniques for production-ready web applications.',
-    level: 'Advanced',
+    level: 'Intermidiate+',
   },
   {
     id: 'frontend-scss',
@@ -29,7 +29,7 @@ const skills = [
     category: 'Frontend Engineering',
     summary:
       'Scalable styling using variables, mixins, modular structure, and maintainable design systems.',
-    level: 'Advanced',
+    level: 'Intermidiate',
   },
   {
     id: 'frontend-tailwind',
@@ -45,7 +45,7 @@ const skills = [
     category: 'Frontend Engineering',
     summary:
       'Rapid UI development using responsive grid systems and pre-built components.',
-    level: 'Intermediate',
+    level: 'Advanced',
   },
   {
     id: 'frontend-routing',
@@ -53,7 +53,7 @@ const skills = [
     category: 'Frontend Engineering',
     summary:
       'Client-side routing and navigation patterns for scalable React applications.',
-    level: 'Advanced',
+    level: 'Intermidiate',
   },
   {
     id: 'backend-node',
@@ -125,7 +125,7 @@ const skills = [
     category: 'AI & Automation',
     summary:
       'Integrating large language model APIs into applications for chatbots, assistants, and intelligent features.',
-    level: 'Intermediate+',
+    level: 'Intermediate',
   },
   {
     id: 'tools-git',
@@ -141,7 +141,7 @@ const skills = [
     category: 'Developer Tools',
     summary:
       'Command-line workflows, development environment setup, and server-side operations.',
-    level: 'Intermediate+',
+    level: 'Advanced',
   },
 ];
 

@@ -201,6 +201,26 @@
   gap: $space-sm;
   padding: $space-lg;
 
+  &__heading {
+    align-items: center;
+    display: flex;
+    gap: $space-sm;
+  }
+
+  &__icon {
+    align-items: center;
+    background-color: rgba($primary, 0.14);
+    border: 0.0625rem solid rgba($primary, 0.32);
+    border-radius: $radius-md;
+    color: $primary;
+    display: inline-flex;
+    flex-shrink: 0;
+    font-size: 0.9rem;
+    height: 2rem;
+    justify-content: center;
+    width: 2rem;
+  }
+
   &__category {
     align-items: center;
     color: $primary;
@@ -219,6 +239,7 @@
 
   &__title {
     color: $text-primary;
+    margin: 0;
   }
 
   &__description {

@@ -30,6 +30,36 @@
     color: $text-secondary;
   }
 
+  &__principles {
+    border-top: 0.0625rem solid $border-soft;
+    margin-top: $space-sm;
+    padding-top: $space-md;
+  }
+
+  &__section-title {
+    color: $text-primary;
+    font-family: $font-display;
+    font-size: 1.1rem;
+    margin-bottom: $space-sm;
+  }
+
+  &__list {
+    display: grid;
+    gap: $space-xs;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__list-item {
+    background-color: rgba($accent, 0.08);
+    border: 0.0625rem solid rgba($accent, 0.25);
+    border-radius: $radius-md;
+    color: $text-secondary;
+    font-size: 0.92rem;
+    padding: $space-sm;
+  }
+
   &__panel {
     @include panel-surface;
     overflow: hidden;
@@ -70,5 +100,44 @@
   &__metric-label {
     color: $text-secondary;
     font-size: 0.9rem;
+  }
+
+  &__details {
+    display: grid;
+    gap: $space-md;
+    grid-template-columns: 1fr 1fr;
+    margin-top: $space-lg;
+
+    @include respond-md {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__detail-panel {
+    @include panel-surface;
+    padding: $space-lg;
+  }
+
+  &__focus-grid {
+    display: grid;
+    gap: $space-sm;
+  }
+
+  &__focus-card {
+    background-color: rgba($primary, 0.08);
+    border: 0.0625rem solid rgba($primary, 0.26);
+    border-radius: $radius-md;
+    padding: $space-sm;
+  }
+
+  &__focus-title {
+    color: $text-primary;
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+  }
+
+  &__focus-text {
+    color: $text-secondary;
+    font-size: 0.88rem;
   }
 }

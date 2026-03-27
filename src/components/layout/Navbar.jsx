@@ -62,7 +62,7 @@ function Navbar() {
             target="_blank"
             variant="secondary"
           >
-            Download Resume
+            View Resume
           </Button>
         </nav>
       </Container>
