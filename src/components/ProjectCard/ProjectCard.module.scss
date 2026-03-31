@@ -46,9 +46,9 @@
   @include flex-center;
   flex-direction: column;
   gap: $spacing-sm;
-  background-color: rgba($accent, 0.05);
-  border-bottom: 1px solid $border;
-  color: $muted;
+  background-color: rgba(var(--accent), 0.05);
+  border-bottom: 1px solid var(--border);
+  color: var(--muted);
   font-size: 0.85rem;
   font-weight: 500;
 }
@@ -61,8 +61,8 @@
   top: $spacing-md;
   right: $spacing-md;
   z-index: 2;
-  background-color: $accent;
-  color: $text-light;
+  background-color: var(--accent);
+  color: var(--text-primary);
   font-size: 0.7rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -74,14 +74,14 @@
 .title {
   font-size: 1.2rem;
   font-weight: 600;
-  color: $text-light;
+  color: var(--text-primary);
   padding: 0 $spacing-lg;
   padding-top: $spacing-lg;
 }
 
 .description {
   font-size: 0.9rem;
-  color: $muted;
+  color: var(--muted);
   line-height: 1.5;
   flex-grow: 1;
   padding: 0 $spacing-lg;
@@ -97,9 +97,9 @@
 .techPill {
   font-size: 0.75rem;
   font-weight: 500;
-  color: $accent;
-  background-color: rgba($accent, 0.1);
-  border: 1px solid rgba($accent, 0.2);
+  color: var(--accent);
+  background-color: rgba(var(--accent), 0.1);
+  border: 1px solid rgba(var(--accent), 0.2);
   padding: 2px $spacing-sm;
   border-radius: $radius-full;
 }
@@ -108,7 +108,7 @@
   display: flex;
   gap: $spacing-md;
   padding: $spacing-sm $spacing-lg $spacing-lg;
-  border-top: 1px solid $border;
+  border-top: 1px solid var(--border);
 }
 
 .link {
@@ -116,10 +116,10 @@
   align-items: center;
   gap: $spacing-xs;
   font-size: 0.85rem;
-  color: $muted;
+  color: var(--muted);
   transition: color 0.2s ease;
 
   &:hover {
-    color: $accent;
+    color: var(--accent);
   }
 }

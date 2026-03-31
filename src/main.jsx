@@ -9,12 +9,16 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 // Import global SCSS reset and base styles
 import './styles/_globals.scss';
+// Import theme provider
+import { ThemeProvider } from './context/ThemeContext';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     {/* BrowserRouter enables client-side routing */}
     <BrowserRouter>
-      <App />
+      <ThemeProvider>
+        <App />
+      </ThemeProvider>
     </BrowserRouter>
-  </React.StrictMode>
+  </React.StrictMode>,
 );

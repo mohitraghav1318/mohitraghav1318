@@ -7,7 +7,7 @@
 @use '../../styles/mixins' as *;
 
 .footer {
-  border-top: 1px solid $border;
+  border-top: 1px solid var(--border);
   padding: $spacing-xl 0;
 }
 
@@ -25,16 +25,18 @@
 }
 
 .socialLink {
-  color: $muted;
-  transition: color 0.2s ease, transform 0.2s ease;
+  color: var(--muted);
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
 
   &:hover {
-    color: $accent;
+    color: var(--accent);
     transform: translateY(-2px);
   }
 }
 
 .copyright {
   font-size: 0.85rem;
-  color: $muted;
+  color: var(--muted);
 }

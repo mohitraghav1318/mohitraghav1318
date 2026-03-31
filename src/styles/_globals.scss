@@ -6,6 +6,28 @@
 @use 'variables' as *;
 @use 'mixins' as *;
 
+// Theme CSS custom properties
+:root,
+[data-theme='dark'] {
+  --bg-primary: #{$bg-dark};
+  --text-primary: #{$text-light};
+  --accent: #{$accent};
+  --accent-hover: #{$accent-hover};
+  --surface: #{$surface};
+  --border: #{$border};
+  --muted: #{$muted};
+}
+
+[data-theme='light'] {
+  --bg-primary: #{$text-light};
+  --text-primary: #{$bg-dark};
+  --accent: #{$accent};
+  --accent-hover: #{$accent-hover};
+  --surface: #e8e8e8;
+  --border: #d4d4d4;
+  --muted: #666666;
+}
+
 // Box sizing reset
 *,
 *::before,
@@ -22,14 +44,17 @@ html {
 
 // Body defaults
 body {
-  background-color: $bg-dark;
-  color: $text-light;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   font-family: $font-family;
   font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 // Link reset

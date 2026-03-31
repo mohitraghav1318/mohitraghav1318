@@ -13,12 +13,15 @@
   width: 100%;
   height: $navbar-height;
   z-index: 1000;
-  transition: background-color 0.3s ease, border-bottom 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    border-bottom 0.3s ease;
 
   // Solid background when scrolled
   &.scrolled {
-    background-color: rgba($bg-dark, 0.95);
-    border-bottom: 1px solid $border;
+    background-color: rgba(var(--bg-primary), 0.95);
+    background-color: var(--bg-primary);
+    border-bottom: 1px solid var(--border);
     backdrop-filter: blur(10px);
   }
 }
@@ -34,11 +37,11 @@
 .logo {
   font-size: 1.25rem;
   font-weight: 700;
-  color: $text-light;
+  color: var(--text-primary);
   transition: color 0.2s ease;
 
   &:hover {
-    color: $accent;
+    color: var(--accent);
   }
 }
 
@@ -56,17 +59,17 @@
   position: relative;
   font-size: 0.9rem;
   font-weight: 500;
-  color: $muted;
+  color: var(--muted);
   transition: color 0.2s ease;
   padding: $spacing-xs 0;
 
   &:hover {
-    color: $text-light;
+    color: var(--text-primary);
   }
 
   // Active link accent underline
   &.active {
-    color: $accent;
+    color: var(--accent);
 
     &::after {
       content: '';
@@ -75,15 +78,36 @@
       left: 0;
       width: 100%;
       height: 2px;
-      background-color: $accent;
+      background-color: var(--accent);
       border-radius: $radius-full;
     }
   }
 }
 
+.themeToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-sm;
+  color: var(--muted);
+  border-radius: $radius-md;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+
+  &:hover {
+    color: var(--accent);
+    background-color: var(--surface);
+  }
+
+  @include respond-to('mobile') {
+    display: none;
+  }
+}
+
 .hamburger {
   display: none;
-  color: $text-light;
+  color: var(--text-primary);
 
   @include respond-to('mobile') {
     display: flex;
@@ -95,8 +119,8 @@
 .mobileMenu {
   display: none;
   flex-direction: column;
-  background-color: $bg-dark;
-  border-bottom: 1px solid $border;
+  background-color: var(--bg-primary);
+  border-bottom: 1px solid var(--border);
   overflow: hidden;
 
   @include respond-to('mobile') {
@@ -109,15 +133,36 @@
   padding: $spacing-md $spacing-xl;
   font-size: 1rem;
   font-weight: 500;
-  color: $muted;
-  transition: color 0.2s ease, background-color 0.2s ease;
+  color: var(--muted);
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
 
   &:hover {
-    color: $text-light;
-    background-color: $surface;
+    color: var(--text-primary);
+    background-color: var(--surface);
   }
 
   &.active {
-    color: $accent;
+    color: var(--accent);
+  }
+}
+
+.mobileThemeToggle {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  width: 100%;
+  padding: $spacing-md $spacing-xl;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--muted);
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+
+  &:hover {
+    color: var(--accent);
+    background-color: var(--surface);
   }
 }

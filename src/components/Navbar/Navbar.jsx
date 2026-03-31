@@ -7,8 +7,9 @@
 import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { HiMenuAlt3, HiX } from 'react-icons/hi';
+import { HiMenuAlt3, HiX, HiSun, HiMoon } from 'react-icons/hi';
 import { about } from '../../data/about';
+import { useTheme } from '../../context/ThemeContext';
 import styles from './Navbar.module.scss';
 
 // Navigation link definitions — edit here to change nav items
@@ -25,6 +26,8 @@ function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   // Controls mobile menu open/close state
   const [mobileOpen, setMobileOpen] = useState(false);
+  // Theme context
+  const { theme, toggleTheme } = useTheme();
 
   // Listen to scroll events to toggle navbar background
   useEffect(() => {
@@ -42,9 +45,7 @@ function Navbar() {
   };
 
   return (
-    <nav
-      className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}
-    >
+    <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
       <div className={styles.inner}>
         {/* Logo / Name — pulled from about data */}
         <NavLink to="/" className={styles.logo}>
@@ -66,6 +67,15 @@ function Navbar() {
             </li>
           ))}
         </ul>
+
+        {/* Theme toggle button */}
+        <button
+          className={styles.themeToggle}
+          onClick={toggleTheme}
+          aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
+        >
+          {theme === 'dark' ? <HiSun size={20} /> : <HiMoon size={20} />}
+        </button>
 
         {/* Mobile hamburger button */}
         <button
@@ -100,6 +110,28 @@ function Navbar() {
                 </NavLink>
               </li>
             ))}
+            {/* Theme toggle in mobile menu */}
+            <li>
+              <button
+                className={styles.mobileThemeToggle}
+                onClick={() => {
+                  toggleTheme();
+                  handleLinkClick();
+                }}
+              >
+                {theme === 'dark' ? (
+                  <>
+                    <HiSun size={18} />
+                    <span>Light Mode</span>
+                  </>
+                ) : (
+                  <>
+                    <HiMoon size={18} />
+                    <span>Dark Mode</span>
+                  </>
+                )}
+              </button>
+            </li>
           </motion.ul>
         )}
       </AnimatePresence>

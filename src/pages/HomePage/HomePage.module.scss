@@ -34,7 +34,7 @@
 
 .greeting {
   font-size: 1.1rem;
-  color: $accent;
+  color: var(--accent);
   font-weight: 500;
   margin-bottom: $spacing-sm;
 }
@@ -42,7 +42,7 @@
 .name {
   font-size: 3.5rem;
   font-weight: 700;
-  color: $text-light;
+  color: var(--text-primary);
   margin-bottom: $spacing-sm;
 
   @include respond-to('tablet') {
@@ -56,7 +56,7 @@
 
 .tagline {
   font-size: 1.25rem;
-  color: $muted;
+  color: var(--muted);
   margin-bottom: $spacing-xl;
 
   @include respond-to('mobile') {
@@ -77,33 +77,37 @@
 
 .ctaPrimary {
   display: inline-block;
-  background-color: $accent;
-  color: $text-light;
+  background-color: var(--accent);
+  color: var(--text-primary);
   font-weight: 600;
   font-size: 0.95rem;
   padding: $spacing-md $spacing-xl;
   border-radius: $radius-md;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
 
   &:hover {
-    background-color: $accent-hover;
+    background-color: var(--accent-hover);
     transform: translateY(-2px);
   }
 }
 
 .ctaSecondary {
   display: inline-block;
-  border: 1px solid $border;
-  color: $text-light;
+  border: 1px solid var(--border);
+  color: var(--text-primary);
   font-weight: 600;
   font-size: 0.95rem;
   padding: $spacing-md $spacing-xl;
   border-radius: $radius-md;
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
 
   &:hover {
-    border-color: $accent;
-    color: $accent;
+    border-color: var(--accent);
+    color: var(--accent);
     transform: translateY(-2px);
   }
 }
@@ -112,7 +116,7 @@
 
 .aboutPreview {
   @include section-padding;
-  background-color: $surface;
+  background-color: var(--surface);
 }
 
 .aboutInner {
@@ -124,25 +128,25 @@
 .sectionTitle {
   font-size: 1.75rem;
   font-weight: 700;
-  color: $text-light;
+  color: var(--text-primary);
   margin-bottom: $spacing-lg;
 }
 
 .bio {
   font-size: 1rem;
-  color: $muted;
+  color: var(--muted);
   line-height: 1.7;
   margin-bottom: $spacing-lg;
 }
 
 .readMore {
   display: inline-block;
-  color: $accent;
+  color: var(--accent);
   font-weight: 600;
   font-size: 0.95rem;
   transition: color 0.2s ease;
 
   &:hover {
-    color: $accent-hover;
+    color: var(--accent-hover);
   }
 }

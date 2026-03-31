@@ -34,8 +34,8 @@
 
 // Standard card appearance
 @mixin card {
-  background-color: $surface;
-  border: 1px solid $border;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
   border-radius: $radius-md;
   padding: $spacing-lg;
 }

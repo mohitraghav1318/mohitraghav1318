@@ -19,7 +19,7 @@
 .heading {
   font-size: 2.5rem;
   font-weight: 700;
-  color: $text-light;
+  color: var(--text-primary);
   margin-bottom: $spacing-2xl;
   text-align: center;
 
@@ -54,19 +54,19 @@
   height: 200px;
   border-radius: $radius-lg;
   object-fit: cover;
-  border: 2px solid $border;
+  border: 2px solid var(--border);
 }
 
 .placeholder {
   width: 200px;
   height: 200px;
   border-radius: $radius-lg;
-  background-color: $surface;
-  border: 2px solid $border;
+  background-color: var(--surface);
+  border: 2px solid var(--border);
   @include flex-center;
   font-size: 3rem;
   font-weight: 700;
-  color: $accent;
+  color: var(--accent);
 }
 
 .info {
@@ -76,13 +76,13 @@
 .name {
   font-size: 1.5rem;
   font-weight: 700;
-  color: $text-light;
+  color: var(--text-primary);
   margin-bottom: $spacing-xs;
 }
 
 .role {
   font-size: 1rem;
-  color: $accent;
+  color: var(--accent);
   font-weight: 500;
   margin-bottom: $spacing-md;
 }
@@ -111,18 +111,23 @@
 
 // Simple pulse for the availability dot — kept minimal as it's a status indicator
 @keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
 }
 
 .location {
   font-size: 0.9rem;
-  color: $muted;
+  color: var(--muted);
   margin-bottom: $spacing-lg;
 }
 
 .longBio {
   font-size: 1rem;
-  color: $muted;
+  color: var(--muted);
   line-height: 1.8;
 }
