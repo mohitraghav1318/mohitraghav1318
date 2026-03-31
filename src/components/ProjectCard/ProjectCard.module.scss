@@ -1,0 +1,125 @@
+// ──────────────────────────────────────────────
+// ProjectCard.module.scss — Styles for the ProjectCard component
+// Card with hover lift, tech pills, and link actions.
+// ──────────────────────────────────────────────
+
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.card {
+  @include card;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+  padding: 0;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  }
+}
+
+// ─── Image Section ───
+
+.imageWrapper {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+
+  .card:hover & {
+    transform: scale(1.03);
+  }
+}
+
+.imagePlaceholder {
+  width: 100%;
+  height: 100%;
+  @include flex-center;
+  flex-direction: column;
+  gap: $spacing-sm;
+  background-color: rgba($accent, 0.05);
+  border-bottom: 1px solid $border;
+  color: $muted;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+// Wrapper for card body (everything below image)
+// We need to re-add padding that was removed from .card
+
+.featured {
+  position: absolute;
+  top: $spacing-md;
+  right: $spacing-md;
+  z-index: 2;
+  background-color: $accent;
+  color: $text-light;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: $spacing-xs $spacing-sm;
+  border-radius: $radius-sm;
+}
+
+.title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: $text-light;
+  padding: 0 $spacing-lg;
+  padding-top: $spacing-lg;
+}
+
+.description {
+  font-size: 0.9rem;
+  color: $muted;
+  line-height: 1.5;
+  flex-grow: 1;
+  padding: 0 $spacing-lg;
+}
+
+.techStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-sm;
+  padding: 0 $spacing-lg;
+}
+
+.techPill {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: $accent;
+  background-color: rgba($accent, 0.1);
+  border: 1px solid rgba($accent, 0.2);
+  padding: 2px $spacing-sm;
+  border-radius: $radius-full;
+}
+
+.links {
+  display: flex;
+  gap: $spacing-md;
+  padding: $spacing-sm $spacing-lg $spacing-lg;
+  border-top: 1px solid $border;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+  font-size: 0.85rem;
+  color: $muted;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: $accent;
+  }
+}

@@ -1,0 +1,76 @@
+// ──────────────────────────────────────────────
+// _globals.scss — CSS reset and global styles
+// Imported once in main.jsx to establish the baseline.
+// ──────────────────────────────────────────────
+
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// Box sizing reset
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// Smooth scrolling for anchor links
+html {
+  scroll-behavior: smooth;
+}
+
+// Body defaults
+body {
+  background-color: $bg-dark;
+  color: $text-light;
+  font-family: $font-family;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+// Link reset
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+// List reset
+ul,
+ol {
+  list-style: none;
+}
+
+// Image defaults
+img {
+  max-width: 100%;
+  display: block;
+}
+
+// Button reset
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+  color: inherit;
+}
+
+// Heading styles
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+// Utility: page content wrapper accounting for navbar
+.page-content {
+  padding-top: $navbar-height;
+}

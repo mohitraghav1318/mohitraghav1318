@@ -1,0 +1,86 @@
+// ──────────────────────────────────────────────
+// ContactPage.module.scss — Styles for the Contact page
+// Large social icon buttons with hover lift effect.
+// ──────────────────────────────────────────────
+
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.contact {
+  @include section-padding;
+  min-height: calc(100vh - #{$navbar-height});
+}
+
+.container {
+  @include container;
+  max-width: 700px;
+  text-align: center;
+}
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: $text-light;
+  margin-bottom: $spacing-lg;
+
+  @include respond-to('mobile') {
+    font-size: 1.75rem;
+  }
+}
+
+.message {
+  font-size: 1.05rem;
+  color: $muted;
+  line-height: 1.7;
+  margin-bottom: $spacing-xl;
+}
+
+.availability {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-sm;
+  background-color: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  color: #22c55e;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: $spacing-sm $spacing-md;
+  border-radius: $radius-full;
+  margin-bottom: $spacing-2xl;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: $radius-full;
+  background-color: #22c55e;
+}
+
+.socialGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $spacing-lg;
+
+  @include respond-to('mobile') {
+    grid-template-columns: 1fr;
+  }
+}
+
+.socialCard {
+  @include card;
+  @include flex-center;
+  flex-direction: column;
+  gap: $spacing-md;
+  color: $muted;
+  transition: color 0.2s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    color: $accent;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.socialLabel {
+  font-size: 0.95rem;
+  font-weight: 500;
+}

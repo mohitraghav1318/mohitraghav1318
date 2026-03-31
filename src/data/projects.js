@@ -1,140 +1,134 @@
-export const projectTypeMeta = {
-  personal: {
-    title: 'Personal Builds',
-    subtitle:
-      'Self-initiated products focused on quality, experimentation, and long-term growth.',
-  },
-  team: {
-    title: 'Team Collaborations',
-    subtitle:
-      'Projects delivered in coordinated environments with shared ownership and deadlines.',
-  },
-  freelance: {
-    title: 'Client Work',
-    subtitle:
-      'Outcome-driven builds designed around real-world business requirements.',
-  },
-  other: {
-    title: 'Other Projects',
-    subtitle: 'Additional experiments and practical builds across stacks.',
-  },
-};
+// ──────────────────────────────────────────────
+// projects.js — Portfolio projects data
+// Add, remove, or edit projects here. No component changes needed.
+//
+// img: path to project screenshot image.
+//   - Place images in /public/images/projects/
+//   - Set to a string like "/images/projects/hikaricv.png" to show the image
+//   - Set to null to show a "Coming Soon" placeholder
+//
+// category: project category for filtering.
+//   - "personal"  → Personal Projects
+//   - "team"      → Team Work
+//   - "freelance" → Freelance
+// ──────────────────────────────────────────────
 
-export const projectSectionOrder = ['personal', 'team', 'freelance', 'other'];
-
-const projects = [
+export const projects = [
   {
-    id: 'hikaricv',
+    id: 1,
     title: 'HikariCV',
     description:
-      'A resume-building platform designed to help users create structured, visually appealing CVs quickly with customizable templates.',
-    tech: ['React', 'Node.js', 'Database'],
-    image: '',
-    liveUrl: '',
-    repoUrl: 'https://github.com/mohitraghav1318/gen-ai.git',
-    year: '2026',
-    type: 'personal',
+      'HIKARI_CV is a full-stack web app that helps users prepare for interviews by providing a curated list of interview questions, coding challenges, and mock interview sessions. It features a sleek, user-friendly interface built with React and a robust backend powered by Node.js and MongoDB.',
+    techStack: ['React', 'Node.js', 'MongoDB', 'Groq', 'Tailwind CSS'],
+    githubUrl: 'https://github.com/mohitraghav1318/hikaricv',
+    liveUrl: 'https://hikaricv.vercel.app/login',
+    featured: true,
+    img: '/images/projects/hikaricv.png',
+    category: 'personal',
   },
+
   {
-    id: 'things-i-need',
-    title: 'Things I Need',
-    description:
-      'A productivity-focused web application designed to organize tasks, ideas, and essential resources in one streamlined workspace.',
-    tech: ['React', 'Node.js', 'Database'],
-    image: '',
-    liveUrl: '',
-    repoUrl: '',
-    year: '2026',
-    type: 'personal',
-  },
-  {
-    id: 'tomoshelf',
+    id: 2,
     title: 'TomoShelf',
     description:
       'A digital space for organizing and managing collections, allowing users to track, categorize, and revisit items efficiently.',
-    tech: ['React', 'Node.js', 'Database', 'API Integration'],
-    image: '../images/projects/tomoshelf.png',
+    techStack: ['React', 'Node.js', 'Database', 'API Integration'],
+    githubUrl: 'https://github.com/mohitraghav1318/tomoshelf.git',
     liveUrl: 'https://tomoshelf.vercel.app/',
-    repoUrl: 'https://github.com/mohitraghav1318/tomoshelf.git',
+    featured: false,
+    img: '/images/projects/tomoshelf.png',
+    category: 'personal',
     year: '2026',
-    type: 'personal',
   },
   {
-    id: 'portfolio',
+    id: 3,
     title: 'Developer Portfolio',
     description:
       'A modern developer portfolio built to showcase projects, technical skills, and experience with a clean UI and scalable front-end architecture.',
-    tech: ['React', 'Vite', 'SCSS'],
-    image: '../images/projects/portfolio.png',
+    techStack: ['React', 'Vite', 'SCSS'],
+    githubUrl: 'https://github.com/mohitraghav1318/mohitraghav1318.git',
     liveUrl: 'https://mohitraghav1318.vercel.app/',
-    repoUrl: 'https://github.com/mohitraghav1318/mohitraghav1318.git',
+    featured: false,
+    img: '/images/projects/portfolio.png',
+    category: 'personal',
     year: '2026',
-    type: 'personal',
   },
   {
-    id: 'velora',
+    id: 4,
     title: 'Velora',
     description:
-      'An Hotel Related software that has features like curd , jwt etc',
-    tech: ['EJS', 'Node.js', 'MongoDB'],
-    image: '../images/projects/velora.png',
+      'A hotel-related software featuring CRUD operations, JWT authentication, and a full-stack architecture for managing hotel data.',
+    techStack: ['EJS', 'Node.js', 'MongoDB'],
+    githubUrl: 'https://github.com/mohitraghav1318/velora.git',
     liveUrl: 'https://velora-pxkb.onrender.com',
-    repoUrl: 'https://github.com/mohitraghav1318/velora.git',
+    featured: false,
+    img: '/images/projects/velora.png',
+    category: 'personal',
     year: '2026',
-    type: 'personal',
   },
-
   {
-    id: 'digital-lifterz',
+    id: 5,
     title: 'Digital Lifterz Website',
     description:
       'A freelance client website developed to establish a professional digital presence with responsive design and optimized performance.',
-    tech: ['React', 'CSS', 'JavaScript'],
-    image: '../images/projects/digital-lifterz.png',
-    liveUrl: '',
-    repoUrl: 'https://github.com/mohitraghav1318/digital-lifterz.git',
+    techStack: ['React', 'CSS', 'JavaScript'],
+    githubUrl: 'https://github.com/mohitraghav1318/digital-lifterz.git',
+    liveUrl: null,
+    featured: false,
+    img: null,
+    category: 'freelance',
     year: '2026',
-    type: 'freelance',
   },
-
   {
-    id: 'intellia-web',
+    id: 6,
     title: 'Intellia Organization Website',
     description:
       'A collaborative project to build the official website for the Intellia tech community, designed to showcase initiatives, events, and member activities.',
-    tech: ['React', 'Node.js', 'Firebase'],
-    image: '../images/projects/intellia.png',
-    liveUrl: '',
-    repoUrl: '',
+    techStack: ['React', 'Node.js', 'Firebase'],
+    githubUrl: null,
+    liveUrl: 'https://intelliamiet.in/',
+    featured: false,
+    img: '/images/projects/intellia.png',
+    category: 'team',
     year: '2026',
-    type: 'team',
   },
-
   {
-    id: 'trikon-hackathon',
+    id: 7,
     title: 'Trikon Hackathon Platform',
     description:
       'A dedicated website built for the TRIKON hackathon to manage event information, registrations, and participant engagement.',
-    tech: ['React', 'Node.js', 'Firebase'],
-    image: '../images/projects/trikon.png',
-    liveUrl: '',
-    repoUrl: '',
+    techStack: ['React', 'Node.js', 'Firebase'],
+    githubUrl: null,
+    liveUrl: 'https://intelliamiet.in/trikon/trikon2026',
+    featured: false,
+    img: '/images/projects/trikon.png',
+    category: 'team',
     year: '2026',
-    type: 'team',
   },
-
   {
-    id: 'trix-chatbot',
+    id: 8,
     title: 'Trix AI Chatbot',
     description:
       'An AI-powered chatbot developed for the TRIKON event to assist participants with queries, event details, and hackathon guidance in real time.',
-    tech: ['Python', 'LangChain', 'Gemini API', 'Groq API', 'Flask'],
-    image: '../images/projects/trix.png',
-    liveUrl: '',
-    repoUrl: '',
+    techStack: ['Python', 'LangChain', 'Gemini API', 'Groq API', 'Flask'],
+    githubUrl: null,
+    liveUrl: 'https://intelliamiet.in/trikon/trikon2026',
+    featured: false,
+    img: '/images/projects/Trix.gif',
+    category: 'team',
     year: '2026',
-    type: 'team',
+  },
+  {
+    id: 9,
+    title: 'Things I Need',
+    description:
+      'A productivity-focused web application designed to organize tasks, ideas, and essential resources in one streamlined workspace.',
+    techStack: ['React', 'Node.js', 'Database'],
+    githubUrl: null,
+    liveUrl: 'https://things-i-want.vercel.app/',
+    featured: false,
+    img: '/images/projects/things-i-want.png',
+    category: 'personal',
+    year: '2026',
   },
 ];
-
-export default projects;

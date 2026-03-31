@@ -1,0 +1,79 @@
+// ──────────────────────────────────────────────
+// ProjectsPage.module.scss — Styles for the Projects page
+// Category filter buttons and responsive grid: 3 cols → 2 cols → 1 col.
+// ──────────────────────────────────────────────
+
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.projects {
+  @include section-padding;
+  min-height: calc(100vh - #{$navbar-height});
+}
+
+.container {
+  @include container;
+}
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: $text-light;
+  margin-bottom: $spacing-xl;
+  text-align: center;
+
+  @include respond-to('mobile') {
+    font-size: 1.75rem;
+  }
+}
+
+// ─── Filter Buttons ───
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: $spacing-sm;
+  margin-bottom: $spacing-2xl;
+}
+
+.filterBtn {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: $muted;
+  background-color: transparent;
+  border: 1px solid $border;
+  padding: $spacing-sm $spacing-md;
+  border-radius: $radius-full;
+  transition: all 0.2s ease;
+
+  &:hover {
+    color: $text-light;
+    border-color: $muted;
+  }
+
+  &.active {
+    color: $text-light;
+    background-color: $accent;
+    border-color: $accent;
+  }
+}
+
+// ─── Project Grid ───
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $spacing-xl;
+
+  // Tablet: 2 columns
+  @include respond-to('tablet') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  // Mobile: 1 column
+  @include respond-to('mobile') {
+    grid-template-columns: 1fr;
+    gap: $spacing-lg;
+  }
+}

@@ -1,0 +1,123 @@
+// ──────────────────────────────────────────────
+// Navbar.module.scss — Styles for the Navbar component
+// Transparent background at top, solid on scroll, mobile hamburger.
+// ──────────────────────────────────────────────
+
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $navbar-height;
+  z-index: 1000;
+  transition: background-color 0.3s ease, border-bottom 0.3s ease;
+
+  // Solid background when scrolled
+  &.scrolled {
+    background-color: rgba($bg-dark, 0.95);
+    border-bottom: 1px solid $border;
+    backdrop-filter: blur(10px);
+  }
+}
+
+.inner {
+  @include container;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: $text-light;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: $accent;
+  }
+}
+
+.desktopLinks {
+  display: flex;
+  align-items: center;
+  gap: $spacing-lg;
+
+  @include respond-to('mobile') {
+    display: none;
+  }
+}
+
+.navLink {
+  position: relative;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: $muted;
+  transition: color 0.2s ease;
+  padding: $spacing-xs 0;
+
+  &:hover {
+    color: $text-light;
+  }
+
+  // Active link accent underline
+  &.active {
+    color: $accent;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: $accent;
+      border-radius: $radius-full;
+    }
+  }
+}
+
+.hamburger {
+  display: none;
+  color: $text-light;
+
+  @include respond-to('mobile') {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.mobileMenu {
+  display: none;
+  flex-direction: column;
+  background-color: $bg-dark;
+  border-bottom: 1px solid $border;
+  overflow: hidden;
+
+  @include respond-to('mobile') {
+    display: flex;
+  }
+}
+
+.mobileLink {
+  display: block;
+  padding: $spacing-md $spacing-xl;
+  font-size: 1rem;
+  font-weight: 500;
+  color: $muted;
+  transition: color 0.2s ease, background-color 0.2s ease;
+
+  &:hover {
+    color: $text-light;
+    background-color: $surface;
+  }
+
+  &.active {
+    color: $accent;
+  }
+}

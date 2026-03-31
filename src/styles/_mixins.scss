@@ -1,0 +1,62 @@
+// ──────────────────────────────────────────────
+// _mixins.scss — Reusable SCSS mixins
+// Provides layout helpers, responsive queries, and common patterns.
+// ──────────────────────────────────────────────
+
+@use 'variables' as *;
+
+// Centers children using flexbox
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Responsive breakpoint mixin
+// Usage: @include respond-to('mobile') { ... }
+//        @include respond-to('tablet') { ... }
+//        @include respond-to('desktop') { ... }
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == 'mobile' {
+    @media (max-width: $bp-mobile) {
+      @content;
+    }
+  } @else if $breakpoint == 'tablet' {
+    @media (min-width: $bp-mobile + 1px) and (max-width: $bp-tablet) {
+      @content;
+    }
+  } @else if $breakpoint == 'desktop' {
+    @media (min-width: $bp-tablet + 1px) {
+      @content;
+    }
+  }
+}
+
+// Standard card appearance
+@mixin card {
+  background-color: $surface;
+  border: 1px solid $border;
+  border-radius: $radius-md;
+  padding: $spacing-lg;
+}
+
+// Consistent vertical section padding
+@mixin section-padding {
+  padding: $spacing-3xl $spacing-xl;
+
+  @include respond-to('mobile') {
+    padding: $spacing-2xl $spacing-md;
+  }
+}
+
+// Container with max-width and auto margins
+@mixin container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $spacing-xl;
+
+  @include respond-to('mobile') {
+    padding: 0 $spacing-md;
+  }
+}

@@ -1,0 +1,40 @@
+// ──────────────────────────────────────────────
+// Footer.module.scss — Styles for the Footer component
+// Minimal footer with social icons and copyright.
+// ──────────────────────────────────────────────
+
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.footer {
+  border-top: 1px solid $border;
+  padding: $spacing-xl 0;
+}
+
+.inner {
+  @include container;
+  @include flex-center;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  gap: $spacing-lg;
+}
+
+.socialLink {
+  color: $muted;
+  transition: color 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    color: $accent;
+    transform: translateY(-2px);
+  }
+}
+
+.copyright {
+  font-size: 0.85rem;
+  color: $muted;
+}
