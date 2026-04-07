@@ -131,4 +131,17 @@ export const projects = [
     category: 'personal',
     year: '2026',
   },
+  {
+    id: 10,
+    title: 'SecurePiece',
+    description:
+      'A secure athentication system built with JWT and bcrypt to protect user data and ensure safe access to web applications. with otp authentication and email verification.',
+    techStack: ['Node.js', 'Express', 'MongoDB', 'JWT', 'bcrypt'],
+    githubUrl: 'https://github.com/mohitraghav1318/authentication',
+    liveUrl: 'https://securepiece.vercel.app',
+    featured: true,
+    img: '/images/projects/securepiece.png',
+    category: 'personal',
+    year: '2026',
+  },
 ];
