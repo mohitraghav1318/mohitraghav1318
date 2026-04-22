@@ -57,7 +57,7 @@ export const projects = [
     id: 4,
     title: 'Velora',
     description:
-      'A hotel-related software featuring CRUD operations, JWT authentication, and a full-stack architecture for managing hotel data.',
+      'A hotel-related software featuring CRUD operations, JWT authentication, and a full-stack architecture for managing hotel data. Built with EJS templating, Node.js backend, and MongoDB for data storage, Velora provides a seamless user experience for hotel management tasks.',
     techStack: ['EJS', 'Node.js', 'MongoDB'],
     githubUrl: 'https://github.com/mohitraghav1318/velora.git',
     liveUrl: 'https://velora-pxkb.onrender.com',

@@ -10,6 +10,7 @@ import Footer from './components/Footer/Footer';
 import HomePage from './pages/HomePage/HomePage';
 import AboutPage from './pages/AboutPage/AboutPage';
 import ProjectsPage from './pages/ProjectsPage/ProjectsPage';
+import ExperiencePage from './pages/ExperiencePage/ExperiencePage';
 import SkillsPage from './pages/SkillsPage/SkillsPage';
 import ContactPage from './pages/ContactPage/ContactPage';
 
@@ -28,6 +29,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/experience" element={<ExperiencePage />} />
           <Route path="/skills" element={<SkillsPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>

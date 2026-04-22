@@ -1,0 +1,93 @@
+// ──────────────────────────────────────────────
+// ExperiencePage.module.scss — Styles for Experience page
+// Keeps the same visual language as other portfolio pages.
+// ──────────────────────────────────────────────
+
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.experience {
+  @include section-padding;
+  min-height: calc(100vh - #{$navbar-height});
+}
+
+.container {
+  @include container;
+  max-width: 900px;
+}
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: $spacing-2xl;
+  text-align: center;
+
+  @include respond-to('mobile') {
+    font-size: 1.75rem;
+  }
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+}
+
+.card {
+  @include card;
+  border-left: 3px solid var(--accent);
+}
+
+.cardHeader {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: $spacing-sm;
+  margin-bottom: $spacing-sm;
+}
+
+.role {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.company {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-md;
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: $spacing-md;
+}
+
+.description {
+  font-size: 0.98rem;
+  color: var(--muted);
+  line-height: 1.75;
+  margin-bottom: $spacing-md;
+}
+
+.stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-sm;
+}
+
+.badge {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  background-color: transparent;
+  border: 1px solid var(--border);
+  border-radius: $radius-full;
+  padding: $spacing-xs $spacing-sm;
+}
