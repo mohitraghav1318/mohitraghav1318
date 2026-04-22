@@ -91,6 +91,13 @@ function HomePage() {
             <Link to="/contact" className={styles.ctaSecondary}>
               Contact Me
             </Link>
+            <a
+              href="/resume/mohit-raghav-resume.pdf"
+              download
+              className={styles.ctaSecondary}
+            >
+              Download Resume
+            </a>
           </motion.div>
         </motion.div>
       </section>
