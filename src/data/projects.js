@@ -15,20 +15,20 @@
 
 export const projects = [
   {
-    id: 1,
-    title: 'HikariCV',
+id: 4,
+    title: 'Broke Together',
     description:
-      'HIKARI_CV is a full-stack web app that helps users prepare for interviews by providing a curated list of interview questions, coding challenges, and mock interview sessions. It features a sleek, user-friendly interface built with React and a robust backend powered by Node.js and MongoDB.',
-    techStack: ['React', 'Node.js', 'MongoDB', 'Groq', 'Tailwind CSS'],
-    githubUrl: 'https://github.com/mohitraghav1318/hikaricv',
-    liveUrl: 'https://hikaricv.vercel.app/login',
+      'A full-stack expense tracking application that allows users to log, categorize, and visualize their expenses. Built with a React frontend and a Node.js backend, it provides an intuitive interface for managing personal finances.',
+    techStack: ['React', 'Node.js', 'Firebase'],
+    githubUrl: 'https://github.com/mohitraghav1318/Broke-Together',
+    liveUrl: 'https://broketogether.vercel.app/',
     featured: true,
-    img: '/images/projects/hikaricv.png',
+    img: '/images/projects/broketogether.png',
     category: 'personal',
+    year: '2026',
   },
-
   {
-    id: 2,
+    id: 1,
     title: 'TomoShelf',
     description:
       'A digital space for organizing and managing collections, allowing users to track, categorize, and revisit items efficiently.',
@@ -37,6 +37,19 @@ export const projects = [
     liveUrl: 'https://tomoshelf.vercel.app/',
     featured: false,
     img: '/images/projects/tomoshelf.png',
+    category: 'personal',
+    year: '2026',
+  },
+  {
+    id: 2,
+    title: 'HikariCV',
+    description:
+      'HIKARI_CV is a full-stack web app that helps users prepare for interviews by providing a curated list of interview questions, coding challenges, and mock interview sessions. It features a sleek, user-friendly interface built with React and a robust backend powered by Node.js and MongoDB.',
+    techStack: ['React', 'Node.js', 'MongoDB', 'Groq', 'Tailwind CSS'],
+    githubUrl: 'https://github.com/mohitraghav1318/hikaricv',
+    liveUrl: 'https://hikaricv.vercel.app/login',
+    featured: false,
+    img: '/images/projects/hikaricv.png',
     category: 'personal',
     year: '2026',
   },
@@ -53,8 +66,9 @@ export const projects = [
     category: 'personal',
     year: '2026',
   },
+  
   {
-    id: 4,
+    id: 5,
     title: 'Velora',
     description:
       'A hotel-related software featuring CRUD operations, JWT authentication, and a full-stack architecture for managing hotel data. Built with EJS templating, Node.js backend, and MongoDB for data storage, Velora provides a seamless user experience for hotel management tasks.',
@@ -67,7 +81,7 @@ export const projects = [
     year: '2026',
   },
   {
-    id: 5,
+    id: 6,
     title: 'Digital Lifterz Website',
     description:
       'A freelance client website developed to establish a professional digital presence with responsive design and optimized performance.',
@@ -80,7 +94,7 @@ export const projects = [
     year: '2026',
   },
   {
-    id: 6,
+    id: 7,
     title: 'Intellia Organization Website',
     description:
       'A collaborative project to build the official website for the Intellia tech community, designed to showcase initiatives, events, and member activities.',
@@ -93,7 +107,7 @@ export const projects = [
     year: '2026',
   },
   {
-    id: 7,
+    id: 8,
     title: 'Trikon Hackathon Platform',
     description:
       'A dedicated website built for the TRIKON hackathon to manage event information, registrations, and participant engagement.',
@@ -106,7 +120,7 @@ export const projects = [
     year: '2026',
   },
   {
-    id: 8,
+    id: 9,
     title: 'Trix AI Chatbot',
     description:
       'An AI-powered chatbot developed for the TRIKON event to assist participants with queries, event details, and hackathon guidance in real time.',
@@ -118,19 +132,7 @@ export const projects = [
     category: 'team',
     year: '2026',
   },
-  {
-    id: 9,
-    title: 'Things I Need',
-    description:
-      'A productivity-focused web application designed to organize tasks, ideas, and essential resources in one streamlined workspace.',
-    techStack: ['React', 'Node.js', 'Database'],
-    githubUrl: null,
-    liveUrl: 'https://things-i-want.vercel.app/',
-    featured: false,
-    img: '/images/projects/things-i-want.png',
-    category: 'personal',
-    year: '2026',
-  },
+  
   {
     id: 10,
     title: 'SecurePiece',

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mohitraghav1318.vercel.app/sitemap.xml
