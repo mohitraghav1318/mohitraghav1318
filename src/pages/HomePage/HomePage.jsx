@@ -92,7 +92,7 @@ function HomePage() {
               Contact Me
             </Link>
             <a
-              href="/resume/mohit-raghav-resume.pdf"
+              href="/resume/mohit_raghav_resume.pdf"
               download
               className={styles.ctaSecondary}
             >
