@@ -28,6 +28,34 @@ id: 4,
     year: '2026',
   },
   {
+    id: 2,
+    title: 'HikariCV',
+    description:
+      'HIKARI_CV is an AI-powered career preparation platform that helps students and job seekers build ATS-friendly resumes, analyze job descriptions, identify skill gaps, and prepare for interviews with personalized questions. Built with a modern full-stack architecture, it combines intelligent career tools with a clean, intuitive user experience.',
+    techStack: ['React', 'Node.js', 'MongoDB', 'Groq', 'Tailwind CSS'],
+    githubUrl: 'https://github.com/mohitraghav1318/hikaricv',
+    liveUrl: 'https://hikari-cv.vercel.app/login',
+    featured: true,
+    img: '/images/projects/HikariCv.png',
+    category: 'personal',
+    year: '2026',
+  },
+  
+  {
+  id: 5,
+  title: 'NiriSeek',
+  description:
+    'A native, keyboard-first window switcher built for the Niri Wayland compositor. Features real-time window search, MRU-based ranking, cross-workspace focusing, automatic app metadata resolution, and a custom GTK4 interface, with direct Niri IPC integration and a portable installation workflow.',
+  techStack: ['JavaScript', 'GJS', 'GTK4', 'Niri IPC', 'Wayland'],
+  githubUrl: 'https://github.com/mohitraghav1318/niriseek',
+  liveUrl: '',
+  featured: true,
+  img: '/images/projects/niriseek.png',
+  category: 'personal',
+  year: '2026',
+},
+
+  {
     id: 1,
     title: 'TomoShelf',
     description:
@@ -35,24 +63,12 @@ id: 4,
     techStack: ['React', 'Node.js', 'Database', 'API Integration'],
     githubUrl: 'https://github.com/mohitraghav1318/tomoshelf.git',
     liveUrl: 'https://tomoshelf.vercel.app/',
-    featured: false,
+    featured: true,
     img: '/images/projects/tomoshelf.png',
     category: 'personal',
     year: '2026',
   },
-  {
-    id: 2,
-    title: 'HikariCV',
-    description:
-      'HIKARI_CV is a full-stack web app that helps users prepare for interviews by providing a curated list of interview questions, coding challenges, and mock interview sessions. It features a sleek, user-friendly interface built with React and a robust backend powered by Node.js and MongoDB.',
-    techStack: ['React', 'Node.js', 'MongoDB', 'Groq', 'Tailwind CSS'],
-    githubUrl: 'https://github.com/mohitraghav1318/hikaricv',
-    liveUrl: 'https://hikaricv.vercel.app/login',
-    featured: false,
-    img: '/images/projects/hikaricv.png',
-    category: 'personal',
-    year: '2026',
-  },
+  
   {
     id: 3,
     title: 'Developer Portfolio',
@@ -68,7 +84,7 @@ id: 4,
   },
   
   {
-    id: 5,
+    id: 15,
     title: 'Velora',
     description:
       'A hotel-related software featuring CRUD operations, JWT authentication, and a full-stack architecture for managing hotel data. Built with EJS templating, Node.js backend, and MongoDB for data storage, Velora provides a seamless user experience for hotel management tasks.',
