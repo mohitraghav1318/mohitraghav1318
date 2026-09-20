@@ -9,9 +9,16 @@ import { socials } from '../../data/socials';
 import { about } from '../../data/about';
 import { getIcon } from '../../utils/iconMap';
 import styles from './ContactPage.module.scss';
+import SEO from '../../components/SEO/SEO';
 
-function ContactPage() {
-  return (
+return (
+  <>
+    <SEO
+      title="Contact Mohit Raghav | Full Stack Developer"
+      description="Get in touch with Mohit Raghav for web development projects, collaboration, freelance opportunities, and other professional opportunities."
+      path="/contact"
+    />
+
     <motion.div
       className="page-content"
       initial={{ opacity: 0 }}
@@ -100,7 +107,7 @@ function ContactPage() {
         </div>
       </section>
     </motion.div>
-  );
-}
+  </>
+);
 
 export default ContactPage;

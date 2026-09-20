@@ -6,9 +6,16 @@
 import { motion } from 'framer-motion';
 import { experiences } from '../../data/experience';
 import styles from './ExperiencePage.module.scss';
+import SEO from '../../components/SEO/SEO';
 
-function ExperiencePage() {
-  return (
+return (
+  <>
+    <SEO
+      title="Experience | Mohit Raghav"
+      description="Explore the professional experience and technical work of Mohit Raghav, a Full Stack Developer specializing in modern web technologies."
+      path="/experience"
+    />
+
     <motion.div
       className="page-content"
       initial={{ opacity: 0 }}
@@ -86,7 +93,8 @@ function ExperiencePage() {
         </div>
       </section>
     </motion.div>
-  );
-}
+  </>
+);
+
 
 export default ExperiencePage;
