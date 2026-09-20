@@ -11,103 +11,105 @@ import { getIcon } from '../../utils/iconMap';
 import styles from './ContactPage.module.scss';
 import SEO from '../../components/SEO/SEO';
 
-return (
-  <>
-    <SEO
-      title="Contact Mohit Raghav | Full Stack Developer"
-      description="Get in touch with Mohit Raghav for web development projects, collaboration, freelance opportunities, and other professional opportunities."
-      path="/contact"
-    />
+function ContactPage() {
+  return (
+    <>
+      <SEO
+        title="Contact Mohit Raghav | Full Stack Developer"
+        description="Get in touch with Mohit Raghav for web development projects, collaboration, freelance opportunities, and other professional opportunities."
+        path="/contact"
+      />
 
-    <motion.div
-      className="page-content"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.3 }}
-    >
-      <section className={styles.contact}>
-        <div className={styles.container}>
-          {/* Page heading */}
-          <motion.h1
-            className={styles.heading}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            Get In Touch
-          </motion.h1>
-
-          {/* Inviting message */}
-          <motion.p
-            className={styles.message}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-          >
-            I'm always open to discussing new projects, creative ideas, or
-            opportunities to be part of your vision. Feel free to reach out
-            through any of the platforms below!
-          </motion.p>
-
-          {/* Availability status */}
-          {about.available && (
-            <motion.div
-              className={styles.availability}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.4, delay: 0.2 }}
+      <motion.div
+        className="page-content"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.3 }}
+      >
+        <section className={styles.contact}>
+          <div className={styles.container}>
+            {/* Page heading */}
+            <motion.h1
+              className={styles.heading}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
             >
-              <span className={styles.dot} />
-              Currently available for new opportunities
-            </motion.div>
-          )}
+              Get In Touch
+            </motion.h1>
 
-          {/* Social links as large icon buttons */}
-          <motion.div
-            className={styles.socialGrid}
-            initial="hidden"
-            animate="visible"
-            variants={{
-              hidden: {},
-              visible: {
-                transition: {
-                  staggerChildren: 0.1,
+            {/* Inviting message */}
+            <motion.p
+              className={styles.message}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              I'm always open to discussing new projects, creative ideas, or
+              opportunities to be part of your vision. Feel free to reach out
+              through any of the platforms below!
+            </motion.p>
+
+            {/* Availability status */}
+            {about.available && (
+              <motion.div
+                className={styles.availability}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4, delay: 0.2 }}
+              >
+                <span className={styles.dot} />
+                Currently available for new opportunities
+              </motion.div>
+            )}
+
+            {/* Social links as large icon buttons */}
+            <motion.div
+              className={styles.socialGrid}
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: {},
+                visible: {
+                  transition: {
+                    staggerChildren: 0.1,
+                  },
                 },
-              },
-            }}
-          >
-            {socials.map((social) => {
-              const IconComponent = getIcon(social.icon);
+              }}
+            >
+              {socials.map((social) => {
+                const IconComponent = getIcon(social.icon);
 
-              return (
-                <motion.a
-                  key={social.label}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.socialCard}
-                  variants={{
-                    hidden: { opacity: 0, y: 20 },
-                    visible: {
-                      opacity: 1,
-                      y: 0,
-                      transition: { duration: 0.4, ease: 'easeOut' },
-                    },
-                  }}
-                  whileHover={{ y: -6 }}
-                  transition={{ type: 'spring', stiffness: 300 }}
-                >
-                  {IconComponent && <IconComponent size={28} />}
-                  <span className={styles.socialLabel}>{social.label}</span>
-                </motion.a>
-              );
-            })}
-          </motion.div>
-        </div>
-      </section>
-    </motion.div>
-  </>
-);
+                return (
+                  <motion.a
+                    key={social.label}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.socialCard}
+                    variants={{
+                      hidden: { opacity: 0, y: 20 },
+                      visible: {
+                        opacity: 1,
+                        y: 0,
+                        transition: { duration: 0.4, ease: 'easeOut' },
+                      },
+                    }}
+                    whileHover={{ y: -6 }}
+                    transition={{ type: 'spring', stiffness: 300 }}
+                  >
+                    {IconComponent && <IconComponent size={28} />}
+                    <span className={styles.socialLabel}>{social.label}</span>
+                  </motion.a>
+                );
+              })}
+            </motion.div>
+          </div>
+        </section>
+      </motion.div>
+    </>
+  );
+}
 
 export default ContactPage;
