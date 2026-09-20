@@ -1,9 +1,3 @@
-// ──────────────────────────────────────────────
-// iconMap.js — Maps icon string names to react-icons components
-// Import all icons used in skills.js and socials.js here.
-// Add new icons to this map when adding new skills/socials.
-// ──────────────────────────────────────────────
-
 import {
   FaReact,
   FaHtml5,
@@ -23,6 +17,14 @@ import {
 } from 'react-icons/fa';
 
 import {
+  SiSpringboot,
+} from 'react-icons/si';
+
+import {
+  FaJava,
+} from 'react-icons/fa';
+
+import {
   SiJavascript,
   SiTypescript,
   SiExpress,
@@ -35,10 +37,13 @@ import {
   SiFirebase,
   SiEjs,
   SiFlask,
+  SiTailwindcss,
+  SiPrisma,
 } from 'react-icons/si';
 
 // Central icon map: string name → React icon component
 const iconMap = {
+  // Font Awesome
   FaReact,
   FaHtml5,
   FaCss3Alt,
@@ -54,6 +59,9 @@ const iconMap = {
   FaLinkedin,
   FaTwitter,
   FaEnvelope,
+  FaJava,
+
+  // Simple Icons
   SiJavascript,
   SiTypescript,
   SiExpress,
@@ -66,13 +74,12 @@ const iconMap = {
   SiFirebase,
   SiEjs,
   SiFlask,
+  SiTailwindcss,
+  SiPrisma,
+  SiSpringboot,
+
 };
 
-/**
- * Resolves an icon string name to its React component.
- * @param {string} iconName - The icon name string (e.g., "FaReact")
- * @returns {React.ComponentType|null} The icon component, or null if not found
- */
 export const getIcon = (iconName) => {
   return iconMap[iconName] || null;
 };
