@@ -152,14 +152,17 @@ p {
 // ── nav ────────────────────────────────────────
 .nav {
   position: relative;
-  z-index: 3;
+  z-index: 50;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.nav-pill {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: 12px 24px;
-  padding-top: 24px;
-  padding-bottom: 24px;
 }
 
 .logo {
@@ -192,6 +195,144 @@ p {
       color: var(--text);
       background: #16191e;
     }
+  }
+}
+
+.menu-btn {
+  display: none;
+}
+
+// Mobile: floating glass pill with a dropdown menu.
+@media (max-width: 700px) {
+  .nav {
+    min-height: 84px; // keeps the space the fixed pill leaves behind
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .nav-pill {
+    position: fixed;
+    top: 14px;
+    left: 50%;
+    z-index: 50;
+    width: min(calc(100vw - 28px), 440px);
+    transform: translateX(-50%);
+    flex-wrap: nowrap;
+    gap: 6px;
+    padding: 5px;
+    border: 1px solid #262a32;
+    border-radius: var(--radius-pill);
+    background: rgba(14, 16, 19, 0.78);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+    box-shadow: 0 8px 30px rgba(0, 201, 255, 0.1);
+  }
+
+  .logo {
+    order: 0;
+    margin-right: auto;
+    padding: 0 16px;
+    border-radius: var(--radius-pill);
+    background: var(--grad);
+    color: #06070a;
+    font-size: 17px;
+    .grad {
+      background: none;
+      color: #fff;
+    }
+  }
+
+  .nav-cta {
+    order: 1;
+    min-height: 40px;
+    padding: 0 16px;
+    border-color: transparent;
+    font-size: 14px;
+    &:hover {
+      background: #14161a;
+      border-color: transparent;
+    }
+  }
+
+  .menu-btn {
+    order: 2;
+    position: relative;
+    display: inline-block;
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: 50%;
+    background: #16191e;
+    color: var(--text);
+    cursor: pointer;
+    transition: background 0.2s;
+    &:hover {
+      background: #1c2026;
+    }
+    span {
+      position: absolute;
+      left: 14px;
+      right: 14px;
+      height: 2px;
+      border-radius: 2px;
+      background: currentColor;
+      transition: transform 0.3s cubic-bezier(0.2, 0.7, 0.2, 1);
+      &:nth-child(1) { top: 17px; }
+      &:nth-child(2) { top: 25px; }
+    }
+  }
+
+  .nav-pill.open .menu-btn span {
+    &:nth-child(1) { transform: translateY(4px) rotate(45deg); }
+    &:nth-child(2) { transform: translateY(-4px) rotate(-45deg); }
+  }
+
+  .nav-links {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 2px;
+    padding: 8px;
+    border: 1px solid #262a32;
+    border-radius: 26px;
+    background: rgba(10, 12, 14, 0.97);
+    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-8px) scale(0.98);
+    transform-origin: top center;
+    transition: opacity 0.25s, transform 0.3s cubic-bezier(0.2, 0.7, 0.2, 1), visibility 0s 0.3s;
+
+    a {
+      justify-content: space-between;
+      min-height: 52px;
+      padding: 0 18px;
+      font-size: 18px;
+      font-weight: 500;
+      &[aria-current='page']::after {
+        content: '';
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--a1);
+        box-shadow: 0 0 10px var(--a1);
+      }
+    }
+  }
+
+  .nav-pill.open .nav-links {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: none;
+    transition: opacity 0.25s, transform 0.3s cubic-bezier(0.2, 0.7, 0.2, 1), visibility 0s;
   }
 }
 
@@ -325,6 +466,6 @@ p {
 
 @media (prefers-reduced-motion: reduce) {
   .orb1, .orb2, .float { animation: none; }
-  .card, .btn, .chip, .nav-links a { transition: none; }
+  .card, .btn, .chip, .nav-links, .nav-links a, .menu-btn span { transition: none; }
   .card:hover { transform: none; }
 }

@@ -200,14 +200,14 @@ export const projectsPage = {
 
 export const experience = [
   {
-    when: 'Current',
+    when: 'Aug 2026 - Present',
     kind: 'Internship',
     role: 'Software Development Intern',
     org: 'Bexra',
     text: 'Working on database management, authentication and frontend development for the product.',
     chips: ['Databases', 'Authentication', 'Frontend'],
     // TODO: add exact dates for the Bexra internship
-    todo: 'TODO: add exact dates',
+    // todo: 'TODO: add exact dates',
   },
   {
     when: 'Aug 2025 – Present',
