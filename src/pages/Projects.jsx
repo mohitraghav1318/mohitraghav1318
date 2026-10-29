@@ -9,7 +9,7 @@ export default function Projects() {
 
   return (
     <>
-      <main id="main">
+      <main id="main" tabIndex={-1}>
         <PageHead kicker={projectsPage.kicker} title={projectsPage.title} lede={projectsPage.lede} />
         <section className="sec tight" aria-label={projectsPage.title}>
           <div className="shell">

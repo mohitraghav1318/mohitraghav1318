@@ -56,6 +56,8 @@ export const images = {
     height: 938,
     position: '56% 40%',
     alt: 'Mohit working on a laptop at an event',
+    caption: 'On the keyboard at an event',
+    cursor: 'Live',
   },
   posterTechnical: {
     src: 'public/images/Me/file_0000000021e482469a0b3314d0e54a6e.png',
@@ -66,6 +68,7 @@ export const images = {
     position: '50% 50%',
     alt: 'Technical Head poster of Mohit Raghav',
     caption: 'Technical Head · Intellia',
+    cursor: 'Poster',
   },
   posterCctv: {
     src: 'public/images/Me/IMG-20261022-WA0005.jpg',
@@ -76,6 +79,7 @@ export const images = {
     position: '50% 50%',
     alt: 'CCTV style poster of Mohit Raghav, designed by Intellia',
     caption: 'Design by Intellia',
+    cursor: 'Poster',
   },
   train: {
     src: 'public/me.jpeg',
@@ -85,6 +89,7 @@ export const images = {
     height: 1440,
     position: '40% 30%',
     alt: 'Mohit on a train, wearing headphones and looking out of the window',
+    cursor: 'Friday, 8:20',
   },
 };
 
@@ -345,6 +350,7 @@ export const experience = [
   },
   {
     when: '2024',
+    hidden: true, // not shown on the new Experience page; remove this line to show it
     kind: 'Self-directed',
     role: 'Building projects',
     org: 'MERN, Next.js, Python',
@@ -355,6 +361,22 @@ export const experience = [
 ];
 
 export const experiencePage = {
+  title: 'Experience',
+  kicker: 'Roles, teams and the learning around them',
+  lede: { before: 'An internship, a society I help run, and a degree in progress. ', strong: 'All of it hands-on.' },
+  work: { index: '(01)', title: 'Where I', accent: 'work' },
+  gallery: { index: '(02)', title: 'Behind the', accent: 'screen', items: ['posterTechnical', 'posterCctv', 'laptop'] },
+  footer: {
+    lines: ['Want me', 'on'],
+    accent: 'your team?',
+    button: ['Say', 'hello'],
+    links: [
+      { label: 'See the projects', to: '/projects', cursor: 'Open' },
+      { label: 'See the toolbox', to: '/skills', cursor: 'Open' },
+      { label: 'github.com/mohitraghav1318', href: 'github', cursor: 'Open' },
+    ],
+  },
+  // legacy (old dark design)
   label: 'Experience',
   titleLead: "Where I've",
   titleGrad: 'worked.',
@@ -411,6 +433,36 @@ export const skillsPage = {
 };
 
 export const contactPage = {
+  head: {
+    kicker: 'Open to projects and internships',
+    lines: ['Say'],
+    accent: 'hello',
+    lede: {
+      before: 'Got a website that needs motion, a backend that needs building, or just a question? ',
+      strong: 'Write to me.',
+    },
+    ctas: [
+      { label: 'Where to find me', href: '#reach', cursor: 'Go', solid: true },
+      { label: 'See my work', to: '/projects', cursor: '' },
+    ],
+  },
+  // Only real values: LinkedIn is added when site.linkedin is set, never as a placeholder.
+  footer: {
+    id: 'reach',
+    tight: true, // sits right under the hero, so less space above it
+    lines: ['Find me'],
+    accent: 'here',
+    button: ['Send', 'email'],
+    buttonHref: `mailto:${site.email}`,
+    links: [
+      { label: `Email — ${site.email}`, href: `mailto:${site.email}`, cursor: 'Write' },
+      { label: `GitHub — ${site.githubHandle}`, href: site.github, cursor: 'Open' },
+      { label: `X — ${site.xHandle}`, href: site.x, cursor: 'Open' },
+      ...(site.linkedin ? [{ label: 'LinkedIn', href: site.linkedin, cursor: 'Open' }] : []),
+      { label: `Based in ${site.location}`, text: true },
+    ],
+  },
+  // legacy (old dark design)
   label: 'Contact',
   titleLead: "Let's build",
   titleGrad: 'something.',
@@ -422,6 +474,10 @@ export const contactPage = {
 };
 
 export const notFound = {
+  title: 'Page not found',
+  kicker: '404',
+  lede: { before: 'That page does not exist, or it has moved. ', strong: 'Head back home.' },
+  // legacy (old dark design)
   label: '404',
   titleLead: 'Page not',
   titleGrad: 'found.',

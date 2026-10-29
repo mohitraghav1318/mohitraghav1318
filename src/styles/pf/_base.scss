@@ -42,6 +42,9 @@ html.pf-on {
     outline: 2px solid var(--accent);
     outline-offset: 4px;
   }
+  main:focus {
+    outline: none;
+  }
   em.serif {
     font-family: var(--serif);
     font-style: italic;

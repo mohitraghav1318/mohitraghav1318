@@ -27,6 +27,15 @@ export default function Layout() {
     if (!hash) window.scrollTo({ top: 0, behavior: 'instant' });
   }, [pathname, hash]);
 
+  // After a route change, move focus to the new page's <main> so keyboard and
+  // screen-reader users start at the top of the content (not on the first load).
+  const lastPath = useRef(pathname);
+  useEffect(() => {
+    if (lastPath.current === pathname) return;
+    lastPath.current = pathname;
+    document.getElementById('main')?.focus({ preventScroll: true });
+  }, [pathname]);
+
   return (
     <div className="pf" id="top" ref={rootRef}>
       <a className="skipl" href="#main">

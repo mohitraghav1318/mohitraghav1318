@@ -11,7 +11,7 @@ export default function Skills() {
 
   return (
     <>
-      <main id="main">
+      <main id="main" tabIndex={-1}>
         <PageHead kicker={page.kicker} title={page.title} lede={page.lede} />
         <Marquee tags={page.marquee} style={{ marginTop: 'clamp(40px, 6vw, 70px)' }} />
 

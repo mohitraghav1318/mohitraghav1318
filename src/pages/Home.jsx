@@ -29,7 +29,7 @@ export default function Home() {
         ))}
       </div>
 
-      <main id="main">
+      <main id="main" tabIndex={-1}>
       <section className="intro">
         <div className="shell">
           <div className="intro-grid">

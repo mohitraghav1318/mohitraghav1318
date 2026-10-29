@@ -1,7 +1,7 @@
 import Line from './Line';
 
 // Shared header for inner pages: kicker, big masked title with a vermilion dot, lede.
-export default function PageHead({ kicker, title, lede }) {
+export default function PageHead({ kicker, title, lede, children }) {
   return (
     <section className="phead">
       <div className="shell">
@@ -19,6 +19,7 @@ export default function PageHead({ kicker, title, lede }) {
           {lede.before}
           <b>{lede.strong}</b>
         </p>
+        {children && <div className="intro-cta">{children}</div>}
       </div>
     </section>
   );

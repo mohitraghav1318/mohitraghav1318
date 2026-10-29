@@ -7,8 +7,7 @@ import Skills from './pages/Skills';
 import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
 
-// Home, Projects and Skills use the new paper layout. The other routes still
-// render the legacy pages until they are rebuilt one by one.
+// Every route renders inside the shared paper layout (nav, cursor, progress bar).
 function App() {
   return (
     <Routes>
@@ -16,10 +15,10 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/skills" element={<Skills />} />
+        <Route path="/experience" element={<Experience />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<NotFound />} />
       </Route>
-      <Route path="/experience" element={<Experience />} />
-      <Route path="/contact" element={<Contact />} />
-      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }

@@ -1,48 +1,69 @@
-import { Link } from 'react-router-dom';
-import Page from '../components/Page';
-import CtaBand from '../components/CtaBand';
-import { experience, experiencePage as t } from '../data/site';
-import '../styles/pages.scss';
+import PageHead from '../components/pf/PageHead';
+import Line from '../components/pf/Line';
+import Photo from '../components/pf/Photo';
+import FooterCta from '../components/pf/FooterCta';
+import useDocumentMeta from '../hooks/useDocumentMeta';
+import { experience, experiencePage as page, images } from '../data/site';
 
 export default function Experience() {
+  useDocumentMeta('Experience | Mohit Raghav', 'Roles and teams: Bexra, Intellia Society and a B.Tech in CSE (AI/ML) at MIET Meerut.');
+  const roles = experience.filter((e) => !e.hidden);
+
   return (
-    <Page
-      title="Experience | Mohit Raghav"
-      description="Internship, college society work and education of Mohit Raghav."
-      glow="tr"
-    >
-      <section className="wrap page-head">
-        <p className="mono">{t.label}</p>
-        <h1 className="page-h1">
-          {t.titleLead} <span className="grad">{t.titleGrad}</span>
-        </h1>
-      </section>
+    <>
+      <main id="main" tabIndex={-1}>
+        <PageHead kicker={page.kicker} title={page.title} lede={page.lede} />
 
-      <section className="wrap">
-        {experience.map((x) => (
-          <article key={x.role} className="xp">
-            <div className="when">
-              <span className="mono date">{x.when}</span>
-              <span className="mono">{x.kind}</span>
+        <section className="sec tight">
+          <div className="shell">
+            <div className="sec-top">
+              <span className="lbl">{page.work.index}</span>
+              <h2 className="hd">
+                <Line>{page.work.title}</Line> <Line><em className="serif">{page.work.accent}</em></Line>
+              </h2>
             </div>
-            <div className="card">
-              <h2>{x.role}, {x.org}</h2>
-              <p>{x.text}</p>
-              {x.todo && <p className="mono todo">{x.todo}</p>}
-              {x.chips.length > 0 && (
-                <div className="chips">
-                  {x.chips.map((c) => <span key={c} className="chip">{c}</span>)}
-                </div>
-              )}
-              {x.button && (
-                <div><Link className="btn" to={x.button.to}>{x.button.label}</Link></div>
-              )}
+            <div className="path">
+              {roles.map((e) => (
+                <article className="p-row rv" key={e.role + e.org}>
+                  <h3>
+                    {e.role}, <em className="serif">{e.org}</em>
+                  </h3>
+                  <p className="p-meta lbl">
+                    <span className="p-when">{e.when}</span>
+                    <span>{e.stack || e.chips.join(' · ')}</span>
+                  </p>
+                  <p>{e.text}</p>
+                </article>
+              ))}
             </div>
-          </article>
-        ))}
-      </section>
+          </div>
+        </section>
 
-      <CtaBand title={t.cta.title} label={t.cta.label} to={t.cta.to} />
-    </Page>
+        <section className="sec tight">
+          <div className="shell">
+            <div className="sec-top">
+              <span className="lbl">{page.gallery.index}</span>
+              <h2 className="hd">
+                <Line>{page.gallery.title}</Line> <Line><em className="serif">{page.gallery.accent}</em></Line>
+              </h2>
+            </div>
+            <div className="gal">
+              {page.gallery.items.map((key) => {
+                const img = images[key];
+                return (
+                  <figure className="rv" key={key}>
+                    <div className="frame tilt" data-reveal="" data-lift="-6" data-cursor={img.cursor}>
+                      <Photo image={img} sizes="(max-width: 700px) 90vw, (max-width: 1100px) 45vw, 400px" />
+                    </div>
+                    <figcaption className="lbl">{img.caption}</figcaption>
+                  </figure>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      </main>
+      <FooterCta cta={page.footer} />
+    </>
   );
 }
