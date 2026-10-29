@@ -55,7 +55,7 @@ export const images = {
     height: 938,
     position: '56% 40%',
     alt: 'Mohit working on a laptop at an event',
-    caption: 'On the keyboard at an event',
+    caption: 'At Trikon 3.0',
     cursor: 'Live',
   },
   posterTechnical: {
@@ -66,7 +66,7 @@ export const images = {
     height: 938,
     position: '50% 50%',
     alt: 'Technical Head poster of Mohit Raghav',
-    caption: 'Technical Head · Intellia',
+    caption: 'Technical Head · Eureka',
     cursor: 'Poster',
   },
   posterCctv: {
@@ -77,7 +77,7 @@ export const images = {
     height: 938,
     position: '50% 50%',
     alt: 'CCTV style poster of Mohit Raghav, designed by Intellia',
-    caption: 'Design by Intellia',
+    caption: 'Technical Head · Intellia',
     cursor: 'Poster',
   },
   train: {
@@ -380,7 +380,7 @@ export const projects = [
     blurb: 'This site: a minimal, dark, multi-page portfolio.',
     description:
       'A developer portfolio built to showcase projects, technical skills and experience with a clean UI and a scalable front-end architecture.',
-    chips: ['React', 'Vite', 'SCSS'],
+    chips: ['React', 'Vite', 'Gsap'],
     github: 'https://github.com/mohitraghav1318/mohitraghav1318.git',
     live: 'https://mohitraghav1318.vercel.app/',
     img: '/images/projects/portfolio.png',
@@ -439,12 +439,29 @@ export const experience = [
     kind: 'Internship',
     role: 'Software Development Intern',
     org: 'Bexra',
-    text: 'Database management, authentication and frontend development. Django on the backend, Next.js, React and TypeScript on the frontend, Supabase for the database.',
+    text: 'Built backend and frontend features for an AI business-analysis product: a credits and ledger system, editable reports with version history and restore, and AI regeneration of single report sections that charges only on success and is idempotent. Backed by 949 automated backend tests. Django on the backend, Next.js, React and TypeScript on the frontend, Supabase for the database.',
     stack: 'Django · Next.js · Supabase',
-    chips: ['Databases', 'Authentication', 'Frontend', 'Django', 'Next.js', 'Supabase'],
+    chips: ['Databases', 'Authentication', 'Credits & ledger', 'Versioned editing', 'AI integration', 'Testing', 'Django', 'Next.js', 'Supabase'],
     // TODO: add exact dates for the Bexra internship
-    // todo: 'TODO: add exact dates',
   },
+
+{
+  when: 'Sep 2026 – Present',
+  kind: 'College society',
+  role: 'Technical Head',
+  org: 'Eureka Society, MIET',
+  stack: 'Full-stack Development · Platform Engineering',
+  text: 'Technical Head and full-stack developer for Eureka Society, building and maintaining its digital infrastructure. Developed a feature-rich community platform with a hiring portal, bulk mailing system, role-based access control, organization management, approval workflows and administrative audit logs using Next.js and Firebase.',
+  chips: [
+    'Technical Leadership',
+    'Next.js',
+    'JavaScript',
+    'Firebase',
+    'Full-stack Development',
+    'System Design'
+  ],
+},
+
   {
     when: 'Aug 2025 – Present',
     kind: 'College society',
