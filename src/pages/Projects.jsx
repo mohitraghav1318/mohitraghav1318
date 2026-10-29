@@ -3,6 +3,7 @@ import ProjectCard from '../components/pf/ProjectCard';
 import FooterCta from '../components/pf/FooterCta';
 import useDocumentMeta from '../hooks/useDocumentMeta';
 import { projects, projectsPage } from '../data/site';
+import { projectSlug } from '../data/projects';
 
 export default function Projects() {
   useDocumentMeta('Projects | Mohit Raghav', 'Full-stack products, tooling and client sites by Mohit Raghav.');
@@ -15,7 +16,7 @@ export default function Projects() {
           <div className="shell">
             <div className="pgrid">
               {projects.map((p, i) => (
-                <ProjectCard key={p.slug} project={p} index={i} />
+                <ProjectCard key={projectSlug(p)} project={p} index={i} />
               ))}
             </div>
           </div>

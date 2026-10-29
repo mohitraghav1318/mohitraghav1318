@@ -1,0 +1,100 @@
+{
+  "/images/projects/HikariCv.png": {
+    "name": "hikaricv",
+    "width": 1885,
+    "height": 933,
+    "sizes": [
+      400,
+      800,
+      1400
+    ]
+  },
+  "/images/projects/Trix.gif": {
+    "name": "trix",
+    "width": 360,
+    "height": 360,
+    "sizes": [
+      360
+    ]
+  },
+  "/images/projects/broketogether.png": {
+    "name": "broketogether",
+    "width": 1848,
+    "height": 937,
+    "sizes": [
+      400,
+      800,
+      1400
+    ]
+  },
+  "/images/projects/intellia.png": {
+    "name": "intellia",
+    "width": 1905,
+    "height": 954,
+    "sizes": [
+      400,
+      800,
+      1400
+    ]
+  },
+  "/images/projects/niriseek.png": {
+    "name": "niriseek",
+    "width": 1920,
+    "height": 1080,
+    "sizes": [
+      400,
+      800,
+      1400
+    ]
+  },
+  "/images/projects/portfolio.png": {
+    "name": "portfolio",
+    "width": 1905,
+    "height": 954,
+    "sizes": [
+      400,
+      800,
+      1400
+    ]
+  },
+  "/images/projects/securepiece.png": {
+    "name": "securepiece",
+    "width": 1896,
+    "height": 905,
+    "sizes": [
+      400,
+      800,
+      1400
+    ]
+  },
+  "/images/projects/tomoshelf.png": {
+    "name": "tomoshelf",
+    "width": 1903,
+    "height": 901,
+    "sizes": [
+      400,
+      800,
+      1400
+    ]
+  },
+  "/images/projects/trikon.png": {
+    "name": "trikon",
+    "width": 1906,
+    "height": 910,
+    "sizes": [
+      400,
+      800,
+      1400
+    ]
+  },
+  "/images/projects/velora.png": {
+    "name": "velora",
+    "width": 1903,
+    "height": 901,
+    "sizes": [
+      400,
+      800,
+      1400
+    ]
+  }
+}

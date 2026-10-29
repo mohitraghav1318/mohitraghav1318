@@ -143,10 +143,18 @@ export const home = {
   ],
 };
 
-// art: "rays" | "wave" | "receipt" | "aperture" (fallback cover when img is null)
+// Project fields. The page URL (/projects/<slug>) is derived from `title`.
+//   required: title, tag, blurb, description, chips
+//   links:    github, live (null when there is none)
+//   media:    img (cover screenshot) and/or screenshots: [{ src, alt?, caption? }] (first = cover)
+//   optional detail-page sections (a section is only rendered when its data exists):
+//     overview: 'One paragraph. Falls back to `description`.'
+//     built:    [{ label: 'Frontend', title: '...', text: '...' }]
+//     solved:   [{ title: '...', tag: 'Security', text: '...' }]
+// After adding screenshots run `npm run images` to generate the WebP variants.
+// art: "rays" | "wave" | "receipt" | "aperture" (legacy fallback when img is null)
 export const projects = [
   {
-    slug: 'hikaricv',
     title: 'HikariCV',
     tag: 'Full-stack · AI',
     blurb: 'AI-powered resume analysis and interview coaching platform.',
@@ -155,12 +163,25 @@ export const projects = [
     chips: ['React', 'Vite', 'GSAP', 'SCSS', 'Node.js', 'Express', 'MongoDB', 'Docker'],
     github: 'https://github.com/mohitraghav1318/hikaricv',
     live: 'https://hikari-cv.vercel.app/login',
+    overview:
+      'HikariCV is an AI-powered platform that analyses resumes and coaches you through interviews. I built it full-stack: the landing site, the API, the database and the Docker setup that runs all three.',
+    built: [
+      { label: 'Frontend', title: 'Animated landing site', text: 'Hero, features, how it works, testimonials, FAQ, CTA, footer and a 404 page, each animated with GSAP and ScrollTrigger. React and Vite, styled with SCSS modules on a shared token file.' },
+      { label: 'Backend', title: 'Node and Express API', text: 'Controller-based API with security hardening, input sanitisation and error handling on every route.' },
+      { label: 'Data', title: 'MongoDB models', text: 'Mongoose schemas, with the AI response shape aligned to the models so nothing is stored in the wrong form.' },
+      { label: 'Shipping', title: 'Dockerised stack', text: 'Frontend, backend and MongoDB run together in Docker. The backend image is Puppeteer-aware, built on node:20-slim with system Chromium.' },
+    ],
+    solved: [
+      { title: 'IDOR vulnerabilities', tag: 'Security', text: 'Reviewed the backend and closed insecure direct object references so users can only reach their own records.' },
+      { title: 'Validation and errors', tag: 'Reliability', text: 'Added missing try/catch blocks, file validation and input sanitisation across controllers.' },
+      { title: 'Schema mismatches', tag: 'Data', text: 'Aligned the AI response schema with the Mongoose models.' },
+      { title: 'The AuthLayout blink', tag: 'Frontend', text: 'Fixed a persistent flicker using React Router’s Outlet pattern and GSAP’s useGSAP hook, working around React 18 Strict Mode.' },
+    ],
     img: '/images/projects/HikariCv.png',
     art: 'rays',
     featured: true,
   },
   {
-    slug: 'niriseek',
     title: 'NiriSeek',
     tag: 'Linux · Tooling',
     blurb: 'Keyboard-first window switcher for the Niri Wayland compositor.',
@@ -174,7 +195,6 @@ export const projects = [
     featured: true,
   },
   {
-    slug: 'broke-together',
     title: 'Broke Together',
     tag: 'Full-stack · Finance',
     blurb: 'Expense tracking app to log, categorise and visualise spending.',
@@ -188,7 +208,6 @@ export const projects = [
     featured: true,
   },
   {
-    slug: 'tomoshelf',
     title: 'TomoShelf',
     tag: 'Full-stack · Web',
     blurb: 'A digital shelf for tracking and organising collections.',
@@ -202,7 +221,6 @@ export const projects = [
     featured: true,
   },
   {
-    slug: 'securepiece',
     title: 'SecurePiece',
     tag: 'Backend · Auth',
     blurb: 'Authentication system with JWT, bcrypt, OTP and email verification.',
@@ -216,7 +234,6 @@ export const projects = [
     featured: true,
   },
   {
-    slug: 'velora',
     title: 'Velora',
     tag: 'Full-stack · Hotel',
     blurb: 'Hotel management software with CRUD and JWT authentication.',
@@ -229,7 +246,6 @@ export const projects = [
     art: 'wave',
   },
   {
-    slug: 'trix',
     title: 'Trix AI Chatbot',
     tag: 'AI · Team work',
     blurb: 'AI chatbot that answered participant queries at TRIKON.',
@@ -242,7 +258,6 @@ export const projects = [
     art: 'aperture',
   },
   {
-    slug: 'trikon',
     title: 'Trikon Hackathon Platform',
     tag: 'Web · Team work',
     blurb: 'Event site for the TRIKON hackathon: info, registrations, engagement.',
@@ -255,7 +270,6 @@ export const projects = [
     art: 'receipt',
   },
   {
-    slug: 'intellia',
     title: 'Intellia Organization Website',
     tag: 'Web · Team work',
     blurb: 'Official website of the Intellia tech community.',
@@ -268,7 +282,6 @@ export const projects = [
     art: 'rays',
   },
   {
-    slug: 'digital-lifterz',
     title: 'Digital Lifterz Website',
     tag: 'Web · Freelance',
     blurb: 'Freelance client website with a responsive, fast build.',
@@ -281,7 +294,6 @@ export const projects = [
     art: 'wave',
   },
   {
-    slug: 'portfolio',
     title: 'Developer Portfolio',
     tag: 'Web · Personal',
     blurb: 'This site: a minimal, dark, multi-page portfolio.',
@@ -294,6 +306,27 @@ export const projects = [
     art: 'aperture',
   },
 ];
+
+export const projectPage = {
+  back: 'All projects',
+  meta: { type: 'Type', stack: 'Built with', links: 'Links', live: 'Live site', code: 'GitHub' },
+  overview: 'Overview',
+  built: { title: 'What I', accent: 'built' },
+  stack: { title: 'Stack' },
+  solved: { title: 'Problems I', accent: 'solved' },
+  screens: { title: 'Screens' },
+  next: 'Next project',
+  footer: {
+    lines: ['Want something', 'like'],
+    accent: 'this?',
+    button: ['Say', 'hello'],
+    links: [
+      { label: 'All projects', to: '/projects', cursor: 'Open' },
+      { label: 'See the toolbox', to: '/skills', cursor: 'Open' },
+      { label: 'github.com/mohitraghav1318', href: 'github', cursor: 'Open' },
+    ],
+  },
+};
 
 export const projectsPage = {
   title: 'Projects',

@@ -8,22 +8,23 @@ import Marquee from '../components/pf/Marquee';
 import { tone } from '../components/pf/tones';
 import useDocumentMeta from '../hooks/useDocumentMeta';
 import { site, home, images, projects, ui } from '../data/site';
+import { kindOf, projectPath, projectSlug } from '../data/projects';
+import Shot from '../components/pf/Shot';
 
 export default function Home() {
   useDocumentMeta();
   const circleId = useId();
   const featured = projects.filter((p) => p.featured).slice(0, home.work.count);
-  const kind = (p) => p.tag.split(' · ')[0];
 
   return (
     <>
       <div className="peek" aria-hidden="true">
         {featured.map((p, i) => (
-          <div className="peek-i" key={p.slug}>
-            {p.img && <img src={p.img} alt="" width="400" height="250" loading="lazy" />}
+          <div className="peek-i" key={projectSlug(p)}>
+            {p.img && <Shot src={p.img} alt="" sizes="280px" />}
             <span className="peek-t" style={{ background: tone(i)[0], color: tone(i)[1] }}>
               <span>{p.title}</span>
-              <span className="lbl">{kind(p)}</span>
+              <span className="lbl">{kindOf(p)}</span>
             </span>
           </div>
         ))}
@@ -124,7 +125,7 @@ export default function Home() {
           </div>
           <div className="rows">
             {featured.map((p, i) => (
-              <Link className="row rv" to="/projects" key={p.slug} data-cursor={ui.cursor.open}>
+              <Link className="row rv" to={projectPath(p)} key={projectSlug(p)} data-cursor={ui.cursor.open}>
                 <span className="row-n lbl">{String(i + 1).padStart(2, '0')}</span>
                 <div className="row-t">
                   <h3>{p.title}</h3>
