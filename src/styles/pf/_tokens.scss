@@ -1,0 +1,18 @@
+.pf {
+  --paper: #eee8dc;
+  --paper-2: #e2d9c6;
+  --ink: #26231e;
+  --muted: #5e584d;
+  --green: #1f2b25;
+  --green-2: #2f4237;
+  --green-line: #4b5a50;
+  --sage: #5b6f5e;
+  --tan: #cfc5ae;
+  --accent: #ba3a16;
+  --accent-soft: #f0a88f; // accent tint for use on green / ink
+  --ease-out: cubic-bezier(0.7, 0, 0.2, 1);
+  --ease-lift: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --font: 'Bricolage Grotesque Variable', 'Bricolage Grotesque', system-ui, sans-serif;
+  --serif: 'Instrument Serif', Georgia, serif;
+  --mono: 'DM Mono', ui-monospace, monospace;
+}

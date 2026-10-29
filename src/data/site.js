@@ -12,6 +12,7 @@ export const site = {
   githubHandle: '@mohitraghav1318',
   x: 'https://x.com/mohitraghav1318',
   xHandle: '@mohitraghav1318',
+  linkedin: null, // TODO: add the LinkedIn URL when you want it shown
   location: 'Meerut, India',
   resume: '/resume/mohit_raghav_resume.pdf',
   year: 2026,
@@ -20,12 +21,108 @@ export const site = {
 export const nav = [
   { label: 'Home', to: '/' },
   { label: 'Projects', to: '/projects' },
-  { label: 'Experience', to: '/experience' },
   { label: 'Skills', to: '/skills' },
-  { label: 'Contact', to: '/contact' },
+  { label: 'Experience', to: '/experience' },
+  { label: 'Contact', to: '/contact', pill: true },
 ];
 
+// Short UI strings (cursor labels, aria labels) so no copy lives in components.
+export const ui = {
+  skip: 'Skip to content',
+  backToTop: 'Back to top',
+  cursor: { go: 'Go', hi: 'Hi', open: 'Open', write: 'Write', up: 'Up' },
+  navLabel: 'Main',
+};
+
+// Photos in public/images/Me (originals). `npm run images` writes resized WebP
+// copies to public/images/optimized/<name>-<width>.webp, which <Photo> uses.
+export const images = {
+  portrait: {
+    src: 'public/images/Me/64584092-9a18-45db-878c-edee92f1c902-copied-media~2.jpg.jpg',
+    name: 'portrait',
+    widths: [480, 704],
+    width: 704,
+    height: 938,
+    position: '50% 34%',
+    alt: 'Portrait of Mohit Raghav in a white football shirt, looking to the side',
+  },
+  laptop: {
+    src: 'public/images/Me/DSC_0736.JPG',
+    name: 'laptop',
+    widths: [640, 1000, 1407],
+    width: 1407,
+    height: 938,
+    position: '56% 40%',
+    alt: 'Mohit working on a laptop at an event',
+  },
+  posterTechnical: {
+    src: 'public/images/Me/file_0000000021e482469a0b3314d0e54a6e.png',
+    name: 'poster-technical',
+    widths: [480, 704],
+    width: 704,
+    height: 938,
+    position: '50% 50%',
+    alt: 'Technical Head poster of Mohit Raghav',
+    caption: 'Technical Head · Intellia',
+  },
+  posterCctv: {
+    src: 'public/images/Me/IMG-20261022-WA0005.jpg',
+    name: 'poster-cctv',
+    widths: [480, 704],
+    width: 704,
+    height: 938,
+    position: '50% 50%',
+    alt: 'CCTV style poster of Mohit Raghav, designed by Intellia',
+    caption: 'Design by Intellia',
+  },
+  train: {
+    src: 'public/me.jpeg',
+    name: 'train',
+    widths: [540, 1080],
+    width: 1080,
+    height: 1440,
+    position: '40% 30%',
+    alt: 'Mohit on a train, wearing headphones and looking out of the window',
+  },
+};
+
 export const home = {
+  kicker: 'Full-stack developer · AI/ML · Meerut, India',
+  nameLines: ['Mohit', 'Raghav'],
+  lead: {
+    before: 'I build fast, production-ready web platforms — ',
+    strong: 'databases and auth at the back, motion and detail up front.',
+    after: ' Also known online as Mr. Zero.',
+  },
+  ctas: [
+    { label: 'See my work', to: '/projects', cursor: 'Go', solid: true },
+    { label: 'Say hello', to: '/contact', cursor: 'Hi' },
+  ],
+  marquee: ['React', 'Next.js', 'TypeScript', 'Node.js', 'Django', 'PostgreSQL', 'MongoDB', 'Supabase', 'GSAP', 'LangChain'],
+  badge: 'MR · MR. ZERO · BUILDS · THINGS ·',
+  about: {
+    index: '(01)',
+    title: 'About',
+    text: "I'm a B.Tech CSE (AI/ML) student at MIET Meerut who builds full-stack products. Backend and databases are where I'm strongest, but I care just as much about how a page feels when you move through it. MERN at the core, Next.js and Python AI tooling around it.",
+    imageCursor: 'Debugging',
+    facts: [
+      { label: 'Studying', text: 'B.Tech CSE (AI/ML) at MIET Meerut, 2024–2028.' },
+      { label: 'Working', text: 'Software development intern at Bexra, and Technical Head at Intellia Society.' },
+      { label: 'Strongest at', text: 'Backend, databases and authentication — then making the frontend feel alive.' },
+    ],
+  },
+  work: { index: '(02)', title: 'Selected', accent: 'work', all: 'All projects', count: 4 },
+  cta: {
+    lines: ["Let's build", 'something'],
+    accent: 'that moves.',
+    button: ['Say', 'hello'],
+    links: [
+      { label: 'github.com/mohitraghav1318', href: 'github', cursor: 'Open' },
+      { label: 'Email', href: 'email', cursor: 'Write' },
+      { label: 'Experience', to: '/experience', cursor: 'Open' },
+    ],
+  },
+  // legacy (old dark design, removed with the old Home)
   eyebrow: 'Mohit Raghav · aka Mr. Zero',
   titleLead: 'I build things for the web,',
   titleGrad: 'fast, functional, production-ready.',
@@ -204,17 +301,19 @@ export const experience = [
     kind: 'Internship',
     role: 'Software Development Intern',
     org: 'Bexra',
-    text: 'Working on database management, authentication and frontend development for the product.',
-    chips: ['Databases', 'Authentication', 'Frontend'],
+    text: 'Database management, authentication and frontend development. Django on the backend, Next.js, React and TypeScript on the frontend, Supabase for the database.',
+    stack: 'Django · Next.js · Supabase',
+    chips: ['Databases', 'Authentication', 'Frontend', 'Django', 'Next.js', 'Supabase'],
     // TODO: add exact dates for the Bexra internship
     // todo: 'TODO: add exact dates',
   },
   {
     when: 'Aug 2025 – Present',
     kind: 'College society',
-    role: 'Web Developer',
+    role: 'Technical Head',
     org: 'Intellia Society, MIET',
-    text: 'Web developer for Intellia, the AI & ML departmental society at the college. Sole technical contributor for the TRIKON 3.0 hackathon platform: registration with per-participant QR codes, a real-time admin panel, bulk email delivery and the Trix AI chatbot.',
+    stack: 'AI & ML society',
+    text: 'Technical Head and web developer for Intellia, the AI & ML departmental society at the college. Sole technical contributor for the TRIKON 3.0 hackathon platform: registration with per-participant QR codes, a real-time admin panel, bulk email delivery and the Trix AI chatbot.',
     chips: ['Web development', 'AI & ML community', 'Next.js', 'LangChain'],
   },
   {
@@ -248,7 +347,7 @@ export const skills = [
     title: 'Backend & databases',
     tag: 'Strongest',
     highlight: true,
-    items: ['Node.js', 'Express', 'PostgreSQL', 'MongoDB', 'Mongoose', 'Authentication', 'REST APIs'],
+    items: ['Node.js', 'Express', 'Django', 'PostgreSQL', 'MongoDB', 'Supabase', 'Mongoose', 'Authentication', 'REST APIs'],
   },
   { title: 'Frontend', items: ['React', 'Next.js', 'Vite', 'GSAP', 'SCSS', 'HTML / CSS'] },
   { title: 'Languages', items: ['JavaScript', 'TypeScript', 'Python', 'Java'] },
@@ -281,3 +380,5 @@ export const notFound = {
   titleGrad: 'found.',
   button: 'Back home →',
 };
+
+
