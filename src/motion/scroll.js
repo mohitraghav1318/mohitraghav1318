@@ -13,7 +13,7 @@ export function scrollEffects(root) {
     gsap.to('.intro-h', {
       yPercent: -10,
       ease: 'none',
-      scrollTrigger: { trigger: '.intro', start: 'top top', end: 'bottom top', scrub: true },
+      scrollTrigger: { trigger: root.querySelector('.intro, .phead'), start: 'top top', end: 'bottom top', scrub: true },
     });
   }
 

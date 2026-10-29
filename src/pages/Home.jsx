@@ -4,16 +4,10 @@ import Line from '../components/pf/Line';
 import Words from '../components/pf/Words';
 import Photo from '../components/pf/Photo';
 import FooterCta from '../components/pf/FooterCta';
+import Marquee from '../components/pf/Marquee';
+import { tone } from '../components/pf/tones';
 import useDocumentMeta from '../hooks/useDocumentMeta';
 import { site, home, images, projects, ui } from '../data/site';
-
-// Peek / row accents cycle through the palette (CSS vars), never gradients.
-const tones = [
-  ['var(--accent)', 'var(--paper)'],
-  ['var(--green)', 'var(--paper)'],
-  ['var(--tan)', 'var(--ink)'],
-  ['var(--sage)', 'var(--paper)'],
-];
 
 export default function Home() {
   useDocumentMeta();
@@ -27,7 +21,7 @@ export default function Home() {
         {featured.map((p, i) => (
           <div className="peek-i" key={p.slug}>
             {p.img && <img src={p.img} alt="" width="400" height="250" loading="lazy" />}
-            <span className="peek-t" style={{ background: tones[i % 4][0], color: tones[i % 4][1] }}>
+            <span className="peek-t" style={{ background: tone(i)[0], color: tone(i)[1] }}>
               <span>{p.title}</span>
               <span className="lbl">{kind(p)}</span>
             </span>
@@ -89,16 +83,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="mq" aria-hidden="true">
-        <div className="mq-track">
-          {[...home.marquee, ...home.marquee].map((tag, i) => (
-            <div className="mq-i" key={i}>
-              <span>{tag}</span>
-              <i />
-            </div>
-          ))}
-        </div>
-      </div>
+      <Marquee tags={home.marquee} />
 
       <section className="sec" id="about">
         <div className="shell">

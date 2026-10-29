@@ -1,0 +1,202 @@
+.pf {
+  // ── inner page head ──
+  .phead {
+    padding: clamp(24px, 5vw, 50px) 0 20px;
+    .lede {
+      margin-top: 34px;
+    }
+  }
+
+  // ── projects ──
+  .pgrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(560px, 100%), 1fr));
+    gap: clamp(16px, 2.2vw, 28px);
+  }
+  .pc {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 40px;
+    min-height: 460px;
+    padding: clamp(24px, 3vw, 36px);
+    border-radius: 8px;
+    transform-style: preserve-3d;
+    h3 {
+      font-size: clamp(40px, 6vw, 88px);
+      line-height: 0.95;
+      letter-spacing: -0.045em;
+      font-weight: 700;
+      overflow-wrap: anywhere;
+    }
+    p {
+      margin-top: 18px;
+      font-size: clamp(17px, 1.5vw, 20px);
+      line-height: 1.45;
+      max-width: 520px;
+    }
+  }
+  .pc-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .pc-n {
+    opacity: 0.9;
+    padding-top: 6px;
+  }
+  .pc-a {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid currentColor;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+    transition: transform 0.5s var(--ease-out), background 0.4s, color 0.4s;
+    // stretch the link over the whole card
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 8px;
+    }
+    &:focus-visible {
+      outline-color: currentColor;
+    }
+  }
+  .pc:hover .pc-a,
+  .pc-a:focus-visible {
+    transform: rotate(-45deg);
+    background: var(--paper);
+    color: var(--ink);
+  }
+  .tgs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 26px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .tg {
+    display: inline-flex;
+    align-items: center;
+    min-height: 36px;
+    padding: 0 16px;
+    border-radius: 999px;
+    border: 1.5px solid currentColor;
+    font-family: var(--mono);
+    font-size: 12.5px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .pc-acts {
+    position: relative;
+    z-index: 2; // above the stretched card link
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 22px;
+  }
+  .pc-act {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 20px;
+    border-radius: 999px;
+    border: 2px solid currentColor;
+    font-weight: 700;
+    font-size: 15px;
+    transition: background 0.3s, color 0.3s;
+    &:hover {
+      background: var(--paper);
+      color: var(--ink);
+    }
+    &:focus-visible {
+      outline-color: currentColor;
+    }
+  }
+  @media (max-width: 700px) {
+    .pc {
+      min-height: 400px;
+      gap: 28px;
+    }
+    .pc-a {
+      width: 52px;
+      height: 52px;
+    }
+  }
+
+  // ── skills ──
+  .strong-p {
+    font-size: clamp(28px, 3.4vw, 48px);
+    line-height: 1.18;
+    letter-spacing: -0.025em;
+    max-width: 1100px;
+  }
+  .sk {
+    border-top: 2px solid var(--ink);
+  }
+  .sk-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px clamp(24px, 4vw, 56px);
+    padding: clamp(28px, 4vw, 44px) 0;
+    border-bottom: 2px solid var(--ink);
+    align-items: flex-start;
+  }
+  .sk-l {
+    flex: 0 0 260px;
+    .lbl {
+      color: var(--accent);
+    }
+    p {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.4;
+    }
+  }
+  .sk-r {
+    flex: 1 1 min(520px, 100%);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .sk-w {
+    display: inline-block;
+    max-width: 100%;
+    font-size: clamp(30px, 4.6vw, 66px);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    padding: 10px clamp(16px, 2vw, 24px) 14px;
+    border: 2px solid var(--ink);
+    border-radius: 999px;
+    overflow-wrap: anywhere;
+    transition: background 0.35s, color 0.35s, transform 0.45s var(--ease-lift), border-color 0.35s;
+    &:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--paper-hi);
+      transform: translateY(-8px) rotate(-2deg);
+    }
+  }
+  @media (max-width: 700px) {
+    .sk-l {
+      flex-basis: 100%;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .sk-w:hover {
+      transform: none;
+    }
+  }
+}

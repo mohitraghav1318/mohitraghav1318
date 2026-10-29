@@ -42,7 +42,7 @@
     font-size: clamp(64px, 12.4vw, 176px);
     line-height: 0.9;
     letter-spacing: -0.05em;
-    &.pg {
+    &.pgh {
       font-size: clamp(60px, 10.5vw, 150px);
     }
     .dot {
@@ -302,6 +302,16 @@
   @media (max-width: 1439.98px) {
     .disc {
       right: 0;
+    }
+  }
+
+  // tablets: stacked hero, portrait centred
+  @media (min-width: 600px) and (max-width: 899.98px) {
+    .intro-r {
+      flex-basis: 100%;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 

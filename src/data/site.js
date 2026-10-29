@@ -33,6 +33,7 @@ export const ui = {
   cursor: { go: 'Go', hi: 'Hi', open: 'Open', write: 'Write', up: 'Up' },
   navLabel: 'Main',
   menu: { open: 'Menu', close: 'Close', label: 'Site menu', status: 'Open to projects and internships' },
+  project: { open: 'Open', live: 'Live site', code: 'GitHub', openLabel: 'Open project:' },
 };
 
 // Photos in public/images/Me (originals). `npm run images` writes resized WebP
@@ -290,6 +291,23 @@ export const projects = [
 ];
 
 export const projectsPage = {
+  title: 'Projects',
+  kicker: "Things I've built and am building",
+  lede: {
+    before: 'Full-stack products, tooling and client sites. ',
+    strong: 'Scroll-driven frontends on top of real backends.',
+  },
+  footer: {
+    lines: ['Have an idea', 'for'],
+    accent: 'the next one?',
+    button: ['Say', 'hello'],
+    links: [
+      { label: 'github.com/mohitraghav1318', href: 'github', cursor: 'Open' },
+      { label: 'See the toolbox', to: '/skills', cursor: 'Open' },
+      { label: "Where I've worked", to: '/experience', cursor: 'Open' },
+    ],
+  },
+  // legacy (old dark design)
   label: 'Projects',
   titleLead: "Things I've",
   titleGrad: 'built.',
@@ -346,18 +364,46 @@ export const experiencePage = {
 export const skills = [
   {
     title: 'Backend & databases',
+    note: 'APIs, auth and the data layer.',
     tag: 'Strongest',
     highlight: true,
     items: ['Node.js', 'Express', 'Django', 'PostgreSQL', 'MongoDB', 'Supabase', 'Mongoose', 'Authentication', 'REST APIs'],
   },
-  { title: 'Frontend', items: ['React', 'Next.js', 'Vite', 'GSAP', 'SCSS', 'HTML / CSS'] },
-  { title: 'Languages', items: ['JavaScript', 'TypeScript', 'Python', 'Java'] },
-  { title: 'AI & ML tooling', items: ['LangChain', 'FAISS', 'Groq', 'Gemini', 'faster-whisper'] },
-  { title: 'Tools & workflow', items: ['Git', 'GitHub', 'Docker', 'Linux', 'VS Code'] },
-  { title: 'Learning now', tag: 'In progress', items: ['DSA in Java', 'AWS basics', 'Cloud fundamentals'] },
+  { title: 'Frontend',
+    note: 'Interfaces with motion and detail.', items: ['React', 'Next.js', 'Vite', 'GSAP', 'SCSS', 'HTML / CSS'] },
+  { title: 'Languages',
+    note: 'What everything else is written in.', items: ['JavaScript', 'TypeScript', 'Python', 'Java'] },
+  { title: 'AI & ML tooling',
+    note: 'Putting models inside products.', items: ['LangChain', 'FAISS', 'Groq', 'Gemini', 'faster-whisper'] },
+  { title: 'Tools & workflow',
+    note: 'How the work ships.', items: ['Git', 'GitHub', 'Docker', 'Linux', 'VS Code'] },
+  { title: 'Learning now',
+    note: 'What I\'m picking up next.', tag: 'In progress', items: ['DSA in Java', 'AWS basics', 'Cloud fundamentals'] },
 ];
 
 export const skillsPage = {
+  title: 'Skills',
+  kicker: 'The toolbox',
+  lede: { before: 'MERN at the core, Next.js and Python AI tooling around it. ', strong: 'Hover a skill, it moves.' },
+  marquee: ['JavaScript', 'TypeScript', 'Python', 'React', 'Next.js', 'Node.js', 'Django', 'PostgreSQL', 'MongoDB', 'Supabase'],
+  strongest: {
+    index: '(01)',
+    title: 'Strongest',
+    accent: 'at',
+    text: 'Backend and databases are my strongest side: authentication, schemas and APIs. Then I wrap them in frontends that actually move.',
+  },
+  all: { index: '(02)', title: 'Everything', accent: 'I use' },
+  footer: {
+    lines: ['Need these', 'on'],
+    accent: 'your project?',
+    button: ['Say', 'hello'],
+    links: [
+      { label: "See what I've built", to: '/projects', cursor: 'Open' },
+      { label: "Where I've worked", to: '/experience', cursor: 'Open' },
+      { label: 'github.com/mohitraghav1318', href: 'github', cursor: 'Open' },
+    ],
+  },
+  // legacy (old dark design)
   label: 'Skills',
   titleLead: 'What I',
   titleGrad: 'work with.',

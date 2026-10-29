@@ -23,14 +23,15 @@ export function hoverEffects(root) {
   });
 
   q('.tilt').forEach((el) => {
+    const lift = parseFloat(el.dataset.lift) || 0; // cards also rise on hover
     offs.push(
       listen(el, 'mousemove', (e) => {
         const r = el.getBoundingClientRect();
         const nx = (e.clientX - r.left) / r.width - 0.5;
         const ny = (e.clientY - r.top) / r.height - 0.5;
-        gsap.to(el, { rotationY: nx * 12, rotationX: -ny * 12, transformPerspective: 900, duration: 0.5, ease: 'power3.out' });
+        gsap.to(el, { rotationY: nx * 12, rotationX: -ny * 12, y: lift, transformPerspective: 900, duration: 0.5, ease: 'power3.out' });
       }),
-      listen(el, 'mouseleave', () => gsap.to(el, { rotationX: 0, rotationY: 0, duration: 0.9, ease: 'elastic.out(1,0.5)' })),
+      listen(el, 'mouseleave', () => gsap.to(el, { rotationX: 0, rotationY: 0, y: 0, duration: 0.9, ease: 'elastic.out(1,0.5)' })),
     );
   });
 

@@ -23,7 +23,8 @@ export default function useSiteMotion(rootRef, pathname) {
       (ctx) => {
         const { fine, motion } = ctx.conditions;
         const cleanups = [];
-        if (fine) cleanups.push(hoverEffects(root));
+        // Tilt, magnetic buttons and parallax are motion: skip them under reduced motion.
+        if (fine && motion) cleanups.push(hoverEffects(root));
         if (motion) {
           intro(root);
           cleanups.push(scrollEffects(root));
