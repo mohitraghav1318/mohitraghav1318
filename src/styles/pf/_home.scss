@@ -1,0 +1,352 @@
+.pf {
+  // ── intro (hero / page heads) ──
+  .intro {
+    position: relative;
+    padding-bottom: 90px;
+  }
+  .intro-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px 56px;
+    align-items: flex-end;
+    padding-top: 40px;
+  }
+  .intro-l {
+    flex: 1 1 620px;
+    min-width: 0;
+    position: relative;
+    z-index: 1; // text and buttons always sit above the disc
+  }
+  .intro-r {
+    flex: 1 1 360px;
+    max-width: 470px;
+    position: relative;
+    margin-left: auto;
+  }
+  .kick {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--muted);
+    margin-bottom: 28px;
+    i {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: block;
+    }
+  }
+  .intro-h {
+    font-weight: 700;
+    font-size: clamp(64px, 12.4vw, 176px);
+    line-height: 0.9;
+    letter-spacing: -0.05em;
+    &.pgh {
+      font-size: clamp(60px, 10.5vw, 150px);
+    }
+    .dot {
+      color: var(--accent);
+    }
+  }
+  .lede {
+    margin-top: 40px;
+    max-width: 560px;
+    font-size: 22px;
+    line-height: 1.45;
+    color: var(--muted);
+    b {
+      color: var(--ink);
+      font-weight: 700;
+    }
+  }
+  .intro-cta {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 36px;
+  }
+  .disc {
+    position: absolute;
+    right: -70px;
+    top: -60px;
+    width: 78%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  .frame {
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+    background: var(--tan);
+    clip-path: inset(0% 0% 0% 0%);
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+  .photo {
+    aspect-ratio: 4/5;
+  }
+  .par {
+    position: absolute;
+    inset: -9% 0 -9% 0;
+  }
+  .badge {
+    position: absolute;
+    left: -58px;
+    bottom: -46px;
+    width: 132px;
+    height: 132px;
+    border-radius: 50%;
+    background: var(--ink);
+    color: var(--paper);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .badge-c {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--accent);
+    position: relative;
+  }
+
+  // ── about ──
+  .about-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(32px, 5vw, 60px);
+    align-items: flex-start;
+  }
+  .about-p {
+    flex: 1 1 560px;
+    font-size: clamp(28px, 3.4vw, 48px);
+    line-height: 1.18;
+    font-weight: 500;
+    letter-spacing: -0.025em;
+  }
+  .w {
+    display: inline-block;
+  }
+  .about-img {
+    flex: 1 1 340px;
+    max-width: 460px;
+    aspect-ratio: 4/5;
+    margin-left: auto;
+  }
+  .facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+    gap: 40px;
+    margin-top: clamp(56px, 7vw, 90px);
+    border-top: 2px solid var(--ink);
+    padding-top: 32px;
+  }
+  .fact {
+    .lbl {
+      color: var(--muted);
+    }
+    p {
+      margin-top: 12px;
+      font-size: 20px;
+      line-height: 1.4;
+    }
+  }
+
+  // ── work rows ──
+  .rows {
+    border-top: 2px solid var(--ink);
+  }
+  .row {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    padding: 38px 24px;
+    border-bottom: 2px solid var(--ink);
+    overflow: hidden;
+    transition: color 0.45s, padding 0.45s var(--ease-out);
+    flex-wrap: wrap;
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--ink);
+      transform: scaleY(0);
+      transform-origin: 50% 100%;
+      transition: transform 0.55s var(--ease-out);
+      z-index: 0;
+    }
+    > * {
+      position: relative;
+      z-index: 1;
+    }
+    &:hover,
+    &:focus-visible {
+      color: var(--paper);
+      padding-left: 48px;
+      &::before {
+        transform: scaleY(1);
+      }
+      .row-n {
+        color: var(--accent-soft);
+      }
+      .row-t p,
+      .row-s {
+        color: var(--tan);
+      }
+      .row-a {
+        transform: rotate(-45deg);
+        background: var(--accent);
+        border-color: var(--accent);
+      }
+    }
+  }
+  .row-n {
+    width: 44px;
+    color: var(--accent);
+  }
+  .row-t {
+    flex: 1 1 360px;
+    min-width: 0;
+    h3 {
+      font-size: clamp(34px, 5vw, 72px);
+      line-height: 1;
+      letter-spacing: -0.04em;
+      font-weight: 700;
+    }
+    p {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 18px;
+      transition: color 0.45s;
+    }
+  }
+  .row-s {
+    flex: 0 1 320px;
+    color: var(--muted);
+    transition: color 0.45s;
+  }
+  .row-a {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 2px solid currentColor;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+    transition: transform 0.5s var(--ease-out), background 0.4s, border-color 0.4s;
+  }
+  .more {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 40px;
+  }
+
+  // floating project preview that follows the mouse
+  .peek {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 280px;
+    height: 190px;
+    z-index: 50;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    border-radius: 6px;
+    background: var(--tan);
+  }
+  .peek-i {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+    }
+  }
+  .peek-t {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: -0.02em;
+  }
+
+  // keep the disc inside the viewport until there is room for it to overhang
+  @media (max-width: 1439.98px) {
+    .disc {
+      right: 0;
+    }
+  }
+
+  // tablets: stacked hero, portrait centred
+  @media (min-width: 600px) and (max-width: 899.98px) {
+    .intro-r {
+      flex-basis: 100%;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .badge {
+      left: -10px;
+      bottom: -60px;
+      width: 110px;
+      height: 110px;
+    }
+    // number + arrow share the first line; title and stack read below
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 44px;
+      grid-template-areas: 'n a' 't t' 's s';
+      gap: 8px 16px;
+      padding: 24px 8px;
+      &:hover {
+        padding-left: 16px;
+      }
+    }
+    .row-n {
+      grid-area: n;
+    }
+    .row-a {
+      grid-area: a;
+      width: 44px;
+      height: 44px;
+    }
+    .row-t {
+      grid-area: t;
+    }
+    .row-s {
+      grid-area: s;
+      margin-top: 8px;
+    }
+  }
+}

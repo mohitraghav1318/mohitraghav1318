@@ -1,0 +1,202 @@
+.pf {
+  // ── cursor, progress ──
+  .cursor {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .cursor-label {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--paper);
+    opacity: 0;
+    white-space: nowrap;
+  }
+  .prog {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 4px;
+    width: 100%;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    z-index: 90;
+  }
+  @media (hover: none) {
+    .cursor,
+    .peek {
+      display: none;
+    }
+  }
+
+  // ── marquee ──
+  .mq {
+    background: var(--ink);
+    color: var(--paper);
+    overflow: hidden;
+    padding: 26px 0;
+  }
+  .mq-track {
+    display: flex;
+    width: max-content;
+    will-change: transform;
+  }
+  .mq-i {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    padding-right: 36px;
+    font-size: clamp(30px, 4vw, 54px);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    white-space: nowrap;
+    i {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: block;
+      flex: none;
+    }
+  }
+
+  // ── sections ──
+  .sec {
+    padding: clamp(90px, 13vw, 150px) 0 0;
+    &.tight {
+      padding-top: clamp(64px, 8vw, 90px);
+    }
+  }
+  .sec-top {
+    display: flex;
+    align-items: baseline;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: clamp(32px, 5vw, 56px);
+    .lbl {
+      color: var(--accent);
+    }
+  }
+  .hd {
+    font-weight: 700;
+    font-size: clamp(46px, 7.4vw, 108px);
+    line-height: 0.95;
+    letter-spacing: -0.045em;
+  }
+
+  // ── footer CTA (green) ──
+  .contact {
+    background: var(--green);
+    color: var(--paper);
+    margin-top: clamp(90px, 12vw, 160px);
+    padding: clamp(80px, 11vw, 130px) 0 24px;
+    position: relative;
+    overflow: hidden;
+    .hd {
+      font-size: clamp(54px, 10vw, 152px);
+      line-height: 0.92;
+      em {
+        color: var(--accent-soft);
+      }
+    }
+    a:focus-visible {
+      outline-color: var(--paper);
+    }
+    &.tight {
+      margin-top: clamp(24px, 5vw, 60px);
+    }
+  }
+  .c-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px 50px;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: clamp(40px, 6vw, 70px);
+  }
+  .c-links {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    a {
+      font-size: clamp(22px, 2.6vw, 34px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      overflow-wrap: anywhere;
+      transition: color 0.3s, transform 0.4s var(--ease-lift);
+      &:hover {
+        color: var(--accent-soft);
+        transform: translateX(12px);
+      }
+    }
+  }
+  .c-line {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    font-size: clamp(22px, 2.6vw, 34px);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--tan);
+  }
+  .c-btn {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--paper);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 700;
+    font-size: 26px;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    transition: background 0.4s, color 0.4s;
+    &:hover {
+      background: var(--paper);
+      color: var(--green);
+    }
+  }
+  .foot {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: clamp(64px, 9vw, 120px);
+    padding-top: 16px;
+    border-top: 1px solid var(--green-line);
+    color: var(--tan);
+    a {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      &:hover {
+        color: var(--accent-soft);
+      }
+    }
+    span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+    }
+  }
+}

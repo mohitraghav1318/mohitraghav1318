@@ -1,21 +1,22 @@
 import { Link } from 'react-router-dom';
-import Page from '../components/Page';
-import { notFound } from '../data/site';
+import PageHead from '../components/pf/PageHead';
+import FooterCta from '../components/pf/FooterCta';
+import useDocumentMeta from '../hooks/useDocumentMeta';
+import { home, notFound as page } from '../data/site';
 
 export default function NotFound() {
+  useDocumentMeta('Not found | Mohit Raghav');
+
   return (
-    <Page title="Not found | Mohit Raghav" glow="br">
-      <section className="wrap page-head">
-        <p className="mono">{notFound.label}</p>
-        <h1 className="page-h1">
-          {notFound.titleLead} <span className="grad">{notFound.titleGrad}</span>
-        </h1>
-        <p style={{ marginTop: 40 }}>
-          <Link className="btn primary" to="/">
-            {notFound.button}
+    <>
+      <main id="main" tabIndex={-1}>
+        <PageHead kicker={page.kicker} title={page.title} lede={page.lede}>
+          <Link className="pill solid mag" to="/" data-cursor="">
+            {page.button}
           </Link>
-        </p>
-      </section>
-    </Page>
+        </PageHead>
+      </main>
+      <FooterCta cta={home.cta} />
+    </>
   );
 }
