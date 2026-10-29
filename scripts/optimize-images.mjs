@@ -4,7 +4,7 @@
 //    (project.img and project.screenshots[].src; animated GIFs stay animated)
 //    plus a manifest at src/data/shots.json that <Shot> reads for srcset and dimensions.
 // Run: npm run images
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
@@ -27,6 +27,8 @@ for (const img of Object.values(images)) {
 
 // ── project screenshots ──
 const shotDir = path.join(photoDir, 'projects');
+// start clean so renamed or removed screenshots don't leave stale files behind
+await rm(shotDir, { recursive: true, force: true });
 await mkdir(shotDir, { recursive: true });
 const sources = new Set();
 for (const p of projects) {
@@ -37,7 +39,8 @@ for (const p of projects) {
 const manifest = {};
 for (const src of [...sources].sort()) {
   const file = path.join(root, 'public', src);
-  const base = path.basename(src, path.extname(src)).toLowerCase().replace(/[^a-z0-9]+/g, '-');
+  // named from the whole path under /images/projects, so eureka/hero.png and hikaricv/hero.png stay distinct
+  const base = src.replace(/^\/images\/projects\//, '').replace(/\.[^.]+$/, '').toLowerCase().replace(/[^a-z0-9]+/g, '-');
   const animated = /\.gif$/i.test(src);
   const meta = await sharp(file, { animated }).metadata();
   const width = meta.width;

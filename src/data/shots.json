@@ -1,14 +1,4 @@
 {
-  "/images/projects/HikariCv.png": {
-    "name": "hikaricv",
-    "width": 1885,
-    "height": 933,
-    "sizes": [
-      400,
-      800,
-      1400
-    ]
-  },
   "/images/projects/Trix.gif": {
     "name": "trix",
     "width": 360,
@@ -21,6 +11,36 @@
     "name": "broketogether",
     "width": 1848,
     "height": 937,
+    "sizes": [
+      400,
+      800,
+      1400
+    ]
+  },
+  "/images/projects/eureka/hero.png": {
+    "name": "eureka-hero",
+    "width": 1612,
+    "height": 936,
+    "sizes": [
+      400,
+      800,
+      1400
+    ]
+  },
+  "/images/projects/hikaricv/dashboard.png": {
+    "name": "hikaricv-dashboard",
+    "width": 1885,
+    "height": 933,
+    "sizes": [
+      400,
+      800,
+      1400
+    ]
+  },
+  "/images/projects/hikaricv/hero.png": {
+    "name": "hikaricv-hero",
+    "width": 1612,
+    "height": 936,
     "sizes": [
       400,
       800,
@@ -49,8 +69,8 @@
   },
   "/images/projects/portfolio.png": {
     "name": "portfolio",
-    "width": 1905,
-    "height": 954,
+    "width": 1612,
+    "height": 936,
     "sizes": [
       400,
       800,

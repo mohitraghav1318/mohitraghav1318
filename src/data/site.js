@@ -14,7 +14,6 @@ export const site = {
   xHandle: '@mohitraghav1318',
   linkedin: null, // TODO: add the LinkedIn URL when you want it shown
   location: 'Meerut, India',
-  resume: '/resume/mohit_raghav_resume.pdf',
   year: 2026,
 };
 
@@ -160,7 +159,7 @@ export const projects = [
     blurb: 'AI-powered resume analysis and interview coaching platform.',
     description:
       'AI-powered resume analysis and interview coaching platform. React and Vite frontend with GSAP scroll animations, a Node and Express backend hardened with input validation and access checks, containerised with Docker.',
-    chips: ['React', 'Vite', 'GSAP', 'SCSS', 'Node.js', 'Express', 'MongoDB', 'Docker'],
+    chips: ['React', 'Vite', 'GSAP', 'SCSS', 'Node.js', 'Express', 'MongoDB'],
     github: 'https://github.com/mohitraghav1318/hikaricv',
     live: 'https://hikari-cv.vercel.app/login',
     overview:
@@ -169,7 +168,7 @@ export const projects = [
       { label: 'Frontend', title: 'Animated landing site', text: 'Hero, features, how it works, testimonials, FAQ, CTA, footer and a 404 page, each animated with GSAP and ScrollTrigger. React and Vite, styled with SCSS modules on a shared token file.' },
       { label: 'Backend', title: 'Node and Express API', text: 'Controller-based API with security hardening, input sanitisation and error handling on every route.' },
       { label: 'Data', title: 'MongoDB models', text: 'Mongoose schemas, with the AI response shape aligned to the models so nothing is stored in the wrong form.' },
-      { label: 'Shipping', title: 'Dockerised stack', text: 'Frontend, backend and MongoDB run together in Docker. The backend image is Puppeteer-aware, built on node:20-slim with system Chromium.' },
+      // { label: 'Shipping', title: 'Dockerised stack', text: 'Frontend, backend and MongoDB run together in Docker. The backend image is Puppeteer-aware, built on node:20-slim with system Chromium.' },
     ],
     solved: [
       { title: 'IDOR vulnerabilities', tag: 'Security', text: 'Reviewed the backend and closed insecure direct object references so users can only reach their own records.' },
@@ -177,7 +176,11 @@ export const projects = [
       { title: 'Schema mismatches', tag: 'Data', text: 'Aligned the AI response schema with the Mongoose models.' },
       { title: 'The AuthLayout blink', tag: 'Frontend', text: 'Fixed a persistent flicker using React Router’s Outlet pattern and GSAP’s useGSAP hook, working around React 18 Strict Mode.' },
     ],
-    img: '/images/projects/HikariCv.png',
+    img: '/images/projects/hikaricv/hero.png',
+    screenshots: [
+      { src: '/images/projects/hikaricv/hero.png', alt: 'HikariCV landing page hero' },
+      { src: '/images/projects/hikaricv/dashboard.png', alt: 'HikariCV dashboard' },
+    ],
     art: 'rays',
     featured: true,
   },
@@ -270,15 +273,93 @@ export const projects = [
     art: 'receipt',
   },
   {
-    title: 'Intellia Organization Website',
-    tag: 'Web · Team work',
+    title: 'Intellia',
+    tag: 'Web · Teamwork',
     blurb: 'Official website of the Intellia tech community.',
     description:
-      'A collaborative project to build the official website for the Intellia tech community, showcasing initiatives, events and member activities.',
+      'A collaborative web development project for the Intellia tech community, built to establish its online presence and showcase community initiatives, events and member activities.',
     chips: ['React', 'Node.js', 'Firebase'],
     github: null,
     live: 'https://intelliamiet.in/',
+    overview:
+      'Intellia is the official website of a technology community. Developed as a team project, it brings the community’s online presence into one place, helping visitors explore its initiatives, events and activities.',
+    built: [
+      {
+        label: 'Frontend',
+        title: 'Community website',
+        text: 'Built the user-facing website with React to present the Intellia community, its initiatives and activities through an accessible web experience.'
+      },
+      {
+        label: 'Backend',
+        title: 'Application services',
+        text: 'Used Node.js to support the application’s backend functionality and connect the frontend with its supporting services.'
+      },
+      {
+        label: 'Data',
+        title: 'Firebase integration',
+        text: 'Integrated Firebase into the project’s technology stack to support application data and related backend services.'
+      },
+      {
+        label: 'Collaboration',
+        title: 'Team-based development',
+        text: 'Contributed to a collaborative project focused on building and maintaining the official online presence of the Intellia tech community.'
+      }
+    ],
     img: '/images/projects/intellia.png',
+    art: 'rays',
+  },
+  {
+    title: 'Eureka Society',
+    tag: 'Full-stack · Platform',
+    blurb: 'A full-stack platform powering community operations, recruitment and bulk communication.',
+    description:
+      'A feature-rich community management platform built with Next.js, JavaScript and Firebase. Designed to streamline organizational workflows through a hiring portal, role-based access control, approval workflows and a bulk mailing system with recipient-specific attachments, campaign tracking and audit logs.',
+    chips: [
+      'Next.js',
+      'JavaScript',
+      'Firebase',
+      'Firestore',
+      'Firebase Auth',
+      'Firebase Storage',
+      'Vercel'
+    ],
+    github: null,
+    live: 'https://eurekasociety.vercel.app/',
+    overview:
+      'Eureka is a full-stack platform designed to bring community operations into one place. Beyond its public-facing website, it includes recruitment workflows, organization and membership management, and a bulk mailing system built around controlled access, approvals and accountability. The platform combines user-facing experiences with administrative tools to simplify how a technical community operates.',
+    built: [
+      {
+        label: 'Recruitment',
+        title: 'Hiring portal',
+        text: 'Built recruitment-focused functionality to support hiring workflows and provide a centralized digital experience for applicants and administrators.'
+      },
+      {
+        label: 'Communication',
+        title: 'Bulk mailing system',
+        text: 'Developed a bulk email workflow supporting CSV-based recipient lists, shared and recipient-specific PDF attachments, controlled sending, campaign progress and delivery logs.'
+      },
+      {
+        label: 'Access control',
+        title: 'Role-based organization management',
+        text: 'Implemented a multi-level authorization model with platform ownership, organization-scoped mail administrators and member memberships, alongside account states and approval workflows.'
+      },
+      {
+        label: 'Security',
+        title: 'Authentication and private storage',
+        text: 'Integrated Firebase Authentication with server-side token verification and HTTP-only mail-session cookies. Designed protected attachment storage and authorization-aware access to sensitive operations.'
+      },
+      {
+        label: 'Accountability',
+        title: 'Audit trails and operational controls',
+        text: 'Designed administrative logging, organization-level and member-level sending quotas, invitation workflows and approval controls to improve traceability and operational oversight.'
+      },
+      {
+        label: 'Infrastructure',
+        title: 'Firebase and Vercel integration',
+        text: 'Built on Next.js and Firebase, with Firestore-backed application data, Firebase Storage for private files and Vercel for deployment.'
+      }
+    ],
+    img: '/images/projects/eureka/hero.png',
     art: 'rays',
   },
   {
