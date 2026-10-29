@@ -14,6 +14,8 @@
   .intro-l {
     flex: 1 1 620px;
     min-width: 0;
+    position: relative;
+    z-index: 1; // text and buttons always sit above the disc
   }
   .intro-r {
     flex: 1 1 360px;
@@ -124,7 +126,7 @@
   .about-wrap {
     display: flex;
     flex-wrap: wrap;
-    gap: 60px;
+    gap: clamp(32px, 5vw, 60px);
     align-items: flex-start;
   }
   .about-p {
@@ -147,7 +149,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
     gap: 40px;
-    margin-top: 90px;
+    margin-top: clamp(56px, 7vw, 90px);
     border-top: 2px solid var(--ink);
     padding-top: 32px;
   }
@@ -296,6 +298,13 @@
     letter-spacing: -0.02em;
   }
 
+  // keep the disc inside the viewport until there is room for it to overhang
+  @media (max-width: 1439.98px) {
+    .disc {
+      right: 0;
+    }
+  }
+
   @media (max-width: 700px) {
     .badge {
       left: -10px;
@@ -303,17 +312,31 @@
       width: 110px;
       height: 110px;
     }
-    .disc {
-      right: -20px;
-    }
+    // number + arrow share the first line; title and stack read below
     .row {
-      padding: 28px 8px;
+      display: grid;
+      grid-template-columns: 1fr 44px;
+      grid-template-areas: 'n a' 't t' 's s';
+      gap: 8px 16px;
+      padding: 24px 8px;
       &:hover {
         padding-left: 16px;
       }
     }
+    .row-n {
+      grid-area: n;
+    }
+    .row-a {
+      grid-area: a;
+      width: 44px;
+      height: 44px;
+    }
+    .row-t {
+      grid-area: t;
+    }
     .row-s {
-      flex-basis: 100%;
+      grid-area: s;
+      margin-top: 8px;
     }
   }
 }

@@ -42,68 +42,6 @@
     }
   }
 
-  // ── nav ──
-  .topnav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 8px 24px;
-    padding: 28px 0;
-    flex-wrap: wrap;
-  }
-  .brand {
-    font-weight: 700;
-    font-size: 22px;
-    letter-spacing: -0.03em;
-    min-height: 44px;
-    display: inline-flex;
-    align-items: center;
-    span {
-      color: var(--accent);
-    }
-  }
-  .menu {
-    display: flex;
-    gap: 34px;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  .nl {
-    display: inline-flex;
-    align-items: center;
-    min-height: 44px;
-    position: relative;
-    .r {
-      display: block;
-      overflow: hidden;
-      height: 1.35em;
-      line-height: 1.35em;
-      font-size: 16px;
-      span {
-        display: block;
-        transition: transform 0.55s var(--ease-out);
-      }
-    }
-    &:hover .r span {
-      transform: translateY(-100%);
-    }
-    &.on::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 6px;
-      height: 3px;
-      border-radius: 2px;
-      background: var(--accent);
-    }
-  }
-  @media (max-width: 700px) {
-    .menu {
-      gap: 4px 18px;
-    }
-  }
-
   // ── marquee ──
   .mq {
     background: var(--ink);
@@ -137,9 +75,9 @@
 
   // ── sections ──
   .sec {
-    padding: 150px 0 0;
+    padding: clamp(90px, 13vw, 150px) 0 0;
     &.tight {
-      padding-top: 90px;
+      padding-top: clamp(64px, 8vw, 90px);
     }
   }
   .sec-top {
@@ -147,7 +85,7 @@
     align-items: baseline;
     gap: 24px;
     flex-wrap: wrap;
-    margin-bottom: 56px;
+    margin-bottom: clamp(32px, 5vw, 56px);
     .lbl {
       color: var(--accent);
     }
@@ -163,8 +101,8 @@
   .contact {
     background: var(--green);
     color: var(--paper);
-    margin-top: 160px;
-    padding: 130px 0 40px;
+    margin-top: clamp(90px, 12vw, 160px);
+    padding: clamp(80px, 11vw, 130px) 0 24px;
     position: relative;
     overflow: hidden;
     .hd {
@@ -181,10 +119,10 @@
   .c-row {
     display: flex;
     flex-wrap: wrap;
-    gap: 50px;
+    gap: 40px 50px;
     align-items: center;
     justify-content: space-between;
-    margin-top: 70px;
+    margin-top: clamp(40px, 6vw, 70px);
   }
   .c-links {
     display: flex;
@@ -231,8 +169,8 @@
     justify-content: space-between;
     gap: 20px;
     flex-wrap: wrap;
-    margin-top: 120px;
-    padding-top: 26px;
+    margin-top: clamp(64px, 9vw, 120px);
+    padding-top: 16px;
     border-top: 1px solid var(--green-line);
     color: var(--tan);
     a {

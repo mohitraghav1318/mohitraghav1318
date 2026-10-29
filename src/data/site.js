@@ -19,11 +19,11 @@ export const site = {
 };
 
 export const nav = [
-  { label: 'Home', to: '/' },
-  { label: 'Projects', to: '/projects' },
-  { label: 'Skills', to: '/skills' },
-  { label: 'Experience', to: '/experience' },
-  { label: 'Contact', to: '/contact', pill: true },
+  { label: 'Home', to: '/', hint: 'Where it starts' },
+  { label: 'Projects', to: '/projects', hint: "Things I've built" },
+  { label: 'Skills', to: '/skills', hint: 'The toolbox' },
+  { label: 'Experience', to: '/experience', hint: 'Roles and teams' },
+  { label: 'Contact', to: '/contact', hint: 'Start a project', pill: true },
 ];
 
 // Short UI strings (cursor labels, aria labels) so no copy lives in components.
@@ -32,6 +32,7 @@ export const ui = {
   backToTop: 'Back to top',
   cursor: { go: 'Go', hi: 'Hi', open: 'Open', write: 'Write', up: 'Up' },
   navLabel: 'Main',
+  menu: { open: 'Menu', close: 'Close', label: 'Site menu', status: 'Open to projects and internships' },
 };
 
 // Photos in public/images/Me (originals). `npm run images` writes resized WebP
